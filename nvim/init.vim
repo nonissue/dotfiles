@@ -17,10 +17,19 @@ let g:deoplete#enable_at_startup = 1
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
+Plug 'gf3/molotov'
 
 call plug#end()
 
-colorscheme gotham
+" Set 256 colours, dark background, and molotov
+set t_Co=256
+set background=dark
+colorscheme molotov
+
+" If using airline.vim:
+let g:airline_theme='molotov'
+
+" colorscheme gotham
 
 " airline theme stuff
 " let g:airline#extensions#tabline#enabled = 2
@@ -34,7 +43,7 @@ colorscheme gotham
 "let g:airline_right_sep = ' '
 "let g:airline_right_alt_sep = '|'
 let g:airline_powerline_fonts=1
-let g:airline_theme='gotham'
+" let g:airline_theme='gotham'
 
 syntax on
 set ruler               " Show the line and column numbers of the cursor.
@@ -56,6 +65,9 @@ set incsearch                   " Shows the match while typing
 set hlsearch                    " Highlight found searches
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
+set nostartofline " Don't reset cursor to start of line when moving around
+set nowrap " Do not wrap lines
+set nu " Enable line numbers
 
 " set tabstop=4 shiftwidth=4 expandtab
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
