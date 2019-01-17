@@ -5,3 +5,4 @@ fish_history
 */*/fish_prompt*
 fish/functions/fish_prompt.fish
 omf.fish
+fish/functions/.iterm2_shell_integration.fish
