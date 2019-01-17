@@ -1,9 +1,10 @@
+# modified version of original here https://github.com/gf3/dotfiles/blob/master/.config/fish/functions/gh.fish
+# for some reason the original didn't work
+# the repo one liner is goddamn disgusting, but i don't know perl well enough to do better
+
 function gh
   set url 'https://github.com'
   set branch (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
-  # set repo (git remote show -n origin | grep "Fetch URL" | perl -ne 'print $1 if /(\w+\/\w+)(?=\.git)/')
-
-  #set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com\/(.*)/')
   set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com\/(.*)/' | perl -lne '/(.*)\.git/ ? print $1 : print')
 
   # Build GitHub URL
