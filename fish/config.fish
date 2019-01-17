@@ -20,5 +20,7 @@ function lookbusy ; cat /dev/urandom | hexdump -C | grep --color "ca fe" ; end
 function t        ; command tree -C $argv ; end
 function view     ; nvim -R $argv ; end
 
+# fixes bug with iterm/fish_mode_prompt?
+function fish_mode_prompt; end
 # iterm
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
