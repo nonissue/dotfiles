@@ -1,2 +1,7 @@
 nvim/plugged/
 .DS_Store
+fish/fishd.*
+fish_history
+*/*/fish_prompt*
+fish/functions/fish_prompt.fish
+omf.fish
