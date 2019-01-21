@@ -15,9 +15,7 @@ function encfs-find -a filename location
         cd "/mnt/media/remote"
     end
     echo $TARGET in (pwd)
-
-    # path /mnt/media/remote
-    find */ -name "$TARGET*" -exec echo \n{} \; -exec encfsctl encode --extpass='echo royalty-lab-swirl' /mnt/media/.remote/whatson3/media/ {} \;
+    find */ -name "$TARGET*" -exec echo \n{} \; -exec encfsctl encode --extpass='echo $ENCFS_PW' /mnt/media/.remote/whatson3/media/ {} \;
     popd
 end
 

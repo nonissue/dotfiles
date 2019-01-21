@@ -6,3 +6,4 @@ fish_history
 fish/functions/fish_prompt.fish
 omf.fish
 fish/functions/.iterm2_shell_integration.fish
+.env
