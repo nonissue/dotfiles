@@ -1,1 +1,1 @@
-/Users/apw/.local/share/omf/themes/pure/fish_prompt.fish
+/Users/andrewwilliams/.local/share/omf/themes/shellder/fish_prompt.fish
