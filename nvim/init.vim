@@ -1,54 +1,42 @@
 " my nvim config
 
 " Plugin list starts
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.dotfiles/nvim/plugged')
 
 " Plugins
 Plug 'whatyouhide/vim-gotham'
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
- endif
-
-let g:deoplete#enable_at_startup = 1
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
 Plug 'gf3/molotov'
 Plug 'scrooloose/nerdcommenter'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
 " Set 256 colours, dark background, and molotov
-set t_Co=256
-"set background=dark
-colorscheme molotov
+"
+" set t_Co=256
+" set background=dark
+
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 12
+let g:airline_theme = 'nord'
+"if filereadable("~/.dotfiles/nvim/color/molotov.vim")
+"  colorscheme molotov
+"end
+
+" colorscheme molotov
+colorscheme nord
+
+" colorscheme gotham
 
 " for nerdcommenter
 filetype plugin on
 
 " If using airline.vim:
-let g:airline_theme='molotov'
-
-" colorscheme gotham
-
-" airline theme stuff
-"let g:airline#extensions#tabline#enabled = 2
-"let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-"let g:airline#extensions#tabline#right_sep = ' '
-"let g:airline#extensions#tabline#right_alt_sep = '|'
-"let g:airline_left_sep = ' '
-"let g:airline_left_alt_sep = '|'
-"let g:airline_right_sep = ' '
-"let g:airline_right_alt_sep = '|'
-" let g:airline_theme='gotham'
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='molotov'
 
 syntax on
 set ruler               " Show the line and column numbers of the cursor.
