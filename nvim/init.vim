@@ -10,41 +10,25 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
 Plug 'gf3/molotov'
 Plug 'scrooloose/nerdcommenter'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
 " Set 256 colours, dark background, and molotov
 "
-set t_Co=256
-set background=dark
-if filereadable("~/.dotfiles/nvim/color/molotov.vim")
-  colorscheme molotov
-end
+" set t_Co=256
+" set background=dark
 
-colorscheme molotov
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 12
+let g:airline_theme = 'nord'
+"if filereadable("~/.dotfiles/nvim/color/molotov.vim")
+"  colorscheme molotov
+"end
 
-augroup airline_config
-  autocmd!
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-
-  let g:airline_theme = 'molotov'
-
-  let g:airline_powerline_fonts = 1
-  let g:airline_skip_empty_sections = 1
-  let g:airline_symbols.linenr = '␤'
-
-
-  let g:airline#extensions#ale#enabled = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline#extensions#tabline#formatter = 'jsformatter'
-augroup END
-" }}}
+" colorscheme molotov
+colorscheme nord
 
 " colorscheme gotham
 
