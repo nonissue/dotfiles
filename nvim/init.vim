@@ -1,20 +1,10 @@
 " my nvim config
 
 " Plugin list starts
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.dotfiles/nvim/plugged')
 
 " Plugins
 Plug 'whatyouhide/vim-gotham'
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
- endif
-
-let g:deoplete#enable_at_startup = 1
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
@@ -24,31 +14,45 @@ Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 " Set 256 colours, dark background, and molotov
+"
 set t_Co=256
-"set background=dark
+set background=dark
+if filereadable("~/.dotfiles/nvim/color/molotov.vim")
+  colorscheme molotov
+end
+
 colorscheme molotov
+
+augroup airline_config
+  autocmd!
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+  let g:airline_theme = 'molotov'
+
+  let g:airline_powerline_fonts = 1
+  let g:airline_skip_empty_sections = 1
+  let g:airline_symbols.linenr = '␤'
+
+
+  let g:airline#extensions#ale#enabled = 1
+  let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamecollapse = 0
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tabline#formatter = 'jsformatter'
+augroup END
+" }}}
+
+" colorscheme gotham
 
 " for nerdcommenter
 filetype plugin on
 
 " If using airline.vim:
-let g:airline_theme='molotov'
-
-" colorscheme gotham
-
-" airline theme stuff
-"let g:airline#extensions#tabline#enabled = 2
-"let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-"let g:airline#extensions#tabline#right_sep = ' '
-"let g:airline#extensions#tabline#right_alt_sep = '|'
-"let g:airline_left_sep = ' '
-"let g:airline_left_alt_sep = '|'
-"let g:airline_right_sep = ' '
-"let g:airline_right_alt_sep = '|'
-" let g:airline_theme='gotham'
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='molotov'
 
 syntax on
 set ruler               " Show the line and column numbers of the cursor.
