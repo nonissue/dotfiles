@@ -1,0 +1,39 @@
+{
+
+    "editor.fontSize": 13,
+    // good fonts:
+    // input, ibm plex
+    "editor.fontFamily": "'Input', 'Helvetica'",
+    // Good themes:
+    // Dainty - Nord
+    "workbench.colorTheme": "Dainty Light",
+    "workbench.sideBar.location": "right",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "editor.formatOnPaste": true,
+    "git.enableSmartCommit": true,
+    "workbench.iconTheme": "verdandi",
+    "todo-tree.defaultHighlight": {
+    "icon": "alert",
+    "type": "text",
+    "foreground": "red",
+    "background": "white",
+    "opacity": 50,
+    "iconColour": "blue"
+    },
+    "todo-tree.customHighlight": {
+        "TODO": {
+            "icon": "check",
+            "type": "line"
+        },
+        "FIXME": {
+            "foreground": "black",
+            "iconColour": "yellow"
+        }
+    },
+    "todo-tree.regex": "((//|#|\\--|--\\[\\[|<!--|;|/\\*)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "extensions.autoUpdate": false,
+    "editor.cursorStyle": "underline"
+}
+

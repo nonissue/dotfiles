@@ -16,12 +16,13 @@ call plug#end()
 
 " Set 256 colours, dark background, and molotov
 "
-" set t_Co=256
-" set background=dark
+set t_Co=256
+set background=dark
 
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_comment_brightness = 12
+
 let g:airline_theme = 'nord'
 "if filereadable("~/.dotfiles/nvim/color/molotov.vim")
 "  colorscheme molotov
