@@ -23,13 +23,15 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_comment_brightness = 12
 
-let g:airline_theme = 'nord'
+" let g:airline_theme = 'molotov'
 "if filereadable("~/.dotfiles/nvim/color/molotov.vim")
 "  colorscheme molotov
 "end
 
-" colorscheme molotov
-colorscheme nord
+colorscheme molotov
+
+" let g:airline_theme = 'molotov'
+" colorscheme nord
 
 " colorscheme gotham
 
