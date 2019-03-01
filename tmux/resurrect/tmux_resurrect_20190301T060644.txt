@@ -1,7 +1,0 @@
-pane	0	1	:plexdrive	0	:#	1	:/home/seed	1	plexdrive	:/opt/plexdrive/plexdrive mount -v 3 --refresh-interval=1m --chunk-check-threads=8 --chunk-load-threads=8 --chunk-load-ahead=4 --max-chunks=100 --fuse-options=allow_other,read_only --config=/opt/plexdrive --cache-file=/opt/plexdrive/cache.bolt /mnt/encfs-pd
-pane	0	2	:glances	1	:*	1	:/home/seed	1	sudo	:fish
-pane	0	3	:rclone	0	:#-	1	:/home/seed	1	bash	:/bin/bash /etc/cron.hourly/rclone-cron.sh
-window	0	1	0	:#	b69d,208x61,0,0,0
-window	0	2	1	:*	b6a3,208x61,0,0,6
-window	0	3	0	:#-	b6a1,208x61,0,0,4
-state	0	

@@ -8,3 +8,4 @@ omf.fish
 fish/functions/.iterm2_shell_integration.fish
 .env
 tmux/plugins/*
+tmux/resurrect
