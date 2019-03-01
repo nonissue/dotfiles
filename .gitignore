@@ -11,4 +11,7 @@ tmux/plugins/*
 tmux/resurrect
 fish/fisher/functions/*
 .gitignore.swp
+fish/fisher/completions/*
 fish/fisher/conf.d/*
+!fish/fisher/conf.d/fisher.fish
+
