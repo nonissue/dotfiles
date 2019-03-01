@@ -5,19 +5,10 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Plugins
 Plug 'whatyouhide/vim-gotham'
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
-Plug 'gf3/molotov'
 
 call plug#end()
 
@@ -27,7 +18,7 @@ set background=dark
 colorscheme molotov
 
 " If using airline.vim:
-let g:airline_theme='molotov'
+" let g:airline_theme='molotov'
 
 " colorscheme gotham
 
@@ -85,3 +76,5 @@ nmap <Leader>s :%s//g<Left><Left>
 let mapleader='z'
 let maplocalleader='\'
 
+" YAML Fix
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
