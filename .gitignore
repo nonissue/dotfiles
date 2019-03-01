@@ -9,3 +9,6 @@ fish/functions/.iterm2_shell_integration.fish
 .env
 tmux/plugins/*
 tmux/resurrect
+fish/fisher/functions/*
+.gitignore.swp
+fish/fisher/conf.d/*
