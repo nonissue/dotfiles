@@ -30,7 +30,7 @@ set background=dark
 
 colorscheme molotov
 
-let g:airline_theme = 'molotov'
+" let g:airline_theme = 'molotov'
 " colorscheme nord
 
 " colorscheme gotham
