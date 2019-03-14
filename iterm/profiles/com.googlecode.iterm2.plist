@@ -4914,7 +4914,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>01B712C4-92FA-4427-AA74-0FF03E73E3CE</string>
+	<string>547A4FB5-3305-4884-90AF-7E40AED40A18</string>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>EnableDivisionView</key>
@@ -4974,19 +4974,19 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>370 191 700 622 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>259 325 796 486 0 0 1680 1027 </string>
+	<string>442 28 918 512 0 0 1440 877 </string>
 	<key>NSWindow Frame com.apple.typography_panel_InconsolataForPowerline-dz</key>
 	<string>246 501 260 58 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 8 1674 1019 0 0 1680 1027 </string>
+	<string>0 0 714 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<string>0 450 650 427 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 600 650 427 0 0 1680 1027 </string>
+	<string>0 0 714 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<string>720 0 714 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -9802,7 +9802,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-11T04:05:15Z</date>
+	<date>2019-03-13T04:39:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>
@@ -9815,6 +9815,8 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.2.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>

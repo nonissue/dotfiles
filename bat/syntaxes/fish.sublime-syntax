@@ -1,0 +1,397 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: TextMate Syntax Definition (YAML)
+file_extensions:
+  - YAML-tmLanguage
+scope: source.yaml-tmlanguage
+contexts:
+  name:
+    - match: '(?:, +|\{ *|^ {2,}|^ *- +)((["'']?)(contentName|name)(\2))(:) +((["'']?)[-\w\. ]*(\7))'
+      scope: meta.name.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: punctuation.definition.string.yaml-tmlanguage
+  main:
+    - match: ^---(?= |$)
+      scope: entity.other.document-start.yaml-tmlanguage
+    - match: '^\.{3}$'
+      scope: entity.other.document-end.yaml-tmlanguage
+    - match: ^\t+
+      scope: invalid.illegal.tab-indent.yaml-tmlanguage
+    - include: comment
+    - include: repository
+    - include: uuid
+    - include: name-main
+    - include: scope-name
+    - include: file-types
+    - include: author
+    - include: key-equivalent
+    - include: other-markers
+    - include: patterns
+    - include: captures
+    - include: name
+    - include: match
+    - include: include
+    - include: comment-from-key
+    - include: number-key
+    - include: repository-key-inline
+    - include: comment
+    - include: unmatched
+  match:
+    - match: '^( *)(?:-?( +)())((["'']?)(match|begin|end)(\3))(:) +([|>](\d*)[-+]?)(?=, |,$| +#| *$)'
+      captures:
+        4: string.other.quoted-or-unquoted.yaml-tmlanguage
+        5: punctuation.definition.string.yaml-tmlanguage
+        6: keyword.other.match.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: keyword.control.definition.yaml-tmlanguage
+        9: keyword.control.block.yaml-tmlanguage
+        10: constant.numeric.indentation-indicator.yaml-tmlanguage
+      push:
+        - meta_scope: meta.match.block.yaml-tmlanguage
+        - meta_content_scope: meta.value.yaml-tmlanguage
+        - match: ^(?! *$|\1\2  )
+          pop: true
+        - include: comment
+        - include: scope:source.oniregexp
+    - match: '(?:, +|\{ *|^ {2,}|^ *- +)((["'']?)(match|begin|end)(\2))(:) +(["''])'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.match.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: punctuation.definition.string.yaml-tmlanguage
+      push:
+        - meta_scope: meta.match.yaml-tmlanguage
+        - meta_content_scope: meta.value.yaml-tmlanguage
+        - match: \6(?!\6)
+          captures:
+            0: punctuation.definition.string.yaml-tmlanguage
+          pop: true
+        - match: "''"
+        - match: '""'
+        - include: scope:source.oniregexp
+    - match: '(?:, +|\{ *|^ {2,}|^ *- +)((["'']?)(match|begin|end)(\2))(:)(?:(?= +#)| +(?!["''\[{]))'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.match.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+      push:
+        - meta_scope: meta.match.yaml-tmlanguage
+        - meta_content_scope: meta.value.yaml-tmlanguage
+        - match: '(?=, |,$| +[#{\[]| *$| *})'
+          pop: true
+        - include: scope:source.oniregexp
+  comment:
+    - match: (?:^ *|\G *| +)((#).*\n?)
+      captures:
+        1: comment.line.number-sign.yaml-tmlanguage
+        2: punctuation.definition.comment.line.yaml-tmlanguage
+  author:
+    - match: '(?:,|\{ *|^)((["'']?)(author)(\2))(:) +((["'']?).*(\7))'
+      scope: meta.author.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.author.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: punctuation.definition.string.yaml-tmlanguage
+  captures:
+    - match: '(?:, +|\{ *|^ {2,}|^ *- +)((["'']?)((?:(?:begin|end)C|c)aptures)(\2))(:)'
+      scope: meta.captures.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: entity.other.captures.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+  comment-from-key:
+    - match: '^( *)(?:- +)?((["'']?)(comment)(\3))(:) +([|>](\d*)[-+]?)(?=, |,$| +#| *$)'
+      comment: |
+        block
+        comment
+      captures:
+        2: string.other.quoted-or-unquoted.yaml-tmlanguage
+        3: punctuation.definition.string.yaml-tmlanguage
+        4: keyword.other.comment-from-key.yaml-tmlanguage
+        5: punctuation.definition.string.yaml-tmlanguage
+        6: keyword.control.definition.yaml-tmlanguage
+        7: keyword.control.block.yaml-tmlanguage
+        8: constant.numeric.indentation-indicator.yaml-tmlanguage
+      push:
+        - meta_scope: meta.comment-from-key.block.yaml-tmlanguage
+        - meta_content_scope: comment.block.from-key.block.yaml-tmlanguage
+        - match: ^(?! *$|\1 )
+          pop: true
+    - match: '(?:, +|\{ *|^ *|^ *- +)((["'']?)(comment)(\2))(:) +(?!#)(["''])'
+      comment: test comment over multiple lines?
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.comment-from-key.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: punctuation.definition.string.yaml-tmlanguage
+      push:
+        - meta_scope: meta.comment-from-key.quoted.yaml-tmlanguage
+        - meta_content_scope: comment.block.from-key.quoted.yaml-tmlanguage
+        - match: '(?<![^\\]\\)(\6)(?=, |,$| +#| *$| *})'
+          captures:
+            1: punctuation.definition.string.yaml-tmlanguage
+          pop: true
+    - match: '^( *)(?:-( +))?((["'']?)(comment)(\4))(:)[ ]'
+      comment: this is a "test" comment in another line
+      captures:
+        3: string.other.quoted-or-unquoted.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.other.comment-from-key.yaml-tmlanguage
+        6: punctuation.definition.string.yaml-tmlanguage
+        7: keyword.control.definition.yaml-tmlanguage
+      push:
+        - meta_scope: meta.comment-from-key.unquoted.yaml-tmlanguage
+        - meta_content_scope: comment.block.from-key.unquoted.yaml-tmlanguage
+        - match: ^(?! *$|\1\2  )
+          pop: true
+  file-types:
+    - match: '(?:, +|\{ *|^)((["'']?)(fileTypes)(\2))(:) (\[)'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: keyword.control.list.opening-bracket.yaml-tmlanguage
+      push:
+        - meta_scope: meta.file-types.yaml-tmlanguage
+        - match: '\]'
+          captures:
+            0: keyword.control.list.closing-bracket.yaml-tmlanguage
+          pop: true
+        - match: '(?:\G|^),? *((["'']?)([-\w\._]+)(\2))(?=, |,$| +#| *\Z| *\])'
+          captures:
+            1: string.other.quoted-or-unquoted.yaml-tmlanguage
+            2: punctuation.definition.string.yaml-tmlanguage
+            3: support.other.file-types.item.yaml-tmlanguage
+            4: punctuation.definition.string.yaml-tmlanguage
+        - include: comment
+    - match: '(?:, +|\{ *|^)((["'']?)(fileTypes)(\2))(:)(?= +#| *$)'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+      push:
+        - meta_scope: meta.file-types.yaml-tmlanguage
+        - match: ^(?!$|-| *#)
+          pop: true
+        - match: '^- +((["'']?)([-\w\. _]+)(\2))(?= +#| *$)'
+          captures:
+            1: string.other.quoted-or-unquoted.yaml-tmlanguage
+            2: punctuation.definition.string.yaml-tmlanguage
+            3: support.other.file-types.item.yaml-tmlanguage
+            4: punctuation.definition.string.yaml-tmlanguage
+        - include: comment
+  illegal:
+    - match: '[^\s}]'
+      scope: invalid.illegal.unrecognized.yaml-tmlanguage
+  include:
+    - match: |-
+        (?x)
+        (?:,\ +|\{\ *|^\ {2,}|^\ *-\ +)
+          ((["']?)(include)(\2))(:)\ +
+        ((["'])(?:(\$self)
+               |\#?([-\w\.\ ]*)) (\7)
+        |(\$self)
+        |([-\w\.\ ]*)
+        )
+      scope: meta.include.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.include.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: storage.modifier.self-include.yaml-tmlanguage
+        9: variable.other.include.yaml-tmlanguage
+        10: punctuation.definition.string.yaml-tmlanguage
+        11: storage.modifier.self-include.yaml-tmlanguage
+        12: variable.other.include.yaml-tmlanguage
+  key-equivalent:
+    - match: '(?:,|\{ *|^)((["'']?)(keyEquivalent)(\2))(:) +((["'']?).*(\7))'
+      scope: meta.key-equivalent.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.key-equivalent.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: punctuation.definition.string.yaml-tmlanguage
+  name-main:
+    - match: '^((["'']?)(name)(\2))(:) +((["'']?).*?(\7))(?=, |,$| +#| *$| *})'
+      scope: meta.name-main.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: entity.other.name.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: punctuation.definition.string.yaml-tmlanguage
+  number-key:
+    - match: '(?:, +|\{ *|^ *)((["''])(\d+)(\2))(:)'
+      scope: meta.number-key.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: constant.numeric.key.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+  other-markers:
+    - match: '^( *)?(?:- +)?((["'']?)(firstLineMatch|foldingStartMarker|foldingStopMarker)(\3))(:) +([|>])(?=, |,$| +#| *$)'
+      captures:
+        2: string.other.quoted-or-unquoted.yaml-tmlanguage
+        3: punctuation.definition.string.yaml-tmlanguage
+        4: keyword.other.name.other-marker.yaml-tmlanguage
+        5: punctuation.definition.string.yaml-tmlanguage
+        6: keyword.control.definition.yaml-tmlanguage
+        7: keyword.control.block.yaml-tmlanguage
+      push:
+        - meta_scope: meta.other-marker.block.yaml-tmlanguage
+        - meta_content_scope: meta.value.yaml-tmlanguage
+        - match: ^(?! *$|\1 )
+          pop: true
+        - include: comment
+        - include: scope:source.oniregexp
+    - match: '(?:, +|\{ *|^ {2,}|^ *- +)?((["'']?)(firstLineMatch|foldingStartMarker|foldingStopMarker)(\2))(:) +(["''])'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.other-marker.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: punctuation.definition.string.yaml-tmlanguage
+      push:
+        - meta_scope: meta.other-marker.yaml-tmlanguage
+        - meta_content_scope: meta.value.yaml-tmlanguage
+        - match: \6(?!\6)
+          captures:
+            0: punctuation.definition.string.yaml-tmlanguage
+          pop: true
+        - match: "''"
+          scope: test
+        - include: scope:source.oniregexp
+    - match: '(?:, +|\{ *|^ {2,}|^ *- +)?((["'']?)(firstLineMatch|foldingStartMarker|foldingStopMarker)(\2))(:) +(?!["''])'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.other-marker.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+      push:
+        - meta_scope: meta.other-marker.yaml-tmlanguage
+        - meta_content_scope: meta.value.yaml-tmlanguage
+        - match: '(?=, |,$| +[#{\[''"]| *$| *})'
+          pop: true
+        - include: scope:source.oniregexp
+  patterns:
+    - match: '(?:, +|\{ *|^ *|^ *- +)((["'']?)(patterns)(\2))(:)'
+      scope: meta.patterns.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: support.type.patterns.patterns.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+  repository:
+    - match: '(?:, +|\{ *)((["'']?)(repository)(\2))(:)'
+      scope: meta.repository.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: entity.other.repository.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+    - match: '^((["'']?)(repository)(\2))(:)'
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: entity.other.repository.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+      push:
+        - meta_scope: meta.repository-block.yaml-tmlanguage
+        - match: ^(?!\s*($|#))(?=\S)
+          pop: true
+        - include: comment
+        - include: repository-key
+        - include: patterns
+        - include: captures
+        - include: name
+        - include: match
+        - include: include
+        - include: comment-from-key
+        - include: number-key
+        - include: comment
+        - include: unmatched
+        - include: illegal
+  repository-key:
+    - match: '(?:^  )((["'']?)([-\w]+)(\2))(:)'
+      scope: meta.repository-key.yaml-tmlanguage
+      captures:
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: variable.other.repository-key.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+  repository-key-inline:
+    - match: '(?:, +|\{ *)((["'']?)([-\w]+)(\2))(:)'
+      scope: meta.repository-key.yaml-tmlanguage
+      captures:
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: variable.other.repository-key.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+  scope-name:
+    - match: '(?:,|\{ *|^)((["'']?)(scopeName)(\2))(:) +((["'']?)[-\w\. ]*(\7))'
+      scope: meta.scope-name.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.name.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        6: meta.value.yaml-tmlanguage string.other.quoted-or-unquoted.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: punctuation.definition.string.yaml-tmlanguage
+  unmatched:
+    - match: ^ *- |,(?= *$| +#)
+  uuid:
+    - match: '(?:,|\{ *|^)((["'']?)(uuid|bundleUUID)(\2))(:) +((["'']?)(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})(\7))'
+      scope: meta.uuid.yaml-tmlanguage
+      captures:
+        1: string.other.quoted-or-unquoted.yaml-tmlanguage
+        2: punctuation.definition.string.yaml-tmlanguage
+        3: keyword.other.uuid.yaml-tmlanguage
+        4: punctuation.definition.string.yaml-tmlanguage
+        5: keyword.control.definition.yaml-tmlanguage
+        7: punctuation.definition.string.yaml-tmlanguage
+        8: constant.numeric.uuid.yaml-tmlanguage
+        9: punctuation.definition.string.yaml-tmlanguage
