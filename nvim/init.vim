@@ -5,12 +5,40 @@ call plug#begin('~/.dotfiles/nvim/plugged')
 
 " Plugins
 Plug 'whatyouhide/vim-gotham'
+Plug 'gf3/molotov'
+Plug 'arcticicestudio/nord-vim'
+
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'Chiel92/vim-autoformat'
-Plug 'gf3/molotov'
 Plug 'scrooloose/nerdcommenter'
-Plug 'arcticicestudio/nord-vim'
+Plug 'scrooloose/nerdtree' " nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin' " nerdtree git int 
+Plug 'Valloric/YouCompleteMe' " completion
+Plug 'sjl/vitality.vim' " play nice with iterm2
+
+Plug 'vim-syntastic/syntastic' " find sytnax errors
+Plug 'jiangmiao/auto-pairs' " auto pairs brackets
+Plug 'tpope/vim-surround' " deal with surrounding in pairs
+Plug 'tpope/vim-fugitive' " git commands
+Plug 'airblade/vim-gitgutter' " shows git status in gutter
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+" js on steroids
+Plug 'pangloss/vim-javascript'
+" js/ts stuff
+Plug 'leafgarland/typescript-vim'
+" plug into tsserver
+Plug 'Quramy/tsuquyomi'
+" Smart indenting for JS and TS
+Plug 'jason0x43/vim-js-indent'
+
+" Installs and builds vimproc (required to launch tsserver)
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 call plug#end()
 
@@ -18,22 +46,36 @@ call plug#end()
 "
 set t_Co=256
 set background=dark
+colorscheme molotov
 
-" let g:nord_italic = 1
-" let g:nord_italic_comments = 1
-" let g:nord_comment_brightness = 12
+
+" nerdtree config
+" map toggle NERDTree to ^Ctrl + n
+map <C-N> :NERDTreeToggle<CR>
+
+" show hidden files by default
+let NERDTreeShowHidden=1
+
+" ignore specifc files
+let NERDTreeIgnore=['\.pyc$', '\~$', '\.swp$']
+
+
+" syntastic config 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" end syntastic config
 
 " let g:airline_theme = 'molotov'
 "if filereadable("~/.dotfiles/nvim/color/molotov.vim")
 "  colorscheme molotov
 "end
 
-colorscheme molotov
-
-" let g:airline_theme = 'molotov'
-" colorscheme nord
-
-" colorscheme gotham
 
 " for nerdcommenter
 filetype plugin on
