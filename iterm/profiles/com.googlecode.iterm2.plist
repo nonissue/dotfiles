@@ -4918,19 +4918,29 @@
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>EnableDivisionView</key>
-	<true/>
+	<false/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSColorPanelMode</key>
+	<string>6</string>
+	<key>NSColorPickerPreferredRGBEntryMode</key>
+	<integer>2</integer>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>3</string>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/.dotfiles/iterm/profiles</string>
+	<string>~/Library/Mobile Documents/com~apple~CloudDocs/Sync/Wallpapers/Wallpapers</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
+	<string>{799, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -4941,6 +4951,11 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 262.000000, NO, NO</string>
+		<string>0.000000, 263.000000, 224.000000, 48.000000, NO, NO</string>
+	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -4969,28 +4984,84 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>504 878 224 279 0 0 2560 1577 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>180 103 1234 99 0 0 1680 1027 </string>
+	<string>1594 530 445 77 0 0 2560 1577 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 191 700 622 0 0 1440 877 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>209 400 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>442 28 918 512 0 0 1440 877 </string>
-	<key>NSWindow Frame com.apple.typography_panel_InconsolataForPowerline-dz</key>
-	<string>246 501 260 58 0 0 1440 877 </string>
+	<string>290 97 918 514 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>45 526 650 426 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 714 877 0 0 1440 877 </string>
+	<string>115 442 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 10</key>
+	<string>422 440 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 11</key>
+	<string>443 408 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 12</key>
+	<string>464 261 650 444 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 13</key>
+	<string>485 360 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 14</key>
+	<string>423 256 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 15</key>
+	<string>632 250 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 16</key>
+	<string>653 203 650 812 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 17</key>
+	<string>426 229 650 404 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 18</key>
+	<string>695 157 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 19</key>
+	<string>716 158 650 426 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 450 650 427 0 0 1440 877 </string>
+	<string>840 550 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 20</key>
+	<string>737 134 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 21</key>
+	<string>758 112 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 22</key>
+	<string>779 88 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 23</key>
+	<string>190 295 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 24</key>
+	<string>821 18 650 450 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 25</key>
+	<string>842 19 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 26</key>
+	<string>863 583 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 27</key>
+	<string>884 533 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 28</key>
+	<string>926 503 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 29</key>
+	<string>947 480 650 428 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 0 714 877 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>720 0 714 877 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
+	<string>0 578 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 30</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 31</key>
+	<string>989 434 680 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 32</key>
+	<string>1010 411 670 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 33</key>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>0 585 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>0 271 670 454 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>0 625 570 402 0 0 1680 1027 </string>
+	<string>0 600 650 426 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>0 593 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 8</key>
+	<string>323 517 650 428 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 9</key>
+	<string>344 486 650 426 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -5645,7 +5716,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>13</integer>
 			<key>Working Directory</key>
 			<string>/Users/apw</string>
 		</dict>
@@ -6272,6 +6343,19 @@
 			<true/>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.10196078431372549</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.082352941176470587</real>
+				<key>Red Component</key>
+				<real>0.0</real>
+			</dict>
 			<key>Tags</key>
 			<array>
 				<string>dark</string>
@@ -6280,6 +6364,8 @@
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
+			<key>Title Components</key>
+			<integer>32</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -6290,12 +6376,14 @@
 			<true/>
 			<key>Use Cursor Guide</key>
 			<false/>
+			<key>Use Custom Window Title</key>
+			<true/>
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
 			<true/>
 			<key>Use Tab Color</key>
-			<false/>
+			<true/>
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
@@ -6303,7 +6391,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>13</integer>
 			<key>Working Directory</key>
 			<string>/Users/apw</string>
 		</dict>
@@ -9735,25 +9823,737 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncFrame_SharedPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1680, 1050}}</string>
+		<key>topLeft</key>
+		<string>{148, 769}</string>
+	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>3704D52F-9ECE-4721-94C7-9E815383DBBC</string>
+	<string>48EF6AB1-083C-4D25-B050-2D6C8148A52A</string>
 	<key>NoSyncLastTipTime</key>
-	<real>569395684.934237</real>
+	<real>562622317.29462695</real>
+	<key>NoSyncLaunchExperienceControllerRunCount</key>
+	<integer>3</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncNextAnnoyanceTime</key>
+	<real>575542954.02002895</real>
+	<key>NoSyncOnboardingWindowHasBeenShown</key>
+	<true/>
 	<key>NoSyncPermissionToShowTip</key>
-	<true/>
+	<false/>
+	<key>NoSyncRecordedVariableNames</key>
+	<dict>
+		<key>1</key>
+		<array>
+			<string>session.jobName</string>
+			<string>session.id</string>
+			<string>session.pid</string>
+			<string>session.profileName</string>
+			<string>session.name</string>
+			<string>session.terminalIconName</string>
+			<string>session.tmuxClientName</string>
+			<string>session.termid</string>
+			<string>session.triggerName</string>
+			<string>session.tmuxWindowPane</string>
+			<string>session.hostname</string>
+			<string>session.username</string>
+			<string>session.tmuxStatusRight</string>
+			<string>session.tab</string>
+			<string>session.tmuxRole</string>
+			<string>session.path</string>
+			<string>session.creationTimeString</string>
+			<string>session.rows</string>
+			<string>session.tmuxWindowTitle</string>
+			<string>session.autoLogId</string>
+			<string>session.tty</string>
+			<string>session.badge</string>
+			<string>session.autoName</string>
+			<string>session.terminalWindowName</string>
+			<string>iterm2</string>
+			<string>session.tmuxStatusLeft</string>
+			<string>session.autoNameFormat</string>
+			<string>session.jobPid</string>
+			<string>session.lastCommand</string>
+			<string>session.presentationName</string>
+			<string>session.mouseReportingMode</string>
+			<string>session.columns</string>
+		</array>
+		<key>16</key>
+		<array>
+			<string>currentTab.currentSession.session.mouseReportingMode</string>
+			<string>currentTab.currentSession.session.tty</string>
+			<string>currentTab.currentSession.session.username</string>
+			<string>currentTab.currentSession.session.name</string>
+			<string>currentTab.currentSession.session.hostname</string>
+			<string>currentTab.currentSession.session.termid</string>
+			<string>currentTab</string>
+			<string>currentTab.currentSession.session.pid</string>
+			<string>currentTab.currentSession.session.path</string>
+			<string>currentTab.currentSession</string>
+			<string>titleOverride</string>
+			<string>currentTab.currentSession.session.terminalWindowName</string>
+			<string>currentTab.currentSession.session.autoName</string>
+			<string>currentTab.currentSession.session.jobPid</string>
+			<string>currentTab.currentSession.session.autoNameFormat</string>
+			<string>iterm2</string>
+			<string>currentTab.currentSession.session.presentationName</string>
+			<string>currentTab.currentSession.session.columns</string>
+			<string>currentTab.currentSession.session.terminalIconName</string>
+			<string>currentTab.currentSession.session.rows</string>
+			<string>currentTab.currentSession.session.jobName</string>
+		</array>
+		<key>2</key>
+		<array>
+			<string>currentSession.session.jobName</string>
+			<string>currentSession.session.termid</string>
+			<string>currentSession.session.pid</string>
+			<string>currentSession.session.hostname</string>
+			<string>currentSession.session.name</string>
+			<string>currentSession.session.mouseReportingMode</string>
+			<string>currentSession.session.presentationName</string>
+			<string>currentSession.session.username</string>
+			<string>currentSession.session.jobPid</string>
+			<string>currentSession.session.terminalIconName</string>
+			<string>currentSession.session.rows</string>
+			<string>titleOverride</string>
+			<string>currentSession.session.tty</string>
+			<string>currentSession.session.autoNameFormat</string>
+			<string>currentSession.session.path</string>
+			<string>currentSession.session.terminalWindowName</string>
+			<string>iterm2</string>
+			<string>currentSession.session.autoName</string>
+			<string>tmuxWindow</string>
+			<string>currentSession</string>
+			<string>currentSession.session.columns</string>
+		</array>
+		<key>4</key>
+		<array>
+			<string>pid</string>
+			<string>localhostName</string>
+			<string>effectiveTheme</string>
+		</array>
+	</dict>
+	<key>NoSyncRecordedVariables</key>
+	<dict>
+		<key>1</key>
+		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>columns</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>creationTimeString</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxStatusRight</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxClientName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tty</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>mouseReportingMode</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>badge</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>tab</string>
+				<key>nonterminalContext</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>presentationName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxRole</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>path</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>jobName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>lastCommand</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>autoName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindowPane</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>id</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxStatusLeft</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>autoLogId</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>terminalWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>rows</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>autoNameFormat</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>triggerName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>hostname</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>jobPid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>pid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>profileName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>termid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>username</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>16</key>
+		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>titleOverrideFormat</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.username</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.pid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.presentationName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentTab</string>
+				<key>nonterminalContext</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>titleOverride</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.jobName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.lastCommand</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.tty</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.iterm2.localhostName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.path</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.hostname</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>2</key>
+		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>id</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>titleOverrideFormat</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.username</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>titleOverride</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.hostname</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.path</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.terminalWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.presentationName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.jobName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.tty</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>iterm2.localhostName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindow</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.lastCommand</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.pid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>4</key>
+		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>pid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>localhostName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>effectiveTheme</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>569031091.08076596</real>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
+	<real>527558558.09922302</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
 		<string>0000</string>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -9790,7 +10590,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/apw/.dotfiles/iterm/profiles</string>
+	<string>/Users/andrewwilliams/.dotfiles/iterm/profiles</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -9798,27 +10598,33 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=64</string>
+	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=19</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-13T04:39:08Z</date>
+	<date>2019-03-28T00:06:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>15</integer>
+	<key>TerminalVMargin</key>
+	<integer>15</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseMetal</key>
+	<false/>
+	<key>WindowNumber</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.3.20190328-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
