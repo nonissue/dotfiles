@@ -12,3 +12,4 @@ tmux/resurrect
 .gitignore.swp
 !fish/fisher/conf.d/fisher.fish
 fish/fisher/functions/__history*
+nvim/.netrwhist
