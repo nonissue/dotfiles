@@ -4,7 +4,7 @@ nvim/plugged/
 fish/fish_variables
 tmux/plugins/
 tmux/*.log
-tmux/resurrect/
+tmux/resurrect
 fish/fisher/functions/__history*
 fish/fish_history
 fish/fishd.*
