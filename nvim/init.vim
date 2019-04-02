@@ -7,6 +7,11 @@ call plug#begin('~/.dotfiles/nvim/plugged')
 Plug 'whatyouhide/vim-gotham'
 Plug 'gf3/molotov'
 Plug 'arcticicestudio/nord-vim'
+Plug 'fcpg/vim-orbital'
+Plug 'https://github.com/rakr/vim-two-firewatch.git'
+Plug 'jacoborus/tender.vim'
+Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'https://github.com/cocopon/iceberg.vim.git'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -43,9 +48,26 @@ call plug#end()
 
 " Set 256 colours, dark background, and molotov
 "
-set t_Co=256
-set background=dark
-colorscheme molotov
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+"set t_Co=256
+"set background=dark
+"colorscheme molotov
+" colorscheme orbital
+"colorscheme iceberg
+
+syntax enable
+"colorscheme tender
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
+
+
 
 " get the right python
 let g:python2_host_prog = '/usr/local/bin/python'
@@ -62,9 +84,9 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc$', '\~$', '\.swp$']
 
 " syntastic config 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -72,11 +94,16 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " end syntastic config
 
-" let g:airline_theme = 'molotov'
+
 "if filereadable("~/.dotfiles/nvim/color/molotov.vim")
 "  colorscheme molotov
 "end
+set t_Co=256
+set background=dark
+colorscheme molotov
 
+"let g:airline_theme = 'molotov'
+"let g:airline_powerline_fonts = 0
 " for nerdcommenter
 filetype plugin on
 
