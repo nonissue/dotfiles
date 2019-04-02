@@ -8,7 +8,6 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'gf3/molotov'
 Plug 'arcticicestudio/nord-vim'
 
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -48,6 +47,9 @@ set t_Co=256
 set background=dark
 colorscheme molotov
 
+" get the right python
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " nerdtree config
 " map toggle NERDTree to ^Ctrl + n
@@ -58,7 +60,6 @@ let NERDTreeShowHidden=1
 
 " ignore specifc files
 let NERDTreeIgnore=['\.pyc$', '\~$', '\.swp$']
-
 
 " syntastic config 
 set statusline+=%#warningmsg#
@@ -76,12 +77,8 @@ let g:syntastic_check_on_wq = 0
 "  colorscheme molotov
 "end
 
-
 " for nerdcommenter
 filetype plugin on
-
-" If using airline.vim:
-" let g:airline_theme='molotov'
 
 syntax on
 set ruler               " Show the line and column numbers of the cursor.
@@ -122,4 +119,7 @@ nmap <Leader>s :%s//g<Left><Left>
 " Leader key is like a command prefix. 
 " let mapleader='z'
  "let maplocalleader='\'
+
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 

@@ -99,3 +99,14 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 # Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
+# Show the /Volumes folder
+sudo chflags nohidden /Volumes
+
+# Minimize windows into their application’s icon
+# default: -bool false
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Change space switching from slide to fade
+# default: -int 0
+# Note: this might need sudo in 10.14?
+defaults write com.apple.universalaccess reduceMotion -int 1

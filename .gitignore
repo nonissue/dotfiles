@@ -1,3 +1,6 @@
 nvim/plugged/
 .DS_Store
 fish/fish_variables
+tmux/plugins/
+tmux/*.log
+tmux/resurrect/
