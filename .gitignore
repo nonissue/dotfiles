@@ -1,3 +1,4 @@
+.env
 nvim/plugged/
 .DS_Store
 fish/fish_variables
@@ -5,3 +6,6 @@ tmux/plugins/
 tmux/*.log
 tmux/resurrect/
 fish/fisher/functions/__history*
+fish/fish_history
+fish/fishd.*
+nvim/.netrwhist
