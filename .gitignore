@@ -4,3 +4,4 @@ fish/fish_variables
 tmux/plugins/
 tmux/*.log
 tmux/resurrect/
+fish/fisher/functions/__history*
