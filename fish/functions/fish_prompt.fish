@@ -1,3 +1,5 @@
+# 19-04-03 - most up-to-date version!
+
 function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue'
   switch "$color_scheme"
     case 'light'
