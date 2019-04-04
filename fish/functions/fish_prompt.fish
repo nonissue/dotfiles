@@ -59,6 +59,8 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l dust_bright_magneta    FF9446
       set -l dust_green             3D8479
       set -l dust_bright_green      52B2A3
+      
+      set -l teal                   4CBF99
 
       set -l greys                  424242 616161 757575
       set -l blues                  $dust_bright_blue $dust_blue $blue_gray
@@ -75,12 +77,14 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -x set_ind_mod          (set_color -o $dark_yellow)
       
       # otherwise the completion looks bad on light themes?
-      #   set -x fish_pager_color_prefix        4CBF99 # teal
-      #   set -x fish_pager_color_completion    6E5346 # brown
+      # the prefix looks good on dark too tbh
+      set -x fish_pager_color_prefix        $teal # teal
+      set -x fish_pager_color_completion    $dust_bright_blue # bright blue
+      set -x fish_color_autosuggestion      $dust_green # teal
   end
 end
 
-__ayyylmao_colors light
+__ayyylmao_colors dark
 
 function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
