@@ -40,7 +40,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -x fish_pager_color_completion    6E5346 # brown
 
     case 'dark'
-      # CURRENTLY BASICALLY THE SAME AS LIGHT
+      # Only a few changes between this and light
       # local vars with approximate names to just aid in theming
       set -l blue_gray              314a70
       set -l grey_med               857f77
@@ -52,6 +52,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l dust_grey              839496
       set -l dust_blue              0E558C
       set -l dust_bright_blue       1587DF
+      set -l dust_med_blue         09699D
       set -l dust_bright_red        EC5E01
       set -l dust_bright_yellow     FFD56D
       set -l dust_red               EB7000
@@ -63,7 +64,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l teal                   4CBF99
 
       set -l greys                  424242 616161 757575
-      set -l blues                  $dust_bright_blue $dust_blue $blue_gray
+      set -l blues                  $dust_bright_blue $dust_med_blue $dust_blue 
       
       # theme current colour scheme vars
       set -x set_path             (set_color -o $dust_blue)
