@@ -1,21 +1,24 @@
-function _peco_change_directory
-  if [ (count $argv) ]
-    peco --layout=bottom-up --query "$argv "|perl -pe 's/([ ()])/\\\\$1/g'|read foo
-  else
-    peco --layout=bottom-up |perl -pe 's/([ ()])/\\\\$1/g'|read foo
+function peco_cd
+  set -l query (commandline)
+  if test -n $query
+    set peco_flags --query "$query"
   end
-  if [ $foo ]
-    builtin cd $foo
-  else
-    commandline ''
+
+  set -l max_depth $PECO_SELECT_CD_MAX_DEPTH
+  set -l ignore_case $PECO_SELECT_CD_IGNORE_CASE
+
+  if test -z $max_depth
+    set max_depth 3
   end
-end
-function peco_cd 
-  begin
-    echo $HOME/.config
-    ls -ad */|perl -pe "s#^#$PWD/#"|egrep -v "^$PWD/\."|head -n 5
-    sort -r -t '|' -k 3 ~/.z|sed -e 's/\|.*//'
-    
-    ls -ad */|perl -pe "s#^#$PWD/#"|grep -v \.git
-  end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
+
+  if test -z $ignore_case
+    find . -maxdepth $max_depth -type d | peco $peco_flags | read line
+  else
+    find . -maxdepth $max_depth -type d | egrep -v $ignore_case | peco $peco_flags | read line
+  end
+
+  if test $line
+    cd $line
+    commandline -f repaint
+  end
 end
