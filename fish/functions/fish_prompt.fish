@@ -1,1 +1,1 @@
-/Users/andrewwilliams/.dotfiles/fish/themes/ayyylmao/fish_prompt.fish
+/home/ops/.dotfiles/fish/themes/ayyylmao/fish_prompt.fish
