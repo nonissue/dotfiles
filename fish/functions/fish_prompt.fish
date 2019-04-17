@@ -1,1 +1,1 @@
-/home/ops/.dotfiles/fish/themes/ayyylmao/fish_prompt.fish
+../themes/ayyylmao/fish_prompt.fish
