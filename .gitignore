@@ -6,6 +6,7 @@ tmux/plugins/
 tmux/*.log
 tmux/resurrect
 fish/fisher/functions/__history*
+fish/functions/fzf_key_bindings.fish
 fish/fish_history
 fish/fishd.*
 nvim/.netrwhist
