@@ -6,6 +6,7 @@ set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 set -x EDITOR nvim
 set -x GREP_COLOR "1;37;45"
+set -xU LS_COLORS 'ow=01;36;40'
 
 set -g fisher_path {$HOME}/.dotfiles/fish/fisher
 
@@ -35,3 +36,4 @@ function jjrf     ; source ~/.config/fish/config.fish ; end
 function fish_mode_prompt; end
 # iterm
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
