@@ -37,3 +37,5 @@ function fish_mode_prompt; end
 # iterm
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+set -gx PATH $PATH $GEM_HOME/bin:$PATH
+set -x GEM_HOME $HOME/.gem
