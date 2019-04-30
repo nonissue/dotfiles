@@ -40,4 +40,8 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 #set -gx PATH $PATH $GEM_HOME/bin:$PATH
 #set -x GEM_HOME $HOME/.gem
-set -x fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+
+# set -g prevents path items being duplicated when fish is reloaded
+# as we are shadowing the global variable with a session variable
+# info: https://github.com/fish-shell/fish-shell/issues/5117
+set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
