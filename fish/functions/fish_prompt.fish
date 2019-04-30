@@ -133,7 +133,7 @@ function fish_right_prompt
 
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
-    set --local extra "$set_ind_clean ⧓" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷)
+    set --local extra "$set_ind_clean ≍" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷)
 
     set -l status_l "$set_status_l<" 
     set -l status_r "$set_status_r>"
