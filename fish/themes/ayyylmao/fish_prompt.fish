@@ -54,7 +54,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l dust_grey              839496
       set -l dust_blue              0E558C
       set -l dust_bright_blue       1587DF
-      set -l dust_med_blue         09699D
+      set -l dust_med_blue          09699D
       set -l dust_bright_red        EC5E01
       set -l dust_bright_yellow     FFD56D
       set -l dust_red               EB7000
@@ -69,7 +69,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l blues                  $dust_bright_blue $dust_med_blue $dust_blue 
       
       # theme current colour scheme vars
-      set -x set_path             (set_color -o $dust_blue)
+      set -x set_path             (set_color -o $dust_bright_blue)
       set -x set_prompt           $blues
       set -x set_extra            (set_color -o $grey_med)
       set -x set_status_l         (set_color -o $grey_dark)
@@ -131,7 +131,7 @@ function fish_right_prompt
 
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
-    set --local extra "$set_extra𝌆"
+    set --local extra "$set_extra●"
 
     set -l status_l "$set_status_l<" 
     set -l status_r "$set_status_r>"
@@ -161,10 +161,10 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set git_info "$set_ind_dirty𝌆 $set_branch$git_branch" #setcolor for git indicator (dirty), git branch
+            set git_info "$set_ind_dirty✱ $set_branch$git_branch" #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
-                # If there is new or deleted files, update status
-                set extra "$set_ind_mod𝌡" #setcolor for git indicator (dirty)
+                # If there is new or deleted files, update status𝌡
+                set extra "$set_ind_mod✱" #setcolor for git indicator (dirty)
             end
         else if [ ~(_is_git_dirty) ]
             set git_info "$extra $set_branch$git_branch" # setcolor for git branch?
