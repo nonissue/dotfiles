@@ -69,7 +69,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l blues                  $dust_bright_blue $dust_med_blue $dust_blue 
       
       # theme current colour scheme vars
-      set -x set_path             (set_color -o $dust_bright_blue)
+      set -x set_path             (set_color -o $dust_green)
       set -x set_prompt           $blues
       set -x set_extra            (set_color -o $grey_med)
       set -x set_status_l         (set_color -o $grey_dark)
@@ -78,6 +78,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -x set_ind_clean        (set_color -o $grey_med)
       set -x set_ind_dirty        (set_color -o $dark_orange)
       set -x set_ind_mod          (set_color -o $dark_yellow)
+      set -x set_white             (set_color -o EEEEEE)
       
       # otherwise the completion looks bad on light themes?
       # the prefix looks good on dark too tbh
@@ -105,8 +106,9 @@ function fish_prompt
 end
 
 function show_path
-  echo -en $set_path(prompt_pwd)
-  echo -n " "
+    echo -n "$set_status_l "
+    echo -en $set_path(prompt_pwd)
+    echo -n "$set_status_l "
 end
 
 function show_status -a last_status
@@ -131,7 +133,7 @@ function fish_right_prompt
 
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
-    set --local extra "$set_extra●"
+    set --local extra "$set_ind_clean ⧓" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷)
 
     set -l status_l "$set_status_l<" 
     set -l status_r "$set_status_r>"
@@ -157,11 +159,10 @@ function fish_right_prompt
     # 𝍖 --> for stashed?
     # other symbols: ⤽⤼⥅⫀⪿⨄⨦⨧⨮⨴⊛⊕⊙⊘⊚⊝ ●○
     # WE gots to do smething
-
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set git_info "$set_ind_dirty✱ $set_branch$git_branch" #setcolor for git indicator (dirty), git branch𝌆
+            set git_info "$set_status_l $set_ind_dirty✲ $set_branch$git_branch$set_status_l" #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
                 # If there is new or deleted files, update status𝌡
                 set extra "$set_ind_mod✱" #setcolor for git indicator (dirty)
@@ -171,11 +172,11 @@ function fish_right_prompt
         end
     end
 
-    show_path
+    
 
     echo -n -s $git_info
     show_git_info
-
+    show_path
     set_color normal
 end
 
