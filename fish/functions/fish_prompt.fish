@@ -141,7 +141,7 @@ function fish_right_prompt
  
     if [ (_git_branch_name) ]
       set -l git_branch (_git_branch_name)
-      set git_info " $git_branch"
+      set git_info "$set_bright_green$git_branch"
     end
 
     # TODO !
@@ -163,7 +163,7 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set git_info "$set_status_l $set_ind_dirty✲ $set_bright_green$git_branch$set_status_l" #setcolor for git indicator (dirty), git branch𝌆
+            set git_info "$set_status_l $set_ind_dirty✲ $set_branch$git_branch$set_status_l" #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
                 # If there is new or deleted files, update status𝌡
                 set extra "$set_ind_mod✱" #setcolor for git indicator (dirty)
