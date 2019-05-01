@@ -108,9 +108,9 @@ function fish_prompt
 end
 
 function show_path
-    echo -n "$set_status_l  "
+    echo -n "$set_status_l〈 "
     echo -en $set_path(prompt_pwd)
-    echo -n "$set_status_l"
+    echo -n "$set_status_l 〉"
 end
 
 function show_status -a last_status
@@ -135,7 +135,7 @@ function fish_right_prompt
 
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
-    set --local extra "$set_bright_green" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
+    set --local extra "" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
 
     set -l status_l "$set_status_l<" 
     set -l status_r "$set_status_r>"
@@ -164,13 +164,13 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set git_info "$set_status_l〈 $set_branch$git_branch$set_status_l 〉" #setcolor for git indicator (dirty), git branch𝌆
+            set git_info "$set_status_l〈 $set_branch$git_branch$set_status_l" #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
                 # If there is new or deleted files, update status𝌡
                 set extra "$set_ind_mod*" #setcolor for git indicator (dirty)✱✲
             end
         else if [ ~(_is_git_dirty) ]
-            set git_info "$extra$set_status_l" "〈 $set_bright_green$git_branch$set_status_l 〉" # setcolor for git branch?
+            set git_info "$extra$set_status_l〈 $set_bright_green$git_branch$set_status_l 〉" # setcolor for git branch?
         end
     end
 
