@@ -170,7 +170,7 @@ function fish_right_prompt
                 set extra "$set_ind_mod*" #setcolor for git indicator (dirty)✱✲
             end
         else if [ ~(_is_git_dirty) ]
-            set git_info "$extra [$set_bright_green$git_branch (set_color normal)]" # setcolor for git branch?
+            set git_info "$extra [$set_bright_green$git_branch]" # setcolor for git branch?
         end
     end
 
