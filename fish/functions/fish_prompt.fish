@@ -141,7 +141,7 @@ function fish_right_prompt
  
     if [ (_git_branch_name) ]
       set -l git_branch (_git_branch_name)
-      set git_info " $git_branch"
+      set git_info " $set_bright_green$git_branch"
     end
 
     # TODO !
