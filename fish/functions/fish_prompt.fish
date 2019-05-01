@@ -30,7 +30,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -x set_path             (set_color -o $dust_blue)
       set -x set_prompt           $blues
       set -x set_extra            (set_color -o $grey_med)
-      set -x set_status_l         (set_color -o $grey_dark)
+      set -x set_status_l         (set_color -b $grey_dark)
       set -x set_status_r         (set_color -o $grey_dark)
       set -x set_branch           (set_color -o $dust_bright_blue)
       set -x set_ind_clean        (set_color -o $grey_med)
@@ -62,6 +62,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -l dust_bright_magneta    FF9446
       set -l dust_green             3D8479
       set -l dust_bright_green      52B2A3
+      set -l new_blue               3a3a3a #005f87 #5f8787 
       
       set -l teal                   4CBF99
 
@@ -72,9 +73,9 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
       set -x set_path               (set_color -o $dust_blue)
       set -x set_prompt             $blues
       set -x set_extra              (set_color -o $grey_med)
-      set -x set_status_l           (set_color -o $grey_dark)
-      set -x set_status_r           (set_color -o $grey_dark)
-      set -x set_branch             (set_color -o $dark_yellow)
+      set -x set_status_l           (set_color -o $new_blue)
+      set -x set_status_r           (set_color -o $new_blue)
+      set -x set_branch             (set_color -o $dust_red)
       set -x set_ind_clean          (set_color -o $grey_med)
       set -x set_ind_dirty          (set_color -o EEEEEE)
       set -x set_ind_mod            (set_color -o $dark_yellow)
@@ -163,7 +164,7 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set git_info "$set_status_l $set_ind_dirty$set_branch$git_branch$set_status_l" #setcolor for git indicator (dirty), git branch𝌆
+            set git_info "$set_status_l" "[$set_branch$git_branch$set_status_l]" #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
                 # If there is new or deleted files, update status𝌡
                 set extra "$set_ind_mod*" #setcolor for git indicator (dirty)✱✲
@@ -176,7 +177,9 @@ function fish_right_prompt
     
 
     echo -n -s $git_info
+    # set_color -b 596f73
     show_git_info
+    set_color -o 596f73
     show_path
     set_color normal
 end
