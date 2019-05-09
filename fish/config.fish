@@ -41,7 +41,14 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 #set -gx PATH $PATH $GEM_HOME/bin:$PATH
 #set -x GEM_HOME $HOME/.gem
 
+# `brew doctor` was giving a warning about /usr/local/sbin not being found 
+# in fish path, so i'm setting it here (19-05-09)
+# Seems to be working and not duplicating in basic testing
+set -x PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
+
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
 # info: https://github.com/fish-shell/fish-shell/issues/5117
 set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+# set -g fish_user_paths "/usr/local/sbin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/opt/fzf/bin " $fish_user_paths
+
