@@ -44,6 +44,9 @@ Plug 'jason0x43/vim-js-indent'
 " Installs and builds vimproc (required to launch tsserver)
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
+" Installs fish syntax support
+Plug 'dag/vim-fish'
+
 call plug#end()
 
 " Set 256 colours, dark background, and molotov
