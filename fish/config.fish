@@ -49,6 +49,9 @@ set -x PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
 # info: https://github.com/fish-shell/fish-shell/issues/5117
-set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+switch (uname)
+    case Darwin 
+        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+end
 # set -g fish_user_paths "/usr/local/sbin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/opt/fzf/bin " $fish_user_paths
 
