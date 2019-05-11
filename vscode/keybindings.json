@@ -1,0 +1,10 @@
+// Place your key bindings in this file to overwrite the defaults
+[{
+    "key": "shift+cmd+b",
+    "command": "workbench.action.tasks.runTask"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.tasks.build"
+  }
+]
