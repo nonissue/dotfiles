@@ -46,7 +46,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.detectIndentation": true,
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Ayu Adapta",
+    "workbench.colorTheme": "Noctis",
     "workbench.statusBar.feedback.visible": true,
     "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "right",
@@ -137,6 +137,11 @@
         "wifi"
     ],
     "window.zoomLevel": 0,
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.mode": "manual",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
 
 // "todohighlight.include": [
