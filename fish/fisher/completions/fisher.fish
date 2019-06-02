@@ -1,1 +1,1 @@
-fisher self-complete
+fisher complete

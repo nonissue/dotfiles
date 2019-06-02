@@ -8,7 +8,10 @@ set -x EDITOR nvim
 set -x GREP_COLOR "1;37;45"
 set -xU LS_COLORS 'ow=01;36;40'
 
+# set -g fish_config $XDG_CONFIG_HOME/
 set -g fisher_path {$HOME}/.dotfiles/fish/fisher
+# set -g fisher_cache {$HOME}/.dotfiles/fish/fisher/cache
+# set -g fisher_config {$HOME}/.dotfiles/fish/fisher
 
 set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
 set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
