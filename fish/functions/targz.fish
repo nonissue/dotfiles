@@ -13,7 +13,7 @@ function targz -a name target
         set target "."
     end
 
-	tar -cvf "$tmpFile" --exclude=".DS_Store" --exclude "$name.tar" "$target" || return 1;
+	tar -cvf "$tmpFile" --exclude=".DS_Store" --exclude "$name.tar" "$target"; or return 1;
 
     set size (stat -f"%z" "$tmpFile" 2> /dev/null || stat -c"%s" "$tmpFile" 2> /dev/null) 
     set -l cmd gzip
