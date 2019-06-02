@@ -6,10 +6,6 @@ ln -s ~/.dotfiles/nvim/ ~/.config/nvim
 
 ln -s ~/.dotfiles/fish/ ~/.config/fish
 
-ln -s ~/.dotfiles/fish/fisher/config ~/.config/fisher
-
-ln -s ~/.dotfiles/fish/fisher/cache ~/.cache/fisher
-
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 ln -s ~/.dotfiles/glances/ ~/.config/glances
