@@ -27,6 +27,10 @@ This is setup is currently not portable, and not designed for others to use as a
 * vscode
 * ssh (encrypted with ansible-vault)
 
+### Related
+
+My hammerspoon config is kept in a separate repo, but if you use macOS, you may find it interesting: <https://github.com/nonissue/hammerspoon>
+
 ## Contact:
 
 Feel free to open pull requests as you see fit. You can also contact me at andy@<githubusername>.org
