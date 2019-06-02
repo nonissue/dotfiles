@@ -6,7 +6,7 @@
 
 # I have no idea if all of these work, some of them may have been depreciated
 
-#
+# quit sysprefs before doing anything
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
@@ -14,7 +14,6 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -35,7 +34,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
-# Save screenshots to the desktop
+# Save screenshots to custom folder
 defaults write com.apple.screencapture location -string "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Documents/screenshots/2012mbpr/"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -44,13 +43,12 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
-
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder QuitMenuItem -bool false
 
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.finder FXPreferredViewStyle Nlsv
@@ -83,17 +81,17 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	OpenWith -bool true \
 	Privileges -bool true
 
-
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-
-### Dock Stuff
+###############################################################################
+# Dock Stuff
+###############################################################################
 
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
@@ -147,6 +145,18 @@ defaults write com.apple.dock minimize-to-application -bool true
 # Note: this might need sudo in 10.14?
 defaults write com.apple.universalaccess reduceMotion -int 1
 
+###############################################################################
+# Launchpad
+###############################################################################
+
+# change number of launchpad cols
+defaults write com.apple.dock springboard-columns -int 9
+# change number of launchpad rows
+defaults write com.apple.dock springboard-rows -int 6
+
+# reset launchpad after changes
+# we also need to kill finder (I think) but we handle this at end of script
+defaults write com.apple.dock ResetLaunchPad -bool TRUE;
 
 ###############################################################################
 # Activity Monitor                                                            #
