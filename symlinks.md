@@ -2,7 +2,10 @@
 
 ## Need to automate creation for self-install
 
-Inspiration: https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
+Inspiration: 
+
+* https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
+* https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
 
 ## Links
 
