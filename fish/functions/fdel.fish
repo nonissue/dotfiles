@@ -61,15 +61,15 @@ function fdel --description "Delete files older than X days."
     end
 
     if set -q _flag_d
-		printf "\n=============================================\n\n  Debug Mode\n" | tee $logpath
-		printf "  * _flag_f: %s\n" $_flag_f | tee $logpath
-		printf "  * _flag_t: %s\n" $_flag_t | tee $logpath
-		echo "  * time: $time" | tee $logpath
+		printf "\n=============================================\n\n  Debug Mode\n" | tee -a $logpath
+		printf "  * _flag_f: %s\n" $_flag_f | tee -a $logpath
+		printf "  * _flag_t: %s\n" $_flag_t | tee -a $logpath
+		echo "  * time: $time" | tee -a $logpath
     end
 
-    printf "\n%s\n" $timestamp | tee $logpath
-    echo "Timestamp: "$timestamp | tee $logpath
-    printf "\n%s\n\n  Finding dirs & files\n  older than %s days old\n\n" $sep $time | tee $logpath 
+    printf "\n%s\n" $timestamp | tee -a $logpath
+    echo "Timestamp: "$timestamp | tee -a $logpath
+    printf "\n%s\n\n  Finding dirs & files\n  older than %s days old\n\n" $sep $time | tee -a $logpath 
 
     set file_list (find /mnt/media/local -type f -mtime +$time -printf "%f\n")
 
@@ -84,16 +84,16 @@ function fdel --description "Delete files older than X days."
 		printf "\n"
 
 		if read_confirm
-        	printf "\n  Deleting files...\n" | tee $logpath
+        	printf "\n  Deleting files...\n" | tee -a $logpath
     		for file in $file_list
 				echo " $file" >> $logpath
 			end
 			find /mnt/media/local -type f -mtime +$time -delete
 		else
-			printf "\n  * File deletion skipped by user...\n" | tee $logpath
+			printf "\n  * File deletion skipped by user...\n" | tee -a $logpath
 		end
     else
-		echo "  * No files found to delete..." | tee $logpath
+		echo "  * No files found to delete..." | tee -a $logpath
     end
 
     set dir_list (find /mnt/media/local -type d -mtime +$time -empty -printf "%f\n")
@@ -108,7 +108,7 @@ function fdel --description "Delete files older than X days."
 
 		if read_confirm
 
-			printf "\nDeleting folders...\n" | tee $logpath
+			printf "\nDeleting folders...\n" | tee -a $logpath
 
 			for dir in $dir_list
 				echo $dir >> $logpath
@@ -118,9 +118,9 @@ function fdel --description "Delete files older than X days."
 			
 		end
     else
-	    printf "  * No folders found to delete...\n\n  Finished!\n" | tee $logpath
+	    printf "  * No folders found to delete...\n\n  Finished!\n" | tee -a $logpath
     end
 
-    #printf "\n%s\n\n" $sep | tee $logpath
+    #printf "\n%s\n\n" $sep | tee -a $logpath
 
 end
