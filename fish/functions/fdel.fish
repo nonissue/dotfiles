@@ -27,12 +27,12 @@ end
 # -f or --force : runs command without any prompts
 function fdel --description "Delete files older than X days." 
     set sep "---------------------------------------------"
-    #set timestamp (date +"%y-%m-%d %T")
+    set timestamp (date +"%y-%m-%d %T")
     #set timestamp (date +"%y-%m-%d")
-    set timestamp (date)
+    #set timestamp (date)
     set logpath "/home/ops/logs/fdel1.log"
 
-    echo "wtf" >> $logpath    
+    #echo "wtf" >> $logpath    
     set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'd/debug'
     argparse -n fdel $options -- $argv
 
@@ -67,8 +67,8 @@ function fdel --description "Delete files older than X days."
 		echo "  * time: $time" | tee -a $logpath
     end
 
-    printf "\n%s\n" $timestamp | tee -a $logpath
-    echo "Timestamp: "$timestamp | tee -a $logpath
+    printf "\n  %s\n" $timestamp | tee -a $logpath
+    #echo "Timestamp: "$timestamp | tee -a $logpath
     printf "\n%s\n\n  Finding dirs & files\n  older than %s days old\n\n" $sep $time | tee -a $logpath 
 
     set file_list (find /mnt/media/local -type f -mtime +$time -printf "%f\n")
@@ -121,6 +121,6 @@ function fdel --description "Delete files older than X days."
 	    printf "  * No folders found to delete...\n\n  Finished!\n" | tee -a $logpath
     end
 
-    #printf "\n%s\n\n" $sep | tee -a $logpath
+    printf "\n%s\n\n" $sep | tee -a $logpath
 
 end
