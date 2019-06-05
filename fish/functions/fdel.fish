@@ -52,7 +52,7 @@ function fdel --description "Delete files older than X days."
 		printf "\n=============================================\n\n  Look for files and folders\n  older than %s days (default)?\n\n" $time
 
 		if not read_confirm
-   			printf "\n  Exiting...\n\n%s" $sep
+   			printf "\n  Exiting...\n\n%s\n\n" $sep
 			return 1 
 		end
 
