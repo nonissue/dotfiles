@@ -109,6 +109,7 @@ colorscheme molotov
 "let g:airline_powerline_fonts = 0
 " for nerdcommenter
 filetype plugin on
+filetype plugin indent on
 
 syntax on
 set ruler               " Show the line and column numbers of the cursor.
