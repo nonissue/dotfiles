@@ -27,7 +27,7 @@ end
 # -t or --time : optional : accepts int (1-99) : sets age threshold for deleting files
 # -f or --force : runs command without any prompts
 function fdel --description "Delete files older than X days."
-    begin
+	#begin
         set sep "---------------------------------------------"
         set timestamp (date +"%y-%m-%d %T")
         set logpath "/home/ops/logs/fdel1.log"
@@ -133,5 +133,5 @@ function fdel --description "Delete files older than X days."
         end
 
         printf "\n%s\n\n" $sep | tee -a $logpath
-    end | tee -a $logpath
+	#end | tee -a $logpath
 end
