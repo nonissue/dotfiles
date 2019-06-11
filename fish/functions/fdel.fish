@@ -2,6 +2,7 @@
 # * [ ] implement forced mode properly
 # * [ ] combine printf statements / optimize
 # * [ ] add --help opt
+# * [ ] check for content on remote before deleting? 
 
 # * use a code block (`begin?`) to rediect all output to a file rather than doing it many times
 
@@ -27,6 +28,10 @@ end
 # -t or --time : optional : accepts int (1-99) : sets age threshold for deleting files
 # -f or --force : runs command without any prompts
 function fdel --description "Delete files older than X days."
+	echo (pwd)
+	pushd .
+	cd /mnt/media/local
+
 	#begin
         set sep "---------------------------------------------"
         set timestamp (date +"%y-%m-%d %T")
@@ -79,7 +84,9 @@ function fdel --description "Delete files older than X days."
         printf "\n%s\n\n  Finding dirs & files\n  older than %s days old\n\n" $sep $time | tee -a $logpath
 
         # find our files
-        set file_list (find /mnt/media/local -type f -mtime +$time -printf "%f\n")
+	# this used to just return file name with no path,
+	# but we use path to remove it later
+        set file_list (find . -type f -mtime +$time -printf "%p\n")
 
         if [ -n "$file_list" ]
 
@@ -94,12 +101,10 @@ function fdel --description "Delete files older than X days."
             # get user confirmation before continuing
             if read_confirm
                 printf "\n  Deleting files...\n" | tee -a $logpath
-                for file in $file_list
-                    echo " $file" >>$logpath
-                end
-
-                # replace below with for loop && rm?
-                find /mnt/media/local -type f -mtime +$time -delete
+		for file in $file_list
+		    rm "$file"
+		    printf "Deleted %s" $file | tee -a $logpath 
+		end  
             else
                 printf "\n  * File deletion skipped by user...\n" | tee -a $logpath
             end
@@ -107,7 +112,7 @@ function fdel --description "Delete files older than X days."
             echo "  * No files found to delete..." | tee -a $logpath
         end
 
-        set dir_list (find /mnt/media/local -type d -mtime +$time -empty -printf "%f\n")
+        set dir_list (find /mnt/media/local -type d -mtime +$time -empty -printf "%p\n")
 
         if [ -n "$dir_list" ]
 
@@ -134,4 +139,7 @@ function fdel --description "Delete files older than X days."
 
         printf "\n%s\n\n" $sep | tee -a $logpath
 	#end | tee -a $logpath
+	#
+	popd
+	echo (pwd)
 end
