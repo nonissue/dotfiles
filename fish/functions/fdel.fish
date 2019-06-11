@@ -97,7 +97,7 @@ function fdel --description "Delete files older than X days."
 
         printf "\n"
 
-        if $_flag_f 
+        if [ $_flag_f = true ]  
             printf "\n~~~~ non-interactive mode ~~~~~" | tee -a $logpath
             printf "\n  Deleting files...\n" | tee -a $logpath
             for file in $file_list
