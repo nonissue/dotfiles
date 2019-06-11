@@ -33,11 +33,12 @@ function fdel --description "Delete files older than X days."
     cd /mnt/media/local
 
     #begin
-    set sep "---------------------------------------------"
+    set sep1 "============================================="
+    set sep2 "---------------------------------------------"
     set timestamp (date +"%y-%m-%d %T")
     set logpath "/home/ops/logs/fdel1.log"
 
-    printf "\n  %s\n  Interactive Mode\n" $timestamp | tee -a $logpath
+    printf "\n%s\n  %s\n  Interactive Mode\n" $sep1 $timestamp | tee -a $logpath
 
     # config for parsing command line args
     set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'd/debug'
@@ -61,11 +62,11 @@ function fdel --description "Delete files older than X days."
     else
         set -e _flag_t
         set _flag_t "not set"
-        printf "\n=============================================\n\n  Look for files and folders\n  older than %s days (default)?\n\n" $time
+        printf "\n%s\n\n  Look for files and folders\n  older than %s days (default)?\n\n" $sep2 $time
 
         # confirm user wants to continue with default time value
         if not read_confirm
-            printf "\n  Exiting...\n\n%s\n\n" $sep
+            printf "\n  Exiting...\n\n%s\n\n" $sep1
             return 1
         end
 
@@ -75,11 +76,11 @@ function fdel --description "Delete files older than X days."
 
     # print debug mode if param passed
     if set -q _flag_d
-        printf "\n=============================================\n\n  Debug Mode\n  * _flag_f: %s\n  * _flag_t: %s\n  * time: %s\n" $_flag_f $_flag_t $time | tee -a $logpath
+        printf "\n%s\n\n  Debug Mode\n  * _flag_f: %s\n  * _flag_t: %s\n  * time: %s\n" $sep2 $_flag_f $_flag_t $time | tee -a $logpath
     end
 
     # print description
-    printf "\n%s\n\n  Finding dirs & files\n  older than %s days old\n\n" $sep $time | tee -a $logpath
+    printf "\n%s\n\n  Finding dirs & files\n  older than %s days old\n\n" $sep2 $time | tee -a $logpath
 
     # find our files
     # this used to just return file name with no path,
@@ -135,7 +136,7 @@ function fdel --description "Delete files older than X days."
         printf "  * No folders found to delete...\n\n  Finished!\n" | tee -a $logpath
     end
 
-    printf "\n%s\n\n" $sep | tee -a $logpath
+    printf "\n%s\n\n" $sep2 | tee -a $logpath
 
     popd
     echo (pwd)
