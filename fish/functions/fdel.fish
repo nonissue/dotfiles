@@ -28,7 +28,8 @@ end
 # -t or --time : optional : accepts int (1-99) : sets age threshold for deleting files
 # -f or --force : runs command without any prompts
 function fdel --description "Delete files older than X days."
-	echo (pwd)
+	
+    echo (pwd)
 	pushd .
 	cd /mnt/media/local
 
