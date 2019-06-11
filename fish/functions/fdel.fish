@@ -38,7 +38,7 @@ function fdel --description "Delete files older than X days."
     set timestamp (date +"%y-%m-%d %T")
     set logpath "/home/ops/logs/fdel1.log"
 
-    printf "\n%s\n  %s\n  Interactive Mode\n" $sep1 $timestamp | tee -a $logpath
+    printf "\n%s\n\n  %s\n  Interactive Mode\n" $sep1 $timestamp | tee -a $logpath
 
     # config for parsing command line args
     set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'd/debug'
