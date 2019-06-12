@@ -41,22 +41,22 @@ function fdel --description "Delete files older than X days."
     printf "\n%s\n\n  %s\n \n" $sep1 $timestamp | tee -a $logpath
 
     # config for parsing command line args
-    set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'v/verbose' 'd/directory=' 
+    set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'v/verbose' 'd/directory='
     argparse -n fdel $options -- $argv
 
     if set -q _flag_d
-	if test -d $_flag_d
-	    set base_dir $_flag_d
-	    pushd .
-	    cd $base_dir
-	else
-	    echo "invalid directory specified"
-	    return 1
-	end
+        if test -d $_flag_d
+            set base_dir $_flag_d
+            pushd .
+            cd $base_dir
+        else
+            echo "invalid directory specified"
+            return 1
+        end
     else
-	set _flag_d false
-	set base_dir '/mnt/media/local'
-	cd $base_dir
+        set _flag_d false
+        set base_dir '/mnt/media/local'
+        cd $base_dir
     end
     # set time to default value.
     # it will be overwritten if user passes valid param
@@ -102,32 +102,33 @@ function fdel --description "Delete files older than X days."
     set file_list (find . -type f -mtime +$time -print)
 
     if [ -n "$file_list" ]
-        if [ $_flag_f = true ]  
+        if [ $_flag_f = true ]
             printf "\n[dryrun/auto] Deleting files...\n" | tee -a $logpath
             for file in $file_list
-		# this prints the proper absolute file path
-	    	printf "%s/%s\n" $base_dir (echo $file | cut -d'/' -f2-) | tee -a $logpath
+                # this prints the proper absolute file path and logs it
+                # assumes relative path is ./[movies|tv]/[movie|tvshow]
+                printf "%s/%s\n" $base_dir (echo $file | cut -d'/' -f2-) | tee -a $logpath
             end
-	else
+        else
 
-	    printf "  Found the following files to delete: \n\n"
-    
-	    for file in $file_list
-		 printf "  %s/%s\n" (echo $file | cut -d'/' -f2 | cut -b 1) (basename $file) | tee -a $logpath
-	    end
-        # get user confirmation before continuing
-        
-	    if read_confirm
-		printf "\n  Deleting files...\n" | tee -a $logpath
-		for file in $file_list
-		    rm "$file"
+            printf "  Found the following files to delete: \n\n"
 
-		   #printf "Deleted %s" (basename $file) | tee -a $logpath
-		end
-	    else
-		printf "\n  * File deletion skipped by user...\n" | tee -a $logpath
-	    end
-	end
+            for file in $file_list
+                # show shorter file path (m for movies, t for tv)
+                printf "  %s/%s\n" (echo $file | cut -d'/' -f2 | cut -b 1) (basename $file) | tee -a $logpath
+            end
+
+            # get user confirmation before continuing
+            if read_confirm
+                printf "\n  Deleting files...\n" | tee -a $logpath
+                for file in $file_list
+                    rm "$file"
+                    #printf "Deleted %s" (basename $file) | tee -a $logpath
+                end
+            else
+                printf "\n  * File deletion skipped by user...\n" | tee -a $logpath
+            end
+        end
     else
         echo "  * No files found to delete..." | tee -a $logpath
     end
@@ -135,23 +136,29 @@ function fdel --description "Delete files older than X days."
     set dir_list (find /mnt/media/local -type d -mtime +$time -empty -printf "%p\n")
 
     if [ -n "$dir_list" ]
-
         printf "  Found the following dirs to delete: \n"
 
         for dir in $dir_list
             echo $dir
         end
 
-        if read_confirm
-
-            printf "\nDeleting folders...\n" | tee -a $logpath
+        if [ $_flag_f = true ]
 
             for dir in $dir_list
-                echo $dir >>$logpath
+                echo "[dryrun/auto]" $dir | tee -a $logpath
+                #rm -f $dir
             end
+        else
+            if read_confirm
 
-            find /mnt/media/local -type d -empty -mtime +$time -delete
+                printf "\nDeleting folders...\n" | tee -a $logpath
 
+                for dir in $dir_list
+                    echo $dir >>$logpath
+                end
+
+                find /mnt/media/local -type d -empty -mtime +$time -delete
+            end
         end
     else
         printf "  * No folders found to delete...\n\n  Finished!\n" | tee -a $logpath
