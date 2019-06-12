@@ -37,6 +37,7 @@ function fdel --description "Delete files older than X days."
     set timestamp (date +"%y-%m-%d %T")
     set logpath "/home/ops/logs/fdel1.log"
     set start_dir (pwd)
+    pushd .
 
     printf "\n%s\n\n  %s\n \n" $sep1 $timestamp | tee -a $logpath
 
@@ -47,7 +48,6 @@ function fdel --description "Delete files older than X days."
     if set -q _flag_d
         if test -d $_flag_d
             set base_dir $_flag_d
-            pushd .
             cd $base_dir
         else
             echo "invalid directory specified"
