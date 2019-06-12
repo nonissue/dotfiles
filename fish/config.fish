@@ -47,7 +47,7 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 # `brew doctor` was giving a warning about /usr/local/sbin not being found 
 # in fish path, so i'm setting it here (19-05-09)
 # Seems to be working and not duplicating in basic testing
-set -x PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
+set -x PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /opt/samba4/bin /opt/samba4/sbin
 
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
