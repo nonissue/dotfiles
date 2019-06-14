@@ -35,7 +35,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Save screenshots to custom folder
-defaults write com.apple.screencapture location -string "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Documents/screenshots/2012mbpr/"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots/2016mbpr/"
+
+defaults write com.apple.screencapture name "$(hostname) - "
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
