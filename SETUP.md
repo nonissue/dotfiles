@@ -17,6 +17,8 @@ brew: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/
 * git
 * tmux
 * neovim
+	* plug: curl -fLo ~/.dotfiles/nivm/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 * fish
 * z
 * fzf
