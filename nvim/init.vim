@@ -138,8 +138,11 @@ set nowrap " Do not wrap lines
 set nu " Enable line numbers
 
 " set tabstop=4 shiftwidth=4 expandtab
+"
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic               " Use 'magic' patterns (extended regular expressions).
+set nolist              " hides tabs (I think?)
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
