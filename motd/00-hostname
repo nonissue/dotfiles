@@ -1,0 +1,9 @@
+#!/bin/bash
+#!/bin/sh
+#lolcat header, depends on lolcat and figlet
+
+
+LOLCAT=/usr/games/lolcat
+
+/usr/bin/env figlet -f isometric3 "wtsn" | $LOLCAT -f
+printf '\n'
