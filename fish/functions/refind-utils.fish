@@ -18,7 +18,7 @@ function refind-utils --description "utilities for refind"
             return 1
         end
 
-        sudo sudo mount -t msdos /dev/disk0s1 /Volumes/ESP && sudo bless --mount /Volumes/ESP --setBoot --file /Volumes/ESP/EFI/refind/refind_x64.efi --shortform && diskutil unmount /Volumes/ESP > /dev/null
+        sudo mount -t msdos /dev/disk0s1 /Volumes/ESP && sudo bless --mount /Volumes/ESP --setBoot --file /Volumes/ESP/EFI/refind/refind_x64.efi --shortform && diskutil unmount /Volumes/ESP > /dev/null
         set -l result $status
 
         if test $result -eq 3
