@@ -34,6 +34,8 @@ function t        ; command tree -C $argv ; end
 function view     ; nvim -R $argv ; end
 
 function jjrf     ; source ~/.config/fish/config.fish ; end
+function venv	  ; source ~/.dotfiles/env/python3/bin/activate.fish ; end
+
 
 # fixes bug with iterm/fish_mode_prompt?
 function fish_mode_prompt; end

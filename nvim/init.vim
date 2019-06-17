@@ -20,7 +20,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' " nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin' " nerdtree git int 
-Plug 'Valloric/YouCompleteMe' " completion
+" Plug 'Valloric/YouCompleteMe' " completion
 Plug 'sjl/vitality.vim' " play nice with iterm2
 
 Plug 'vim-syntastic/syntastic' " find sytnax errors
@@ -58,10 +58,11 @@ if (has("termguicolors"))
 endif
 
 "set t_Co=256
-"set background=dark
+set background=dark
 "colorscheme molotov
+" :w
 " colorscheme orbital
-"colorscheme iceberg
+" colorscheme iceberg
 
 syntax enable
 "colorscheme tender
@@ -104,6 +105,7 @@ let g:syntastic_check_on_wq = 0
 set t_Co=256
 set background=dark
 colorscheme molotov
+" colorscheme iceberg
 
 "let g:airline_theme = 'molotov'
 "let g:airline_powerline_fonts = 0
@@ -136,8 +138,11 @@ set nowrap " Do not wrap lines
 set nu " Enable line numbers
 
 " set tabstop=4 shiftwidth=4 expandtab
+"
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic               " Use 'magic' patterns (extended regular expressions).
+set nolist              " hides tabs (I think?)
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''

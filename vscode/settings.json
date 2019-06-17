@@ -40,16 +40,12 @@
     "editor.tabSize": 4,
     "editor.wrappingIndent": "same",
     "editor.renderIndentGuides": true,
-    "editor.codeLens": false,
     "editor.cursorStyle": "underline",
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.detectIndentation": true,
-    "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Noctis",
     "workbench.statusBar.feedback.visible": true,
-    "workbench.iconTheme": "ayu",
-    "workbench.sideBar.location": "right",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     "git.autofetch": true,
@@ -141,7 +137,18 @@
     "update.mode": "manual",
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "editor.tabCompletion": "on",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorWidth": 1,
+    "editor.formatOnPaste": true,
+    "bracketPairColorizer.highlightActiveScope": true,
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "debug.console.fontFamily": "Inconsolata",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.fontFamily": "Inconsolata",
+    "workbench.sideBar.location": "right"
 }
 
 // "todohighlight.include": [

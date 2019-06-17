@@ -3,7 +3,7 @@ function fish_user_key_bindings
   bind \cf peco_cd # Bind for peco change directory to Ctrl+F
 end
 
-fzf_key_bindings
+#fzf_key_bindings
 
 bind ! __history_previous_command
 bind '$' __history_previous_command_arguments
