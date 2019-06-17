@@ -6,8 +6,8 @@ set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 set -x EDITOR nvim
 set -x GREP_COLOR "1;37;45"
-set -xU LS_COLORS 'ow=01;36;40'
-
+#set -xU LS_COLORS 'ow=01;36;40'
+set -x LS_COLORS 'ow=01;36;40'
 # set -g fish_config $XDG_CONFIG_HOME/
 set -g fisher_path {$HOME}/.dotfiles/fish/fisher
 # set -g fisher_cache {$HOME}/.dotfiles/fish/fisher/cache
