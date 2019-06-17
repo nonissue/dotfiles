@@ -2,6 +2,7 @@ set fish_greeting
 
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_COMMAND 'git ls-tree -r --name-only HEAD 2> /dev/null; or fd --type f --hidden --follow --exclude .git 2> /dev/null'
+set -x FZF_DEFAULT_OPTS "--height 40 --ansi"
 set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 set -x EDITOR nvim
