@@ -13,3 +13,4 @@ fish/fishd.*
 nvim/.netrwhist
 iterm/profiles/com.googlecode.iterm2.plist
 env/python3/lib/
+vscode/extensions/
