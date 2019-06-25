@@ -22,3 +22,4 @@ ln -s ~/.dotfiles/vscode ~/Library/Application\ Support/Code/User/
 ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 
 
+tpm
