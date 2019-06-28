@@ -22,6 +22,8 @@
 	<false/>
 	<key>CGFontRenderingFontSmoothingDisabled</key>
 	<false/>
+	<key>CheckTestRelease</key>
+	<true/>
 	<key>ColoredSelectedTabOutlineStrength</key>
 	<real>0.0</real>
 	<key>ColoredUnselectedTabTextProminence</key>
@@ -6453,6 +6455,11 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
+		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
@@ -6483,12 +6490,14 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>320 321 799 448 0 0 1440 877 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 104 1494 923 0 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -7390,7 +7399,7 @@
 			<key>Title Components</key>
 			<integer>258</integer>
 			<key>Transparency</key>
-			<real>0.041991196065989847</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -12964,6 +12973,7 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.0beta13</string>
 		<string>3.3.0beta12</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
@@ -12987,9 +12997,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>0F91F0B4-B4FD-493F-9498-5FE938A2C620</string>
 	<key>NoSyncLastTipTime</key>
-	<real>583186306.30578995</real>
+	<real>583282659.04738402</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>5</integer>
+	<integer>7</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>583272703.01496994</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -13659,6 +13669,7 @@
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
+		<string>0000</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<true/>
@@ -13712,13 +13723,17 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=55</string>
+	<string>https://iterm2.com/appcasts/testing_new.xml?shard=55</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-25T20:11:45Z</date>
+	<date>2019-06-25T22:01:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
+	<false/>
+	<key>SavePasteHistory</key>
+	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
@@ -14867,7 +14882,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.0beta12</string>
+	<string>3.3.0beta13</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
