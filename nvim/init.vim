@@ -1,5 +1,8 @@
 " my nvim config
 
+let mapleader=','
+" let maplocalleader='\'
+
 " Plugin list starts
 call plug#begin('~/.dotfiles/nvim/plugged')
 
@@ -22,6 +25,7 @@ Plug 'scrooloose/nerdtree' " nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin' " nerdtree git int 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sjl/vitality.vim' " play nice with iterm2
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'vim-syntastic/syntastic' " find sytnax errors
 Plug 'jiangmiao/auto-pairs' " auto pairs brackets
@@ -49,12 +53,20 @@ Plug 'dag/vim-fish'
 
 call plug#end()
 
+
+" Theme stuff
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
  set termguicolors
 endif
 
+set t_Co=256
+set background=dark
+colorscheme tender
 
+" airline stuff
+let g:airline_theme = 'tender'
+let g:airline_powerline_fonts = 1 
 
 " get the right python
 let g:python2_host_prog = '/usr/local/bin/python2.7'
@@ -80,18 +92,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " end syntastic config
 
-" Theme stuff
-set t_Co=256
-set background=dark
-" if filereadable("~/.dotfiles/nvim/color/molotov.vim")
- " colorscheme molotov
-"end
-colorscheme tender
-
-" airline stuff
-let g:airline_theme = 'tender'
-let g:airline_powerline_fonts = 1 
-
 " for nerdcommenter
 filetype plugin on
 filetype plugin indent on
@@ -102,6 +102,7 @@ filetype plugin indent on
 if !exists("g:syntax_on")
     syntax enable
 endif
+
 set ruler                       " Show the line and column numbers of the cursor.
 " set formatoptions+=o          " Continue comment marker in new lines.
 set textwidth=0                 " Hard-wrap long lines as you type them.
@@ -136,10 +137,14 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
+" map <Esc>[A <Up>
+"map <Esc>[B <Down>
+"map <Esc>[C <Right>
+"map <Esc>[D <Left>
+
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-Right> :tabnext<CR>
+
 " Search and Replace
 nmap <Leader>s :%s//g<Left><Left>
-
-" Leader key is like a command prefix. 
-" let mapleader='z'
- "let maplocalleader='\'
 
