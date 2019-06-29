@@ -9,10 +9,7 @@ set -x EDITOR nvim
 set -x GREP_COLOR "1;37;45"
 #set -xU LS_COLORS 'ow=01;36;40'
 set -x LS_COLORS 'ow=01;36;40'
-# set -g fish_config $XDG_CONFIG_HOME/
 set -g fisher_path {$HOME}/.dotfiles/fish/fisher
-# set -g fisher_cache {$HOME}/.dotfiles/fish/fisher/cache
-# set -g fisher_config {$HOME}/.dotfiles/fish/fisher
 
 set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
 set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
@@ -37,27 +34,35 @@ function view     ; nvim -R $argv ; end
 function jjrf     ; source ~/.config/fish/config.fish ; end
 function venv	  ; source ~/.dotfiles/env/python3/bin/activate.fish ; end
 
-
 # fixes bug with iterm/fish_mode_prompt?
 function fish_mode_prompt; end
+
 # iterm
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
-
-#set -gx PATH $PATH $GEM_HOME/bin:$PATH
-#set -x GEM_HOME $HOME/.gem
 
 # `brew doctor` was giving a warning about /usr/local/sbin not being found 
 # in fish path, so i'm setting it here (19-05-09)
 # Seems to be working and not duplicating in basic testing
-#set -x PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
 
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
 # info: https://github.com/fish-shell/fish-shell/issues/5117
 switch (uname)
     case Darwin 
+        # set -x PATH /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/bin
         set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+        set -g os "macOS"
+    case Linux
+        set -g os "Linux"
 end
 # set -g fish_user_paths "/usr/local/sbin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/opt/fzf/bin " $fish_user_paths
+
+# attach to tmux automatically when logging in using ssh
+if status --is-login
+    set PPID (echo (ps --pid %self -o ppid --no-headers) | xargs)
+    if ps --pid $PPID | grep ssh
+        tmux has-session -t remote; and tmux attach-session -t remote; or tmux new-session -s remote; and kill %self
+        echo "tmux failed to start; using plain fish shell"
+    end
+end
 
