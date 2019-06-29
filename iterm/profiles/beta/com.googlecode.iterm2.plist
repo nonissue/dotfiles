@@ -6493,17 +6493,17 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1440 877 0 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
 	<string>0 0 1440 877 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
 	<string>0 0 1440 877 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 1440 877 0 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 0 1440 877 0 0 1680 1027 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 0 1440 877 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -6722,7 +6722,7 @@
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
@@ -6745,7 +6745,7 @@
 			<key>Columns</key>
 			<integer>999</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/usr/local/bin/fish</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -6784,7 +6784,7 @@
 			<key>Custom Command</key>
 			<string>Yes</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Custom Window Title</key>
 			<string>iterm</string>
 			<key>Default Bookmark</key>
@@ -6820,6 +6820,8 @@
 			<integer>0</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Text</key>
+			<string></string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -7145,6 +7147,8 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Session Close Undo Timeout</key>
+			<integer>10</integer>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Mark Indicators</key>
@@ -7186,7 +7190,7 @@
 						<real>0.82354736328125</real>
 					</dict>
 					<key>font</key>
-					<string>FuraCodeNerdFontComplete-Retina 11</string>
+					<string>FuraCodeNerdFontComplete-Regular 13</string>
 					<key>separator color 2</key>
 					<dict>
 						<key>Alpha Component</key>
@@ -7225,13 +7229,13 @@
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.80000001192092896</real>
+									<real>0.63</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
-									<real>0.80000001192092896</real>
+									<real>0.63</real>
 									<key>Red Component</key>
-									<real>0.80000001192092896</real>
+									<real>0.90000000000000002</real>
 								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
@@ -7265,7 +7269,7 @@
 									<real>0.82354736328125</real>
 								</dict>
 								<key>font</key>
-								<string>FuraCodeNerdFontComplete-Retina 11</string>
+								<string>FuraCodeNerdFontComplete-Regular 13</string>
 								<key>separator color 2</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -7304,13 +7308,13 @@
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.62999999523162842</real>
+									<real>0.90000000000000002</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
-									<real>0.89999997615814209</real>
+									<real>0.90000000000000002</real>
 									<key>Red Component</key>
-									<real>0.76499998569488525</real>
+									<real>0.63</real>
 								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
@@ -7344,7 +7348,7 @@
 									<real>0.82354736328125</real>
 								</dict>
 								<key>font</key>
-								<string>FuraCodeNerdFontComplete-Retina 11</string>
+								<string>FuraCodeNerdFontComplete-Regular 13</string>
 								<key>separator color 2</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -7387,7 +7391,7 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Title Components</key>
-			<integer>258</integer>
+			<integer>290</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -12980,16 +12984,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{269, 595}</string>
+		<string>{209, 818}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>0F91F0B4-B4FD-493F-9498-5FE938A2C620</string>
 	<key>NoSyncLastTipTime</key>
 	<real>583372445.03343499</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>8</integer>
+	<integer>14</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>583272703.01496994</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -13720,7 +13724,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-27T02:42:27Z</date>
+	<date>2019-06-29T09:55:22Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -14744,41 +14748,41 @@
 										</array>
 										<key>Directories</key>
 										<array>
-											<string>/Users/andrewwilliams</string>
-											<string>/Users/andrewwilliams</string>
-											<string>/Users/andrewwilliams/.hammerspoon</string>
-											<string>/Users/andrewwilliams/.hammerspoon</string>
+											<string>/Users/apw</string>
+											<string>/Users/apw</string>
+											<string>/Users/apw/.hammerspoon</string>
+											<string>/Users/apw/.hammerspoon</string>
 										</array>
 										<key>Environment</key>
 										<dict>
 											<key>PWD</key>
-											<string>/Users/andrewwilliams</string>
+											<string>/Users/apw</string>
 										</dict>
 										<key>Hosts</key>
 										<array>
 											<dict>
 												<key>Host name</key>
-												<string>apw/mpb</string>
+												<string>apw-cat</string>
 												<key>User name</key>
-												<string>andrewwilliams</string>
+												<string>apw</string>
 											</dict>
 											<dict>
 												<key>Host name</key>
-												<string>apw/mpb</string>
+												<string>apw-cat</string>
 												<key>User name</key>
-												<string>andrewwilliams</string>
+												<string>apw</string>
 											</dict>
 											<dict>
 												<key>Host name</key>
-												<string>apw/mpb</string>
+												<string>apw-cat</string>
 												<key>User name</key>
-												<string>andrewwilliams</string>
+												<string>apw</string>
 											</dict>
 											<dict>
 												<key>Host name</key>
-												<string>apw/mpb</string>
+												<string>apw-cat</string>
 												<key>User name</key>
-												<string>andrewwilliams</string>
+												<string>apw</string>
 											</dict>
 										</array>
 										<key>Is UTF-8</key>
@@ -14793,7 +14797,7 @@
 										<key>Program</key>
 										<dict>
 											<key>Command</key>
-											<string>login -fp "andrewwilliams"</string>
+											<string>login -fp "apw"</string>
 											<key>Type</key>
 											<string>Command</string>
 										</dict>
@@ -14808,7 +14812,7 @@
 										<key>Substitutions</key>
 										<dict/>
 										<key>Working Directory</key>
-										<string>/Users/andrewwilliams/.hammerspoon</string>
+										<string>/Users/apw/.hammerspoon</string>
 									</dict>
 									<key>View Type</key>
 									<string>SessionView</string>
