@@ -50,10 +50,12 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 switch (uname)
     case Darwin 
         # set -x PATH /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/bin
+            
         set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
         set -g os "macOS"
     case Linux
         set -g os "Linux"
+        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/bin /usr/local/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
 end
 # set -g fish_user_paths "/usr/local/sbin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/opt/fzf/bin " $fish_user_paths
 
