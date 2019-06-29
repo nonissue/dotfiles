@@ -44,6 +44,16 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 # in fish path, so i'm setting it here (19-05-09)
 # Seems to be working and not duplicating in basic testing
 
+function tmux_attach
+    if status --is-login
+        set PPID (echo (ps --pid %self -o ppid --no-headers) | xargs)
+        if ps --pid $PPID | grep ssh
+            tmux has-session -t remote; and tmux attach-session -t remote; or tmux new-session -s remote; and kill %self
+            echo "tmux failed to start; using plain fish shell"
+        end
+    end
+end
+
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
 # info: https://github.com/fish-shell/fish-shell/issues/5117
@@ -56,15 +66,10 @@ switch (uname)
     case Linux
         set -g os "Linux"
         set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/bin /usr/local/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+        tmux_attach
 end
 # set -g fish_user_paths "/usr/local/sbin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/opt/fzf/bin " $fish_user_paths
 
 # attach to tmux automatically when logging in using ssh
-if status --is-login
-    set PPID (echo (ps --pid %self -o ppid --no-headers) | xargs)
-    if ps --pid $PPID | grep ssh
-        tmux has-session -t remote; and tmux attach-session -t remote; or tmux new-session -s remote; and kill %self
-        echo "tmux failed to start; using plain fish shell"
-    end
-end
+
 
