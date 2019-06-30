@@ -10,6 +10,7 @@ fish/functions/fzf_key_bindings.fish
 fzf_key_bindings.fish
 fish/fish_history
 fish/fishd.*
+fisher/
 nvim/.netrwhist
 iterm/profiles/com.googlecode.iterm2.plist
 env/python3/lib/
