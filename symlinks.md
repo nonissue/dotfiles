@@ -22,3 +22,6 @@ ln -s ~/.dotfiles/vscode ~/Library/Application\ Support/Code/User/
 ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 
 
+tpm
+brew install fasd
+sudo ln -s ~/.dotfiles/bin/pbcopy /usr/local/bin/

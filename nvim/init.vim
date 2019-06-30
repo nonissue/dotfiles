@@ -1,5 +1,8 @@
 " my nvim config
 
+let mapleader=','
+" let maplocalleader='\'
+
 " Plugin list starts
 call plug#begin('~/.dotfiles/nvim/plugged')
 
@@ -20,8 +23,9 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' " nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin' " nerdtree git int 
-" Plug 'Valloric/YouCompleteMe' " completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sjl/vitality.vim' " play nice with iterm2
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'vim-syntastic/syntastic' " find sytnax errors
 Plug 'jiangmiao/auto-pairs' " auto pairs brackets
@@ -49,33 +53,24 @@ Plug 'dag/vim-fish'
 
 call plug#end()
 
-" Set 256 colours, dark background, and molotov
-"
 
+" Theme stuff
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
  set termguicolors
 endif
 
-"set t_Co=256
+set t_Co=256
 set background=dark
-"colorscheme molotov
-" :w
-" colorscheme orbital
-" colorscheme iceberg
+colorscheme tender
 
-syntax enable
-"colorscheme tender
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
-
-
+" airline stuff
+let g:airline_theme = 'tender'
+let g:airline_powerline_fonts = 1 
 
 " get the right python
 let g:python2_host_prog = '/usr/local/bin/python2.7'
-let g:python3_host_prog = '/usr/local/bin/python3.6'
+let g:python3_host_prog = '/usr/local/bin/python3.7'
 
 " nerdtree config
 " map toggle NERDTree to ^Ctrl + n
@@ -85,39 +80,33 @@ map <C-N> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " ignore specifc files
-let NERDTreeIgnore=['\.pyc$', '\~$', '\.swp$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '\.swp$', '\.DS_Store']
 
 " syntastic config 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " end syntastic config
 
-
-"if filereadable("~/.dotfiles/nvim/color/molotov.vim")
-"  colorscheme molotov
-"end
-set t_Co=256
-set background=dark
-colorscheme molotov
-" colorscheme iceberg
-
-"let g:airline_theme = 'molotov'
-"let g:airline_powerline_fonts = 0
 " for nerdcommenter
 filetype plugin on
 filetype plugin indent on
 
-syntax on
-set ruler               " Show the line and column numbers of the cursor.
-" set formatoptions+=o    " Continue comment marker in new lines.
-set textwidth=0         " Hard-wrap long lines as you type them.
-" set modeline            " Enable modeline.
+"syntax on
+"syntax enable
+" Inconsistent behaviour with syntax? 
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
+set ruler                       " Show the line and column numbers of the cursor.
+" set formatoptions+=o          " Continue comment marker in new lines.
+set textwidth=0                 " Hard-wrap long lines as you type them.
+set modeline                    " Enable modeline.
 
 set noerrorbells                " No beeps
 set backspace=indent,eol,start  " Makes backspace key more powerful.
@@ -133,29 +122,36 @@ set incsearch                   " Shows the match while typing
 set hlsearch                    " Highlight found searches
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
-set nostartofline " Don't reset cursor to start of line when moving around
-set nowrap " Do not wrap lines
-set nu " Enable line numbers
+set nostartofline               " Don't reset cursor to start of line when moving around
+set nowrap                      " Do not wrap lines
+set nu                          " Enable line numbers
 
 " set tabstop=4 shiftwidth=4 expandtab
-"
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-set gdefault            " Use 'g' flag by default with :s/foo/bar/.
-set magic               " Use 'magic' patterns (extended regular expressions).
-set nolist              " hides tabs (I think?)
+set gdefault                    " Use 'g' flag by default with :s/foo/bar/.
+set magic                       " Use 'magic' patterns (extended regular expressions).
+set nolist                      " hides tabs (I think?)
 
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <A-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <A-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <A-Right> :TmuxNavigateRight<cr>
+nnoremap <silent> <A-\> :TmuxNavigatePrevious<cr>
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
+" map <Esc>[A <Up>
+"map <Esc>[B <Down>
+"map <Esc>[C <Right>
+"map <Esc>[D <Left>
+
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-Right> :tabnext<CR>
+
 " Search and Replace
 nmap <Leader>s :%s//g<Left><Left>
-
-" Leader key is like a command prefix. 
-" let mapleader='z'
- "let maplocalleader='\'
-
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
 
