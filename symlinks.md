@@ -23,3 +23,4 @@ ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 
 
 tpm
+sudo ln -s ~/.dotfiles/bin/pbcopy /usr/local/bin/
