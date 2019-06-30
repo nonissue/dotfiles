@@ -23,3 +23,4 @@ ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 
 
 tpm
+brew install fasd
