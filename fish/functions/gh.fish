@@ -24,7 +24,7 @@ function gh
   else
     set url "$url/tree/$branch"
   end
-
+  echo $url
   # Go go go
   open $url
 end
