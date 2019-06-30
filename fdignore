@@ -29,3 +29,13 @@ fisher
 Creative Cloud Files/
 Public/
 .iterm2
+files
+.vscode-*
+tmp
+.cache
+.java
+archive
+backups
+*plugins*
+logs
+resurrect
