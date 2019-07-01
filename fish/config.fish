@@ -23,6 +23,7 @@ set -x FZF_DEFAULT_OPTS "--height 40 --ansi"
 set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -x FZF_FIND_FILE_COMMAND "fd --type f --hidden --follow . \$dir"
 set -x FZF_OPEN_COMMAND $FZF_DEFAULT_COMMAND
+set -U FZF_PREVIEW_FILE_CMD "bat"
 set -x FZF_CD_COMMAND 'fd --type directory --follow --hidden'
 set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd --type directory --follow --hidden --exclude .git'
 set -g FZF_COMPLETE 2
