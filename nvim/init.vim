@@ -70,7 +70,8 @@ let g:airline_powerline_fonts = 1
 
 " get the right python
 let g:python2_host_prog = '/usr/local/bin/python2.7'
-let g:python3_host_prog = '/usr/local/bin/python3.7'
+
+" let g:python3_host_prog = '/usr/local/bin/python3.7'
 
 " nerdtree config
 " map toggle NERDTree to ^Ctrl + n
