@@ -90,7 +90,8 @@ switch (uname)
         set -g os "macOS"
     case Linux
         set -g os "Linux"
-        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/bin /usr/local/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+        # set -U fish_user_paths "/usr/local/opt/fzf/bin /usr/bin /usr/local/bin /usr/local/sbin /bin /usr/sbin /sbin /home/ops/.local/bin" $fish_user_paths
+        set -Ua fish_user_paths ~/.local/bin
         tmux_attach
 end
 
