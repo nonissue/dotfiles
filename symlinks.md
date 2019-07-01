@@ -25,3 +25,4 @@ ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 tpm
 brew install fasd
 sudo ln -s ~/.dotfiles/bin/pbcopy /usr/local/bin/
+ln -s ~/.dotfiles/fdignore ~/.fdignore
