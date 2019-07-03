@@ -15,6 +15,7 @@ Plug 'https://github.com/rakr/vim-two-firewatch.git'
 Plug 'jacoborus/tender.vim'
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'https://github.com/cocopon/iceberg.vim.git'
+Plug 'https://github.com/arzg/vim-plan9'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,6 +33,7 @@ Plug 'jiangmiao/auto-pairs' " auto pairs brackets
 Plug 'tpope/vim-surround' " deal with surrounding in pairs
 Plug 'tpope/vim-fugitive' " git commands
 Plug 'airblade/vim-gitgutter' " shows git status in gutter
+Plug 'Yggdroot/indentLine' " shows indent line in editor
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -56,16 +58,39 @@ call plug#end()
 
 " Theme stuff
 " If you have vim >=8.0 or Neovim >= 0.1.5
-if (has("termguicolors"))
- set termguicolors
+" if (has("termguicolors"))
+"    set termguicolors
+" endif
+
+" disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+set nocompatible " be iMproved, required
+if &term =~ '256color'
+    set t_ut=
 endif
 
-set t_Co=256
-set background=dark
-colorscheme tender
+" let ayucolor="mirage"
+
+" set t_Co=256
+" set background=dark
+" colorscheme two-firewatch
+" 
+" Fixes for ugly gutter colouring:
+colorscheme gotham256
+hi LineNr term=bold cterm=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr ctermfg=0
+
+" Identline config
+" IndentLine {{
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 2
+    let g:indentLine_setColors = 10 
+" }}
 
 " airline stuff
-let g:airline_theme = 'tender'
+let g:airline_theme = 'gotham256'
 let g:airline_powerline_fonts = 1 
 
 " get the right python
