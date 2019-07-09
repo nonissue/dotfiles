@@ -1,4 +1,7 @@
-set fish_greeting
+# set fish_greeting
+function fish_greeting
+    /bin/cat /run/motd.dynamic
+end
 
 set -g XDG_CONFIG_HOME ~/.dotfiles
 
