@@ -1,7 +1,5 @@
 # set fish_greeting
-function fish_greeting
-    /bin/cat /run/motd.dynamic
-end
+
 
 set -g XDG_CONFIG_HOME ~/.dotfiles
 
@@ -97,6 +95,10 @@ switch (uname)
         # set -U fish_user_paths "/usr/local/opt/fzf/bin /usr/bin /usr/local/bin /usr/local/sbin /bin /usr/sbin /sbin /home/ops/.local/bin" $fish_user_paths
         set -Ua fish_user_paths ~/.local/bin
         set -g -x PATH $PATH
+
+        function fish_greeting
+            /bin/cat /run/motd.dynamic
+        end
         tmux_attach
 end
 
