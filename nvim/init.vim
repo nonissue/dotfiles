@@ -16,6 +16,7 @@ Plug 'jacoborus/tender.vim'
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 Plug 'https://github.com/arzg/vim-plan9'
+Plug 'https://github.com/AlessandroYorba/Alduin'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
