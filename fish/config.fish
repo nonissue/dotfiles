@@ -88,7 +88,7 @@ switch (uname)
     case Darwin 
         # set -x PATH /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/bin
             
-        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin" $fish_user_paths
+        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin" $fish_user_paths
         set -g os "macOS"
     case Linux
         set -g os "Linux"
