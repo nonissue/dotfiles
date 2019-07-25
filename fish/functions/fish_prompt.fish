@@ -114,13 +114,9 @@ function show_path
 end
 
 function show_status -a last_status
-
     if [ $last_status -ne 0 ]
         set current_color red
     end
-
-    
-    # echo -n " "
 
     for color in $set_prompt # setcolor for >>> at prompt
         echo -n (set_color $color)">"
@@ -132,7 +128,6 @@ function show_status -a last_status
 end
 
 function fish_right_prompt
-
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
     set --local extra "" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
@@ -173,11 +168,8 @@ function fish_right_prompt
             set git_info "$extra$set_status_l〈 $set_bright_green$git_branch$set_status_l" # setcolor for git branch?
         end
     end
-
     
-
     echo -n -s $git_info
-    # set_color -b 596f73
     show_git_info
     set_color -o 596f73
     show_path
@@ -191,7 +183,6 @@ function show_virtualenv_name
 end
 
 function show_git_info
-
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
     set --local dirty ""
