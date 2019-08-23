@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Bold.eot');
+    src: url('CooperHewitt-Bold?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Bold.woff') format('woff'),
+         url('CooperHewitt-Bold.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-BoldItalic.eot');
+    src: url('CooperHewitt-BoldItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-BoldItalic.woff') format('woff'),
+         url('CooperHewitt-BoldItalic.svg') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Book.eot');
+    src: url('CooperHewitt-Book?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Book.woff') format('woff'),
+         url('CooperHewitt-Book.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-BookItalic.eot');
+    src: url('CooperHewitt-BookItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-BookItalic.woff') format('woff'),
+         url('CooperHewitt-BookItalic.svg') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Heavy.eot');
+    src: url('CooperHewitt-Heavy?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Heavy.woff') format('woff'),
+         url('CooperHewitt-Heavy.svg') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-HeavyItalic.eot');
+    src: url('CooperHewitt-HeavyItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-HeavyItalic.woff') format('woff'),
+         url('CooperHewitt-HeavyItalic.svg') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Light.eot');
+    src: url('CooperHewitt-Light?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Light.woff') format('woff'),
+         url('CooperHewitt-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-LightItalic.eot');
+    src: url('CooperHewitt-LightItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-LightItalic.woff') format('woff'),
+         url('CooperHewitt-LightItalic.svg') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Medium.eot');
+    src: url('CooperHewitt-Medium?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Medium.woff') format('woff'),
+         url('CooperHewitt-Medium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-MediumItalic.eot');
+    src: url('CooperHewitt-MediumItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-MediumItalic.woff') format('woff'),
+         url('CooperHewitt-MediumItalic.svg') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Semibold.eot');
+    src: url('CooperHewitt-Semibold?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Semibold.woff') format('woff'),
+         url('CooperHewitt-Semibold.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-SemiboldItalic.eot');
+    src: url('CooperHewitt-SemiboldItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-SemiboldItalic.woff') format('woff'),
+         url('CooperHewitt-SemiboldItalic.svg') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-Thin.eot');
+    src: url('CooperHewitt-Thin?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-Thin.woff') format('woff'),
+         url('CooperHewitt-Thin.svg') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+    src: url('CooperHewitt-ThinItalic.eot');
+    src: url('CooperHewitt-ThinItalic?#iefix') format('embedded-opentype'),
+         url('CooperHewitt-ThinItalic.woff') format('woff'),
+         url('CooperHewitt-ThinItalic.svg') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}

@@ -1,0 +1,51 @@
+@import url(fonts/charter/charter.css);
+@import url(fonts/cooperhewitt/cooperhewitt.css);
+body, .charter {
+  font-family: charter, serif;
+}
+h1, .cooperhewitt {
+  font-family: cooperhewitt, sans-serif;
+}
+body {
+  padding: 0px 20px;
+  font-size: 120%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  max-width: 500px;
+}
+section {
+  margin: 60px 0;
+}
+h1 {
+  border-top: 5px solid black;
+  padding-top: 10px;
+}
+h2 {
+  border-top: 2px solid black;
+  padding-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #0030BD;
+}
+a:hover {
+  background-color: #CCDDFF;
+  box-shadow: 0 0 0 2px #CCDDFF;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+.lighter {
+  font-weight: 300;
+}
+.medium {
+  font-weight: 500;
+}
+.semibold {
+  font-weight: 600;
+}
+.lightest {
+  font-weight: 100;
+}
