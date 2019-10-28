@@ -99,7 +99,7 @@ switch (uname)
         function fish_greeting
             /bin/cat /run/motd.dynamic
         end
-        tmux_attach
+        # tmux_attach
 end
 
 # iterm
