@@ -3,21 +3,6 @@
 
 set -g XDG_CONFIG_HOME ~/.dotfiles
 
-# if not functions -q fisher
-#     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.dotfiles
-#     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-#     fish -c fisher
-# end
-
-# set -g fisher_path {$HOME}/.dotfiles/fisher
-
-# set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
-# set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
-
-# for file in $fisher_path/conf.d/*.fish
-#     builtin source $file 2> /dev/null
-# end
-
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow'
 set -x FZF_DEFAULT_OPTS "--height 40 --ansi"
@@ -86,13 +71,10 @@ end
 # info: https://github.com/fish-shell/fish-shell/issues/5117
 switch (uname)
     case Darwin 
-        # set -x PATH /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/bin
-            
         set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin" $fish_user_paths
         set -g os "macOS"
     case Linux
         set -g os "Linux"
-        # set -U fish_user_paths "/usr/local/opt/fzf/bin /usr/bin /usr/local/bin /usr/local/sbin /bin /usr/sbin /sbin /home/ops/.local/bin" $fish_user_paths
         set -Ua fish_user_paths ~/.local/bin
         set -g -x PATH $PATH
 

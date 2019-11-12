@@ -19,8 +19,8 @@
 			<integer>55</integer>
 		</dict>
 		<key>StandardErrorPath</key>
-		<string>/var/log/homebrew/upgrade.log</string>
+		<string>/Users/apw/tmp/logs/homebrew/upgrade.log</string>
 		<key>StandardOutPath</key>
-		<string>/var/log/homebrew/upgrade.log</string>
+		<string>/Users/apw/tmp/logs/homebrew/upgrade.log</string>
 	</dict>
 </plist>
