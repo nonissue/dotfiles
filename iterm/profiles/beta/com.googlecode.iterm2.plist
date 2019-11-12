@@ -7185,9 +7185,9 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 476 620 392 0 0 1680 1027 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -7361,12 +7361,16 @@
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3159576952457428</real>
+				<real>0.3369293212890625</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.26542419195175171</real>
+				<real>0.290536980737989</real>
 				<key>Red Component</key>
-				<real>0.21881616115570068</real>
+				<real>0.2429870931913008</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -7489,12 +7493,16 @@
 			<true/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.33485248684883118</real>
+				<real>0.5854034423828125</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.33366119861602783</real>
+				<real>0.58138704325739698</real>
 				<key>Red Component</key>
-				<real>0.25261959433555603</real>
+				<real>0.4550430002022165</real>
 			</dict>
 			<key>Guid</key>
 			<string>34B61F62-B3FE-4F97-9827-31D161E3C0A1</string>
@@ -7798,7 +7806,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraCodeNerdFontComplete-Retina 14</string>
+			<string>Input-Regular 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -18283,11 +18291,15 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.1beta1</string>
-		<string>3.3.0beta13</string>
 		<string>3.3.0beta16</string>
-		<string>3.3.0beta12</string>
-		<string>3.3.0beta15</string>
 		<string>3.3.1</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.5beta2</string>
+		<string>3.3.0beta15</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.3beta2</string>
+		<string>3.3.0beta12</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -18297,8 +18309,7 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>FuraCode Nerd Font</string>
-		<string>Roboto Mono for Powerline</string>
+		<string>Input</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -18312,16 +18323,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{34, 824}</string>
+		<string>{267, 798}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>0F91F0B4-B4FD-493F-9498-5FE938A2C620</string>
 	<key>NoSyncLastTipTime</key>
 	<real>583372445.03343499</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>73</integer>
+	<integer>118</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>583272703.01496994</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -18798,6 +18809,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>number</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -18863,9 +18882,25 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -19130,11 +19165,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-22T19:59:55Z</date>
+	<date>2019-11-04T00:32:54Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowBookmarkName</key>
@@ -20293,7 +20328,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.1</string>
+	<string>3.3.7beta1</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
