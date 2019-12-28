@@ -16,6 +16,8 @@
 	<string>manual</string>
 	<key>AutoCommandHistory</key>
 	<false/>
+	<key>AutoHideTmuxClientSession</key>
+	<true/>
 	<key>BadgeTopMargin</key>
 	<integer>5</integer>
 	<key>BootstrapDaemon</key>
@@ -29,7 +31,7 @@
 	<key>ColoredUnselectedTabTextProminence</key>
 	<real>0.30000001192092896</real>
 	<key>CompactMinimalTabBarHeight</key>
-	<real>30</real>
+	<real>45</real>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Belafonte Day</key>
@@ -7185,9 +7187,9 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -18290,16 +18292,18 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.1beta1</string>
-		<string>3.3.0beta16</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.5beta2</string>
+		<string>3.3.0beta12</string>
 		<string>3.3.1</string>
 		<string>3.3.0beta13</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.5beta2</string>
+		<string>3.3.1beta1</string>
 		<string>3.3.0beta15</string>
-		<string>3.3.7beta1</string>
 		<string>3.3.3beta2</string>
-		<string>3.3.0beta12</string>
+		<string>3.3.0beta16</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.7beta4</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -18323,16 +18327,16 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{267, 798}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>0F91F0B4-B4FD-493F-9498-5FE938A2C620</string>
 	<key>NoSyncLastTipTime</key>
 	<real>583372445.03343499</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>118</integer>
+	<integer>140</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>583272703.01496994</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -19165,11 +19169,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-04T00:32:54Z</date>
+	<date>2019-11-24T10:53:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowBookmarkName</key>
@@ -19195,11 +19199,11 @@
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabTitlesUseSmartTruncation</key>
-	<false/>
+	<true/>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TabsHaveCloseButton</key>
-	<false/>
+	<true/>
 	<key>TerminalMargin</key>
 	<integer>15</integer>
 	<key>TerminalVMargin</key>
@@ -19213,7 +19217,7 @@
 	<key>UseMetal</key>
 	<true/>
 	<key>UseUnevenTabs</key>
-	<false/>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>Window Arrangements</key>
@@ -20328,7 +20332,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.7beta1</string>
+	<string>3.3.7beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>

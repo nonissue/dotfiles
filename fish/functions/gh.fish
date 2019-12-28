@@ -6,6 +6,7 @@ function gh
   set url 'https://github.com'
   set branch (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
   # set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com\/(.*)/' | perl -lne '/(.*)\.git/ ? print $2 : print')
+  # Breaks on repos with a period in them like github.com/nonissue/nonissue.org
   set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com[\/:](.*[^.git])/')
   # Build GitHub URL
   set url "$url/$repo"
