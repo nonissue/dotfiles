@@ -3,7 +3,8 @@
 # * [ ] combine printf statements / optimize
 # * [ ] add --help opt
 # * [ ] check for content on remote before deleting? 
-
+# * [ ] show how much space is freed
+#
 # * use a code block (`begin?`) to rediect all output to a file rather than doing it many times
 
 function read_confirm --description 'Ask the user for confirmation' --argument prompt
@@ -37,9 +38,10 @@ function fdel --description "Delete files older than X days."
     set timestamp (date +"%y-%m-%d %T")
     set logpath "/home/ops/logs/fdel1.log"
     set start_dir (pwd)
+    set initial_space (du -hs /mnt/media/local | grep -o -E '[0-9]+')
     pushd .
 
-    printf "\n%s\n\n  %s\n \n" $sep1 $timestamp | tee -a $logpath
+    printf "\n%s\n\n  %s\n" $sep1 $timestamp | tee -a $logpath
 
     # config for parsing command line args
     set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'v/verbose' 'd/directory='
@@ -163,10 +165,16 @@ function fdel --description "Delete files older than X days."
     else
         printf "  * No folders found to delete...\n\n  Finished!\n" | tee -a $logpath
     end
+    set final_space (du -hs /mnt/media/local | grep -o -E '[0-9]+')
+    set freed_space (math $initial_space - $final_space)
+    printf "\n  Space freed: %sGB\n" $freed_space | tee -a $logpath
 
-    printf "\n%s\n\n" $sep2 | tee -a $logpath
+    printf "\n%s\n" $sep1 | tee -a $logpath
+
+
 
     popd
-    echo "returned to starting directory: "(pwd)
+    printf "\n  Returned to starting directory:\n  %s\n\n" (pwd)
+    #echo ""
 end
 
