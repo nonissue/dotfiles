@@ -7,6 +7,7 @@ let mapleader=','
 call plug#begin('~/.dotfiles/nvim/plugged')
 
 " Plugins
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'whatyouhide/vim-gotham'
 Plug 'gf3/molotov'
 Plug 'arcticicestudio/nord-vim'
@@ -77,17 +78,18 @@ endif
 " colorscheme two-firewatch
 " 
 " Fixes for ugly gutter colouring:
-colorscheme gotham256
-hi LineNr term=bold cterm=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr ctermfg=0
+"colorscheme gotham256
+colorscheme challenger_deep
+"hi LineNr term=NONE cterm=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+hi Normal guibg=Black ctermbg=Black
+hi LineNr ctermbg=Black term=NONE cterm=NONE
 
 " Identline config
 " IndentLine {{
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 2
-    let g:indentLine_setColors = 10 
+let g:indentLine_setColors = 10 
 " }}
 
 " airline stuff
@@ -152,8 +154,8 @@ set smartcase                   " ... but not when search pattern contains upper
 set nostartofline               " Don't reset cursor to start of line when moving around
 set nowrap                      " Do not wrap lines
 set nu                          " Enable line numbers
-
-" set tabstop=4 shiftwidth=4 expandtab
+set clipboard=unnamed           " Attempting to use macos clipboard 
+set tabstop=4 shiftwidth=4 expandtab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set gdefault                    " Use 'g' flag by default with :s/foo/bar/.
 set magic                       " Use 'magic' patterns (extended regular expressions).
