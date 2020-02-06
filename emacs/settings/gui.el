@@ -1,3 +1,10 @@
+;; Current appearance config
+(use-package neotree)
+;; (use-package doom-neotree)
+(use-package all-the-icons)
+;;(use-package subatomic256-theme)
+
+
 (use-package doom-themes
   :config
   ;; Global settings (defaults)
@@ -24,22 +31,22 @@
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;;(setq custom-safe-themes t) ;; in case I want to use custom themes
 
-;; Current appearance config
-;;(use-package neotree)
-;;(use-package subatomic256-theme)
-
-
 ;; Annoyingly have to use require
 ;; Looks better than neotree default
-(use-package all-the-icons)
-(when (display-graphic-p)
-  (require 'doom-neotree))
+
+;;(when (display-graphic-p)
+;;  (require 'doom-neotree))
 
 ;; (when (display-graphic-p)
 ;;  (use-package subatomic-theme))
 
-;;(when (not (display-graphic-p))
+;; (when (not (display-graphic-p))
 ;;  (use-package subatomic256-theme))
+
+(use-package spaceline)
+(require 'spaceline-config) ;; Have to use require here, annoying.
+;; this doesn't look quite right, but it works
+(spaceline-emacs-theme)
 
 (set-face-attribute 'mode-line nil :box nil)
 
