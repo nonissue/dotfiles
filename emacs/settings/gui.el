@@ -27,6 +27,9 @@
 ;; Get rid of ugly splash screen
 (setq inhibit-startup-screen t)
 
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
 ;; Theming
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;;(setq custom-safe-themes t) ;; in case I want to use custom themes
@@ -40,8 +43,8 @@
 ;; (when (display-graphic-p)
 ;;  (use-package subatomic-theme))
 
-;; (when (not (display-graphic-p))
-;;  (use-package subatomic256-theme))
+(when (not (display-graphic-p))
+  (use-package subatomic256-theme))
 
 (use-package spaceline)
 (require 'spaceline-config) ;; Have to use require here, annoying.
