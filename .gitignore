@@ -15,3 +15,12 @@ nvim/.netrwhist
 iterm/profiles/com.googlecode.iterm2.plist
 env/python3/lib/
 vscode/extensions/
+vscode/phantomjs*
+emacs/elpa
+emacs/backup
+*~
+\#*\#
+*.elc
+auto-save-list
+tramp
+.\#*

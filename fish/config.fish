@@ -90,3 +90,7 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 # tabtab source for packages
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/__tabtab.fish ]; and . ~/.config/tabtab/__tabtab.fish; or true
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[ -f /Users/apw/code/electron/camera-test/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/apw/code/electron/camera-test/node_modules/tabtab/.completions/electron-forge.fish
