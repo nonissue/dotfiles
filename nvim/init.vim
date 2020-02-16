@@ -21,6 +21,7 @@ Plug 'https://github.com/AlessandroYorba/Alduin'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
@@ -80,6 +81,8 @@ endif
 " Fixes for ugly gutter colouring:
 "colorscheme gotham256
 colorscheme challenger_deep
+let g:lightline = { 'colorscheme': 'challenger_deep'}
+
 "hi LineNr term=NONE cterm=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi Normal guibg=Black ctermbg=Black
 hi LineNr ctermbg=Black term=NONE cterm=NONE
@@ -93,8 +96,8 @@ let g:indentLine_setColors = 10
 " }}
 
 " airline stuff
-let g:airline_theme = 'gotham256'
-let g:airline_powerline_fonts = 1 
+" let g:airline_theme = 'gotham256'
+" let g:airline_powerline_fonts = 1 
 
 " get the right python
 let g:python2_host_prog = '/usr/local/bin/python2.7'

@@ -25,3 +25,4 @@ auto-save-list
 tramp
 .\#*
 emacs/packages
+emacs/general.org
