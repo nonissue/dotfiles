@@ -1,190 +1,85 @@
 {
-    /*
-  Nice themes:
-      Light:
-          * volatile
-          * violaceous light
-          * userscape light
-          * spearmint 
-          * pleasure
-          * penitent
-          * peel light
-          * peacock light
-          * patriot light
-          * oakaton
-          * monzo [VERY GOOD]
-          * morass
-          * material light / material light high cont
-          * laracasts
-          * joker light
-          * github light
-          * dare light
-          * crisp
-          * Spitfire Light (rainglow)
-  */
-    // "editor.fontFamily": "Fira Code",
-    // "editor.fontFamily": "Input Mono",
-    // "editor.fontFamily": "IBM Plex Mono",
-    // "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",    // "editor.fontFamily": "Fira Code",
-    // "editor.fontFamily": "Operator Mono SSM",
-    "editor.fontFamily": "Input",
-    // "editor.fontFamily": "PragmataPro",
-    // "editor.fontFamily": "FuraCode Nerd Font",
-    "breadcrumbs.enabled": true,
-    "extensions.autoUpdate": false,
-    // "editor.fontFamily": "FiraCode-Retina",
-    // "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 13.5,
-    "editor.fontLigatures": false,
-    "editor.lineHeight": 20,
-    "editor.tabSize": 4,
-    "editor.wrappingIndent": "same",
-    "editor.renderIndentGuides": true,
+    // "remote.SSH.configFile": "/Users/apw/.ssh/config",
+    "city-lights-icons-vsc.hidesExplorerArrows": true,
+    "css.lint.unknownAtRules": "ignore",
     "editor.cursorStyle": "underline",
+    // "editor.fontFamily": "Fira Code", "Georgia", "Input", "Menlo", "Courier New",
+    // "editor.fontFamily": "SFMono-Regular , \"Georgia\", Input, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Input",
+    "editor.fontSize": 13,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.detectIndentation": true,
-    "workbench.colorTheme": "Noctis",
-    "workbench.statusBar.feedback.visible": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.visible": true,
-    "git.autofetch": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 2,
+    "eslint.packageManager": "yarn",
+    "explorer.decorations.badges": true,
+    "explorer.decorations.colors": false,
+    "extensions.autoUpdate": false,
     "git.enableSmartCommit": true,
-    // Prettier settings
-    "prettier.tabWidth": 2,
-    "prettier.eslintIntegration": true,
-    "prettier.jsxBracketSameLine": true,
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "es5",
-    ////////////////////////////////
-    // Language-specific settings //
-    ////////////////////////////////
-    //
-    // JS/TS
-    //
-    "[javascript]": {
+    "git.showPushSuccessNotification": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "lua.format.indentCount": 4,
+    "lua.preferLuaCheckErrors": true,
+    "phpfmt.indent_with_space": 4,
+    "python.jediEnabled": false,
+    "search.showLineNumbers": true,
+    "terminal.external.osxExec": "iTerm 2.app",
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.shell.linux": "/usr/bin/fish",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "wallaby.noAutomaticInstall": true,
+    "window.newWindowDimensions": "maximized",
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Night Wolf [dark blue]",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.iconTheme": "quill-icons-minimal",
+    "workbench.sideBar.location": "right",
+    "workbench.tips.enabled": false,
+    "workbench.tree.indent": 10,
+    "workbench.tree.renderIndentGuides": "onHover",
+    "search.exclude": {
+        "**/.next": true
+    },
+    "css.lint.validProperties": [
+        "composes"
+    ],
+    "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "javascript.implicitProjectConfig.checkJs": true,
-    "javascript.validate.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "eslint.enable": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        }
+    "todo.file.exclude": [
+        "**/.!(todo|todos|task|tasks)/**",
+        "**/_output/**",
+        "**/bower_components/**",
+        "**/build/**",
+        "**/dist/**",
+        "**/node_modules/**",
+        "**/out/**",
+        "**/output/**",
+        "**/release/**",
+        "**/releases/**",
+        "**/static/**",
+        "**/target/**",
+        "**/third_party/**",
+        "**/vendor/**",
+        "**/lambda/**"
     ],
-    "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
-    //
-    // Python
-    //
-    "python.pythonPath": "python3",
-    //
-    // Markdown
-    //
-    "markdownlint.config": {
-        "default": true,
-        "MD007": {
-            "indent": 2
-        },
-        "no-hard-tabs": false
-    },
-    //
-    // Lua
-    //
-    "lua.luacheckPath": "/usr/bin",
-    "lua.preferLuaCheckErrors": true,
-    "[lua]": {
-        "editor.defaultFormatter": "trixnz.vscode-lua"
-    },
-    "cSpell.userWords": [
-        "Belafonte",
-        "DEVTOOLS",
-        "Plex",
-        "Spotify",
-        "Tierra",
-        "browserslist",
-        "crossorigin",
-        "cyclomatic",
-        "fastforward",
-        "flexbox",
-        "genericize",
-        "hammerspoon",
-        "io",
-        "ios",
-        "janky",
-        "slugify",
-        "ssid",
-        "submodules",
-        "tachyons",
-        "tmux",
-        "wifi"
-    ],
-    "window.zoomLevel": 0,
-    "update.enableWindowsBackgroundUpdates": false,
-    "update.mode": "manual",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.tabCompletion": "on",
-    "editor.cursorSmoothCaretAnimation": true,
-    "editor.cursorWidth": 1,
-    "editor.formatOnPaste": true,
-    "bracketPairColorizer.highlightActiveScope": true,
-    "bracketPairColorizer.showBracketsInGutter": true,
-    "debug.console.fontFamily": "Inconsolata",
-    "terminal.explorerKind": "external",
-    "terminal.integrated.enableBell": true,
-    "terminal.integrated.fontFamily": "Inconsolata",
-    "workbench.sideBar.location": "right"
 }
-
-// "todohighlight.include": [
-//     "**/*.js",
-//     "**/*.jsx",
-//     "**/*.ts",
-//     "**/*.tsx",
-//     "**/*.html",
-//     "**/*.php",
-//     "**/*.css",
-//     "**/*.scss",
-//     "**/*.lua",
-// ],
-// "todohighlight.exclude": [
-//     "**/archive/**",
-//     "**/node_modules/**",
-//     "**/bower_components/**",
-//     "**/dist/**",
-//     "**/build/**",
-//     "**/.vscode/**",
-//     "**/.github/**",
-//     "**/_output/**",
-//     "**/*.min.*",
-//     "**/*.map",
-//     "**/.next/**"
-// ],
-// "todohighlight.maxFilesForSearch": 5120,
-// "todohighlight.toggleURI": false,
-
-// "todohighlight.keywords": [
-//     {
-//         "text": "TODO:",
-//         "color": "#ffebee",
-//         "fontWeight": "bold",
-//         "border": "2px solid #880E4F",
-//         "borderRadius": "4px",
-//         "backgroundColor": "#AA00FF",
-//     },
-// ],
