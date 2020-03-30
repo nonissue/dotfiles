@@ -71,7 +71,7 @@ end
 # info: https://github.com/fish-shell/fish-shell/issues/5117
 switch (uname)
     case Darwin 
-        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin" $fish_user_paths
+        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin /Applications/Postgres.app/Contents/Versions/latest/bin" $fish_user_paths
         set -g os "macOS"
     case Linux
         set -g os "Linux"
