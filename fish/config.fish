@@ -70,8 +70,12 @@ end
 # as we are shadowing the global variable with a session variable
 # info: https://github.com/fish-shell/fish-shell/issues/5117
 switch (uname)
-    case Darwin 
-        set -g fish_user_paths "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin /Applications/Postgres.app/Contents/Versions/latest/bin" $fish_user_paths
+    case Darwin
+        # This isn't working for sourcing macports, hmmm. 
+        # works if we add one segment at a time
+        # Do they have to be separated by colon?
+        # lol, yup that seems to have fixed it
+        set -x fish_user_paths "/opt/local/bin:/usr/local/opt/fzf/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/local/opt/curl/bin" $fish_user_paths
         set -g os "macOS"
     case Linux
         set -g os "Linux"
@@ -93,4 +97,5 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[ -f /Users/apw/code/electron/camera-test/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/apw/code/electron/camera-test/node_modules/tabtab/.completions/electron-forge.fish
+#[ -f /Users/apw/code/electron/camera-test/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/apw/code/electron/camera-test/node_modules/tabtab/.completions/electron-forge.fish
+# set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
