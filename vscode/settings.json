@@ -5,7 +5,7 @@
     "editor.cursorStyle": "underline",
     // "editor.fontFamily": "Fira Code", "Georgia", "Input", "Menlo", "Courier New",
     // "editor.fontFamily": "SFMono-Regular , \"Georgia\", Input, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontFamily": "Input",
+    "editor.fontFamily": "Fira Code",
     "editor.fontSize": 13,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -32,7 +32,7 @@
     "window.newWindowDimensions": "maximized",
     "window.openFoldersInNewWindow": "on",
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Dainty Dark",
+    "workbench.colorTheme": "Dainty – Dark+ Reimagined",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.tabSizing": "shrink",
     "workbench.iconTheme": "quill-icons-minimal",
@@ -82,4 +82,5 @@
     ],
     "timeline.showView": true,
     "faunadb.adminSecretKey": "fnADok6sSuACFI2mCPvnr-E2-D-BeG0QvS3uupSW",
+    "terminal.integrated.fontFamily": "monospace",
 }
