@@ -2,9 +2,10 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    ~/.ssh/config:
-        path: ssh/config
-        create: true
+    # Probably don't want to share this between machines...
+    # ~/.ssh/config:
+    #     path: ssh/config
+    #     create: true
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
@@ -13,8 +14,10 @@
     ~/.config/glances: 
         path: glances
     ~/.config/fish: 
+        relink: true
         path: fish
     ~/.vscode: 
+        if: '[ `uname` = Darwin ]'
         path: vscode
     ~/.fdignore:
         path: fdignore
