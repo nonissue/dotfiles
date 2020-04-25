@@ -19562,7 +19562,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>603518153.19196606</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>275</integer>
+	<integer>287</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>583272703.01496994</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -20398,7 +20398,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-07T22:01:23Z</date>
+	<date>2020-04-24T19:20:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -20412,7 +20412,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowMetalFPSmeter</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
