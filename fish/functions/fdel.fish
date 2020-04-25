@@ -1,11 +1,37 @@
-# Todo:
-# * [ ] implement forced mode properly
-# * [ ] combine printf statements / optimize
-# * [ ] add --help opt
-# * [ ] check for content on remote before deleting? 
-# * [ ] show how much space is freed
+# -------------------------------------------------------------------
+# Function: fdel
+# Author: Andy Williams (https://github.com/nonissue)
+# -------------------------------------------------------------------
+# Description: 
+#   Simple utility for find, listing, and deleting files
+#   older than a specified date (which is passed in using opts)
 #
-# * use a code block (`begin?`) to rediect all output to a file rather than doing it many times
+# Opts:
+#   -v, --verbose       (optional) enables debug mode
+#   -d, --directory     (optional) accepts path to dir, defaults to a local dir for me
+#   -t, --time          (optional) specify age in days of files to delete (1-99)
+#   -f, --force         (optional) runs command without any prompts, use with caution
+#
+# Features:
+#   - Removes files first, and then dirs
+#   - Lists files and folders, prompts to confirm delete is intended
+#   - Lists diskspace reclaimed 
+#
+# Notes:
+#   - This is not currently portable, it uses paths specific to my server
+#   for logs and target directories, but they could be easily changed
+#   - I'm not responsible if all your stuff evaporates. I've been using it
+#   without issue for over a year, but YMMV ¯\_(ツ)_/¯. Do contact me
+#   if you find a bug though (or open an issue)
+#
+# Todo:
+#   - [ ] implement forced mode properly
+#   - [ ] combine printf statements / optimize
+#   - [ ] add --help opt
+#   - [ ] check for content on remote before deleting? 
+#   - [x] show how much space is freed
+#
+# -------------------------------------------------------------------
 
 function read_confirm --description 'Ask the user for confirmation' --argument prompt
     if test -z "$prompt"
