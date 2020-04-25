@@ -6,5 +6,17 @@
         path: ssh/config
         create: true
     ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux: tmux
+    ~/.config/nvim:
+        path: nvim
+    ~/.config/glances: 
+        path: glances
+    ~/.config/fish: 
+        path: fish
+    ~/.vscode: 
+        path: vscode
+    ~/.fdignore:
+        path: fdignore
 
 
