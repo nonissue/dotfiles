@@ -13,10 +13,13 @@
     ~/.config/glances: 
         path: glances
     ~/.config/fish: 
+        relink: true
         path: fish
     ~/.vscode: 
+        if: '[ `uname` = Darwin ]'
         path: vscode
     ~/.fdignore:
         path: fdignore
+
 
 
