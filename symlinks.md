@@ -26,3 +26,4 @@ tpm
 brew install fasd
 sudo ln -s ~/.dotfiles/bin/pbcopy /usr/local/bin/
 ln -s ~/.dotfiles/fdignore ~/.fdignore
+ln -s ~/.dotfiles/vscode/settings.json /Users/apw/Library/Application\ Support/Code/User/settings.json

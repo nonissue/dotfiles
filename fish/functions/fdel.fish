@@ -1,10 +1,37 @@
+# -------------------------------------------------------------------
+# Function: fdel
+# Author: Andy Williams (https://github.com/nonissue)
+# -------------------------------------------------------------------
+# Description: 
+#   Simple utility for find, listing, and deleting files
+#   older than a specified date (which is passed in using opts)
+#
+# Opts:
+#   -v, --verbose       (optional) enables debug mode
+#   -d, --directory     (optional) accepts path to dir, defaults to a local dir for me
+#   -t, --time          (optional) specify age in days of files to delete (1-99)
+#   -f, --force         (optional) runs command without any prompts, use with caution
+#
+# Features:
+#   - Removes files first, and then dirs
+#   - Lists files and folders, prompts to confirm delete is intended
+#   - Lists diskspace reclaimed 
+#
+# Notes:
+#   - This is not currently portable, it uses paths specific to my server
+#   for logs and target directories, but they could be easily changed
+#   - I'm not responsible if all your stuff evaporates. I've been using it
+#   without issue for over a year, but YMMV ¯\_(ツ)_/¯. Do contact me
+#   if you find a bug though (or open an issue)
+#
 # Todo:
-# * [ ] implement forced mode properly
-# * [ ] combine printf statements / optimize
-# * [ ] add --help opt
-# * [ ] check for content on remote before deleting? 
-
-# * use a code block (`begin?`) to rediect all output to a file rather than doing it many times
+#   - [ ] implement forced mode properly
+#   - [ ] combine printf statements / optimize
+#   - [ ] add --help opt
+#   - [ ] check for content on remote before deleting? 
+#   - [x] show how much space is freed
+#
+# -------------------------------------------------------------------
 
 function read_confirm --description 'Ask the user for confirmation' --argument prompt
     if test -z "$prompt"
@@ -37,9 +64,10 @@ function fdel --description "Delete files older than X days."
     set timestamp (date +"%y-%m-%d %T")
     set logpath "/home/ops/logs/fdel1.log"
     set start_dir (pwd)
+    set initial_space (du -hs /mnt/media/local | grep -o -E '[0-9]+')
     pushd .
 
-    printf "\n%s\n\n  %s\n \n" $sep1 $timestamp | tee -a $logpath
+    printf "\n%s\n\n  %s\n" $sep1 $timestamp | tee -a $logpath
 
     # config for parsing command line args
     set -l options 't/time=!_validate_int --min 1 --max 99' 'f/force' 'v/verbose' 'd/directory='
@@ -163,10 +191,16 @@ function fdel --description "Delete files older than X days."
     else
         printf "  * No folders found to delete...\n\n  Finished!\n" | tee -a $logpath
     end
+    set final_space (du -hs /mnt/media/local | grep -o -E '[0-9]+')
+    set freed_space (math $initial_space - $final_space)
+    printf "\n  Space freed: %sGB\n" $freed_space | tee -a $logpath
 
-    printf "\n%s\n\n" $sep2 | tee -a $logpath
+    printf "\n%s\n" $sep1 | tee -a $logpath
+
+
 
     popd
-    echo "returned to starting directory: "(pwd)
+    printf "\n  Returned to starting directory:\n  %s\n\n" (pwd)
+    #echo ""
 end
 

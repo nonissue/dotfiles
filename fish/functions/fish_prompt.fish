@@ -103,6 +103,7 @@ end
 function fish_prompt
     # Keep the command executed status
     set --local last_status $status
+    # __ssh_badge
 
     show_status $last_status
 end
@@ -169,6 +170,7 @@ function fish_right_prompt
         end
     end
     
+    __ssh_host
     echo -n -s $git_info
     show_git_info
     set_color -o 596f73
@@ -187,4 +189,28 @@ function show_git_info
     set --local git_status (git status --porcelain 2> $LIMBO)
     set --local dirty ""
     [ $status -eq 128 ]; and return  # Not a repository? Nothing to do
+end
+
+# Currently not using this, as __ssh_host obviates its utility
+function __ssh_badge
+    # See if any standard SSH environment variables contain anything
+    if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
+        # dark purple on light purple
+        set_color -b d6aeec -o 2a0a8b
+        # first character of remote hostname, uppercase
+        echo -n " "(string upper (string sub -s 1 -l 1 (hostname -s)))" "
+        set_color normal
+    end
+end
+
+# only display a host name if we're in an ssh session
+function __ssh_host
+	if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
+		set_color -d white
+		echo -n $USER@
+		set_color normal
+		set_color -d -o brmagenta
+		echo -n (hostname -s)
+		set_color normal
+	end
 end
