@@ -28,3 +28,8 @@ Host bronas
     Hostname 192.168.0.203
     User ops
     IdentityFile ~/.ssh/id_rsa
+
+Host buyvm 
+    Hostname 205.185.118.172
+    User ops
+    IdentityFile ~/.ssh/id_rsa

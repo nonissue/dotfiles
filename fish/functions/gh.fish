@@ -2,6 +2,7 @@
 # for some reason the original didn't work
 # the repo one liner is goddamn disgusting, but i don't know perl well enough to do better
 # [x] issue with repos with periods in the url (ie. github.com/nonissue/plainest.git)
+# NOTE: This is still broken in some cases, need to take another pass at the absolutely horrendus series of regexes I wrote
 
 function gh
   set url 'https://github.com'
