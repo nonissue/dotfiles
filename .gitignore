@@ -27,6 +27,7 @@ tramp
 emacs/packages
 emacs/general.org
 .ssh/config
+ssh/config
 tmux/sidebar/directory_widths.txt
 ssh/
 ssh/config
