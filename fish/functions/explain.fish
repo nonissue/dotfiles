@@ -10,7 +10,7 @@
 #   bind \ch explain
 # -------------------------------------------------------------------
 
-function explain -d "Pipe current command to explainshell.com"
+function explain -d "Pipe current command to explainshell.com (hotkey: C-H)"
   set -l command_buffer (commandline)
   open "https://explainshell.com/explain?cmd="$command_buffer
 end
