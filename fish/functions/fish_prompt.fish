@@ -103,7 +103,7 @@ end
 function fish_prompt
     # Keep the command executed status
     set --local last_status $status
-    __ssh_badge
+    # __ssh_badge
 
     show_status $last_status
 end
