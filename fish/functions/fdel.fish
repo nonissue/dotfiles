@@ -25,6 +25,7 @@
 #   if you find a bug though (or open an issue)
 #
 # Todo:
+# * use a code block (`begin?`) to rediect all output to a file rather than doing it many times
 #   - [ ] implement forced mode properly
 #   - [ ] combine printf statements / optimize
 #   - [ ] add --help opt
