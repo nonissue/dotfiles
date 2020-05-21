@@ -191,6 +191,7 @@ function show_git_info
     [ $status -eq 128 ]; and return  # Not a repository? Nothing to do
 end
 
+# Currently not using this, as __ssh_host obviates its utility
 function __ssh_badge
     # See if any standard SSH environment variables contain anything
     if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"

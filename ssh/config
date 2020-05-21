@@ -1,7 +1,7 @@
 Host *
-#    UseKeychain yes
-#    AddKeysToAgent yes
-#    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
 
 Host hetz
     HostName 144.76.92.138
