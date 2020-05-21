@@ -26,3 +26,4 @@ tramp
 .\#*
 emacs/packages
 emacs/general.org
+ssh/config
