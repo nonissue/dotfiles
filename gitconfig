@@ -4,3 +4,5 @@
 	name = nonissue 
 	email = andy@nonissue.org 
 
+[core]
+	excludesfile = /Users/apw/.global_gitignore

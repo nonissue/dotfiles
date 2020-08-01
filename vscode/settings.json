@@ -5,9 +5,9 @@
   // "editor.fontFamily": "Fira Code", "Georgia", "Input", "Menlo", "Courier New",
   // "editor.fontFamily": "SFMono-Regular , \"Georgia\", Input, Menlo, Monaco, 'Courier New', monospace",
   // "editor.fontFamily": "Fira Code",
-  "editor.fontFamily": "'Input', 'MonoLisa', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'MonoLisa', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 12.5,
+  "editor.fontSize": 13,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -17,7 +17,7 @@
   "editor.tabSize": 2,
   "eslint.packageManager": "yarn",
   "extensions.autoUpdate": false,
-  "faunadb.adminSecretKey": "fnADok6sSuACFI2mCPvnr-E2-D-BeG0QvS3uupSW",
+  "faunadb.adminSecretKey": "fnADvAU-q-ACAHFwmh5bTceeQvqBg92VsgSH2dS3",
   "git.enableSmartCommit": true,
   "git.showPushSuccessNotification": true,
   // "gruvboxMaterial.italicKeywords": true,
@@ -45,7 +45,7 @@
   "window.newWindowDimensions": "maximized",
   "window.openFoldersInNewWindow": "on",
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Rosé Pine",
+  "workbench.colorTheme": "Noctis Uva",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "quill-icons",
@@ -91,8 +91,7 @@
   "search.exclude": {
     "**/.next": true
   },
-  "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 6,
   "extensions.ignoreRecommendations": true,
-  "window.nativeFullScreen": false
+  "editor.smoothScrolling": true
 }
