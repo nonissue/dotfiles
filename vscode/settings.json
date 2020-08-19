@@ -45,10 +45,10 @@
   "window.newWindowDimensions": "maximized",
   "window.openFoldersInNewWindow": "on",
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Noctis Uva",
+  "workbench.colorTheme": "Minuit",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.iconTheme": "quill-icons",
+  "workbench.iconTheme": "vscode-seedling-icon-theme",
   "workbench.sideBar.location": "left",
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 16,
@@ -93,5 +93,8 @@
   },
   "explorer.openEditors.visible": 6,
   "extensions.ignoreRecommendations": true,
-  "editor.smoothScrolling": true
+"editor.smoothScrolling": true,
+"python.languageServer": "Microsoft",
+"editor.wordWrap": "wordWrapColumn",
+"editor.wordWrapColumn": 90
 }
