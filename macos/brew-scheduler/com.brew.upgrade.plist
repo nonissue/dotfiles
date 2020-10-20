@@ -14,9 +14,9 @@
 		<key>StartCalendarInterval</key>
 		<dict>
 			<key>Hour</key>
-			<integer>23</integer>
+			<integer>4</integer>
 			<key>Minute</key>
-			<integer>55</integer>
+			<integer>00</integer>
 		</dict>
 		<key>StandardErrorPath</key>
 		<string>/Users/apw/tmp/logs/homebrew/upgrade.log</string>
