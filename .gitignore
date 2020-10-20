@@ -30,3 +30,4 @@ emacs/general.org
 ssh/config
 tmux/sidebar/directory_widths.txt
 ssh/
+nvim/autoload/plug.vim
