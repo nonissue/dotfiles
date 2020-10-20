@@ -5,12 +5,6 @@ Inspiration:
 * https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
 * https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
 
-## Install
-
-* Use dotbot
-* `~/.dotfiles/install`
-* Symlinks listed in `install.conf.yaml`
-
 ## Links
 
 ```bash
@@ -22,29 +16,20 @@ ln -s ~/.dotfiles/vscode ~/Library/Application\ Support/Code/User/
 ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 ```
 
-
-## Other Actions
-
-tpm
-brew install fasd
-sudo ln -s ~/.dotfiles/bin/pbcopy /usr/local/bin/
-ln -s ~/.dotfiles/fdignore ~/.fdignore
-ln -s ~/.dotfiles/vscode/settings.json /Users/apw/Library/Application\ Support/Code/User/settings.json
-
-#### System Configs
+## System Configs
 
 * change capslock to control
 * make dirs:
 	* ~/code
 	* ~/nosync
 
-#### Packages
+### Packages
 
 #### All OS
 * git
 * tmux
 * neovim
-	* plug: curl -fLo ~/.dotfiles/nivm/autoload/plug.vim --create-dirs \
+	* plug: curl -fLo ~/.dotfiles/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 * fish
 * z
@@ -81,6 +66,9 @@ sudo apt-get update
 sudo add-apt-repository ppa:neovim-ppa/stable 
 sudo apt-get update
 sudo apt-get install neovim
+# Plugin Manager
+curl -fLo ~/.dotfiles/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 ### Fish 
@@ -108,19 +96,22 @@ sudo dpkg -i bat*
 # As of 20-10-16
 sudo apt install fzf
 sudo apt install fdfind
-
 ```
 
 ### Node
 
 ```bash
 sudo apt install nodejs
+sudo apt install npm
+curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
 ### Tmux
 
 ```bash
 sudo apt install tmux
+# TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ### Python3/Pip
@@ -136,3 +127,36 @@ sudo apt install python3-pip
 pip3 install glances --user
 ```
 
+### Docker
+
+```bash
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# have to run below in bash, fish chokes
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+	 $(lsb_release -cs) 
+	 stable"
+
+sudo apt-get update
+sudo apt-get install linux-generic-hwe-18.04 # unlisted docker dependency
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo usermod -aG docker ops # add my user to docker group
+```
+
+### Symlinks
+
+```bash
+# Should run dotbot
+./install
+```
