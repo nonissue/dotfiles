@@ -18,7 +18,6 @@ set -x EDITOR nvim
 set -x GREP_COLOR "1;37;45"
 set -x LS_COLORS 'ow=01;36;40'
 
-
 function ..    ; cd .. ; end
 function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
@@ -42,7 +41,6 @@ function venv	  ; source ~/.dotfiles/env/python3/bin/activate.fish ; end
 abbr ff  "$EDITOR ~/.config/fish/config.fish"
 abbr tt  "$EDITOR ~/.tmux.conf"
 abbr vv  "$EDITOR ~/.conf"
-
 
 # Fuzzy find & vim
 function vp
@@ -88,6 +86,9 @@ switch (uname)
         set -g os "Linux"
         set -Ua fish_user_paths ~/.local/bin
         set -g -x PATH $PATH
+
+        # Alias FD for FZF
+        alias fd="fdfind"
 
         function fish_greeting
             /bin/cat /run/motd.dynamic
