@@ -41,7 +41,7 @@ function venv	  ; source ~/.dotfiles/env/python3/bin/activate.fish ; end
 
 abbr ff  "$EDITOR ~/.config/fish/config.fish"
 abbr tt  "$EDITOR ~/.tmux.conf"
-abbr vv  "$EDITOR ~/.conf"
+abbr vv  "$EDITOR ~/.config/nvim/init.vim"
 
 
 # Fuzzy find & vim
