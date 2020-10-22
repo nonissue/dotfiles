@@ -38,8 +38,8 @@ Plug 'tpope/vim-fugitive' " git commands
 Plug 'airblade/vim-gitgutter' " shows git status in gutter
 Plug 'Yggdroot/indentLine' " shows indent line in editor
 
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf' " hmmm what's this?
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " js on steroids
 Plug 'pangloss/vim-javascript'
@@ -55,6 +55,10 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 " Installs fish syntax support
 Plug 'dag/vim-fish'
+
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_conceal_code_blocks = 0
 
 call plug#end()
 
