@@ -53,7 +53,7 @@
   "window.zoomLevel": 0,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.iconTheme": "quill-icons",
+  "workbench.iconTheme": "vscode-seedling-icon-theme",
   "workbench.sideBar.location": "left",
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 16,
@@ -101,5 +101,5 @@
     "**/.next": true
   },
   "windowColors.🌈 Theme": "light",
-  "workbench.colorTheme": "Rosé Pine Moon"
+  "workbench.colorTheme": "Minuit Soft"
 }
