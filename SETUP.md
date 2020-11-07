@@ -160,3 +160,15 @@ sudo usermod -aG docker ops # add my user to docker group
 # Should run dotbot
 ./install
 ```
+
+### nnn
+
+Automatically install latest release for 18.04
+
+```bash
+curl -s https://api.github.com/repos/jarun/nnn/releases/latest \
+  | grep ubuntu18 \
+  | cut -d '"' -f 4 \
+  | wget -qi -
+sudo dpkg -i nnn*
+```

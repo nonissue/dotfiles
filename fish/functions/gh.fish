@@ -1,8 +1,9 @@
 # modified version of original here https://github.com/gf3/dotfiles/blob/master/.config/fish/functions/gh.fish
 # for some reason the original didn't work
 # the repo one liner is goddamn disgusting, but i don't know perl well enough to do better
-# [x] issue with repos with periods in the url (ie. github.com/nonissue/plainest.git)
+# - [x] issue with repos with periods in the url (ie. github.com/nonissue/plainest.git)
 # - [ ] Handle cases where branch isn't available on remote
+# - [ ] I think we accidentally strip trailing chars (like "t") from urls
 
 function gh
     set url 'https://github.com'
