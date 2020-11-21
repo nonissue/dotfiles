@@ -101,5 +101,8 @@
     "**/.next": true
   },
   "windowColors.🌈 Theme": "light",
-  "workbench.colorTheme": "Minuit Soft"
+  "workbench.colorTheme": "Moonlight Italic",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
