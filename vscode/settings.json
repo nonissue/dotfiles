@@ -4,9 +4,9 @@
   "css.lint.validProperties": ["composes", "apply"],
   "editor.accessibilitySupport": "off",
   "editor.cursorStyle": "underline",
-  "editor.fontFamily": "'MonoLisa', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Input', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
+  "editor.fontSize": 13.5,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -78,6 +78,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
+  
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "todo.file.exclude": [
@@ -101,8 +102,14 @@
     "**/.next": true
   },
   "windowColors.🌈 Theme": "light",
-  "workbench.colorTheme": "Moonlight Italic",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html",
+    "plaintext": "javascript"
+  },
+  "typescript.autoClosingTags": false,
+  "workbench.colorTheme": "Rosé Pine Moon"
 }
