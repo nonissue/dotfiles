@@ -28,7 +28,8 @@
       path: bin/pbcopy
 
 - shell:
-    - # Ugly, and uses sudo
+    -  # Ugly, and uses sudo
+    - # also breaks in bash?
       command: 'if begin; [ (uname) = "Linux" ]; and sudo ln -s /home/ops/.dotfiles/bin/pbcopy /usr/local/bin/pbcopy; end; and echo "Linked pbcopy"; else if [ (uname) = "Darwin" ]; echo "macOS: Skipping..."; else; echo "Error linking pbcopy"; end;'
       stderr: true
       stdout: true
