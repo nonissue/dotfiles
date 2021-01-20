@@ -8,6 +8,12 @@
 find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;
 ```
 
+### Show mdworker activity info
+
+```bash
+sudo fs_usage mdworker mds
+```
+
 ## General
 
 ### Update PlexMediaServer
@@ -33,3 +39,4 @@ ncdu -x /
 # check virt memory usage, sorted
 ps -e -o pid,vsz,comm= | sort -n -k 2
 ```
+

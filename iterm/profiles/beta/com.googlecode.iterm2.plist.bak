@@ -20774,6 +20774,8 @@
 	</dict>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<true/>
+	<key>PreventEscapeSequenceFromClearingHistory</key>
+	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -20815,7 +20817,7 @@
 	<key>TerminalMargin</key>
 	<integer>15</integer>
 	<key>TerminalVMargin</key>
-	<integer>0</integer>
+	<integer>15</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
 	<key>URLHandlersByGuid</key>
