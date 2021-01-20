@@ -32,4 +32,7 @@ ncdu -x /
 
 # check virt memory usage, sorted
 ps -e -o pid,vsz,comm= | sort -n -k 2
+
+# Find empty folders older than a day, show their creation date
+find /mnt/media/local -type d -empty -ctime +1 -printf "%c - %p\n""
 ```

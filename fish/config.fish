@@ -88,7 +88,7 @@ switch (uname)
         set -g -x PATH $PATH
 
         # Alias FD for FZF
-        alias fd="fdfind"
+        # alias fd="fdfind"
 
         function fish_greeting
             /bin/cat /run/motd.dynamic
