@@ -7706,6 +7706,8 @@
 	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
+	<key>FastTrackpad</key>
+	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
 	<key>ForceAntialiasingOnRetina</key>
