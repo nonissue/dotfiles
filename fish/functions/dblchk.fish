@@ -15,58 +15,6 @@
 #
 # -------------------------------------------------------------------
 
-# CMD: 
-# find /mnt/media/local/tv/ -type f -size +16000c -exec du -s {} \; | xargs -L 1 | string split -m1 " "
-
-# Output: 
-# 1156328
-# /mnt/media/local/tv/This Old House/Season 42/This Old House - 42x11 - Design Elements WEBDL-1080p.mkv
-
-# find /mnt/media/local/tv/ -type f -size +16000c -exec du -hs {} +
-
-# find /mnt/media/local/tv/ -type f -size +16000c -printf '%p\n' | xargs -L 1 -d '\n' du -s
-
-
-# find /mnt/media/local/tv/ -type f -size +16000c -printf "%k\0%p\n" | xargs -0 | xargs -L 1 | while read -lt first second
-#     echo (string sub -l 6 $first)
-# end
-
-# Output
-# 322190
-# 731108
-# 161122
-# 186248
-# 169668
-# 184653
-# 176642
-# 186408
-# 188000
-# 189540
-# 197701
-# 183908
-# 208960
-# 651060
-# 120462
-# 265600
-# 798960
-# 183029
-
-# set test1 (find /mnt/media/remote/tv/Central\ Park/ -type f -size +16000c -printf "%k %p\n" | sort | xargs -L 1 | while read -lt first second
-#   math "floor(($first + 50) / 100 ) * 100"
-# end)
-# set test2 (find /mnt/media/remote/tv/Central\ Park/ -type f -size +16000c -printf "%k %p\n" | sort | xargs -L 1 | while read -lt first second
-#    math "floor(($first + 50) / 100 ) * 100"
-# end)
-# diff (echo $test1 | psub) (echo $test2 | psub)
-
-
-# DAMN this is all i fucking needed jfc
-# find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
-#     if not test -e $remotepath
-#         echo (set_color red)"FAIL: "$remotepath(set_color normal)
-#     end
-# end
-
 # FUCK YAH DUDE, this is it
 function diff_paths
     set -l res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
@@ -113,7 +61,6 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
     # Files are in folder: (source)
     # And should be in holder: (destination)
 
-    #begin
     set sep1 "============================================="
     set sep2 "---------------------------------------------"
     set timestamp (date +"%y-%m-%d %T")
@@ -156,10 +103,6 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         set _flag_d 'undefined'
         set dest_dir '/mnt/media/remote'
         echo "  "$dest_dir
-
-        # set _flag_d false
-        # set base_dir '/mnt/media/local'
-        # cd $base_dir
     end
 
     set -l time +5
@@ -196,21 +139,30 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         if not test -e $remotepath
             printf (set_color red)"NOT SYNCED: "(set_color yellow)" %s"(set_color normal) $remotepath | string replace "remote" "local"
         else 
+            # printf (set_color green)"SYNCED: "(set_color blue)" %s"(set_color normal) $remotepath | string replace "remote" "local"
             # echo (set_color green)"SYNCED: "(set_color blue)(echo $remotepath | string replace "remote" "local")(set_color normal)
         end
     end | nl -bt -s.' ' | string collect)
-# | nl -bt -w5 -n rn -s.' '
-    # find /mnt/media/local -type f -mtime +$time -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
-    #     if not test -e $remotepath
-    #         echo (set_color red)"NOT SYNCED: "(set_color yellow)(echo $remotepath | string replace "remote" "local")(set_color normal)
-    #     else 
-    #         echo (set_color green)"SYNCED: "(set_color blue)(echo $remotepath | string replace "remote" "local")(set_color normal)
-    #     end
-    # end | nl -b a -w3 -nrn -s.' ' | string collect
+
+    set -x synced (find /mnt/media/local -type f -mtime $time -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
+        if not test -e $remotepath
+            # printf (set_color red)"NOT SYNCED: "(set_color yellow)" %s"(set_color normal) $remotepath | string replace "remote" "local"
+        else 
+            printf (set_color green)"SYNCED: "(set_color blue)" %s"(set_color normal) $remotepath | string replace "remote" "local"
+            # echo (set_color green)"SYNCED: "(set_color blue)(echo $remotepath | string replace "remote" "local")(set_color normal)
+        end
+    end | nl -bt -s.' ' | string collect)
     
     if [ (printf "%s" $res | nl | count) -ge 1 ]
-        echo $res
+        echo " "
         echo "  "(printf "%s" $res | nl -bt | count ) "file(s) not synced!"
+        echo $res
+
+        if set -q _flag_v
+            echo " "
+            echo "  "(printf "%s" $synced | nl -bt | count ) "file(s) synced!"
+            echo $synced
+        end
     else
         echo "  No unsynced files found"
     end
