@@ -82,11 +82,17 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
             return 1
         end
     else
-        echo "  No source dir specified, using default: " 
-        set source_dir '/mnt/media/local'
-        echo "  "$source_dir 
+        echo "  No source dir specified, using default: "
         set _flag_s 'undefined'
-        # return 1
+        set source_dir '/mnt/media/remote'
+
+        if not test -d $source_dir
+            echo "  ERROR: Can't find default source dir!"
+            echo "  Are you sure you're on the right machine?"
+            return 1
+        end
+
+        echo "  "$source_dir
     end
 
     if set -q _flag_d
@@ -98,10 +104,16 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
             return 1
         end
     else
-
         echo "  No destination dir specified, using default: "
         set _flag_d 'undefined'
         set dest_dir '/mnt/media/remote'
+
+        if not test -d $dest_dir
+            echo "  ERROR: Can't find default destination dir!"
+            echo "  Are you sure you're on the right machine?"
+            return 1
+        end
+
         echo "  "$dest_dir
     end
 
