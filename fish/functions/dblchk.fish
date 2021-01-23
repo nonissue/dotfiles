@@ -69,8 +69,8 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         set source_dir '/mnt/media/remote'
 
         if not test -d $source_dir
-            echo "  ERROR: Can't find default source dir!"
-            echo "  Are you sure you're on the right machine?"
+            echo (set_color red)"  ERROR: Can't find default source dir!"
+            echo (set_color yellow)"  Are you sure you're on the right machine?"(set_color normal)
             printf "\n%s\n\n" $sep1
             return 1
         end
@@ -91,8 +91,8 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         set dest_dir '/mnt/media/remote'
 
         if not test -d $dest_dir
-            echo "  ERROR: Can't find default destination dir!"
-            echo "  Are you sure you're on the right machine?"
+            echo (set_color red)"  ERROR: Can't find default destination dir!"
+            echo (set_color yellow)"  Are you sure you're on the right machine?"(set_color normal)
             printf "\n%s\n\n" $sep1
             return 1
         end
