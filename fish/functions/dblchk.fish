@@ -75,7 +75,6 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
     if set -q _flag_s
         if test -d $_flag_s
             set source_dir $_flag_s
-            cd $source_dir
         else
             echo "  Invalid source directory specified"
             echo $_flag_s
@@ -98,7 +97,6 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
     if set -q _flag_d
         if test -d $_flag_d
             set dest_dir $_flag_d
-            cd $dest_dir
         else
             echo "  Invalid destination directory specified"
             return 1
