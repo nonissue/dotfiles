@@ -51,24 +51,21 @@
 # 798960
 # 183029
 
-set test1 (find /mnt/media/remote/tv/Central\ Park/ -type f -size +16000c -printf "%k %p\n" | sort | xargs -L 1 | while read -lt first second
-  math "floor(($first + 50) / 100 ) * 100"
-end)
-set test2 (find /mnt/media/remote/tv/Central\ Park/ -type f -size +16000c -printf "%k %p\n" | sort | xargs -L 1 | while read -lt first second
-   math "floor(($first + 50) / 100 ) * 100"
-end)
-diff (echo $test1 | psub) (echo $test2 | psub)
+# set test1 (find /mnt/media/remote/tv/Central\ Park/ -type f -size +16000c -printf "%k %p\n" | sort | xargs -L 1 | while read -lt first second
+#   math "floor(($first + 50) / 100 ) * 100"
+# end)
+# set test2 (find /mnt/media/remote/tv/Central\ Park/ -type f -size +16000c -printf "%k %p\n" | sort | xargs -L 1 | while read -lt first second
+#    math "floor(($first + 50) / 100 ) * 100"
+# end)
+# diff (echo $test1 | psub) (echo $test2 | psub)
 
 
 # DAMN this is all i fucking needed jfc
-find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
-    if not test -e $remotepath
-        echo (set_color red)"FAIL: "$remotepath(set_color normal)
-    else
-        # echo "PASS: "$remotepath
-    end
-
-end
+# find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
+#     if not test -e $remotepath
+#         echo (set_color red)"FAIL: "$remotepath(set_color normal)
+#     end
+# end
 
 # FUCK YAH DUDE, this is it
 function diff_paths
@@ -88,9 +85,9 @@ function diff_paths
     end
 end
 
-set res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath    if not test -e $remotepath        echo (set_color red)"FAIL: "(set_color yellow)$remotepath(set_color normal)    else        # echo "PASS: "$remotepath    endend | nl -b a -w3 -nrz -s.' ' | string collect)
-echo $res
-echo $res | count
+# set res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath    if not test -e $remotepath        echo (set_color red)"FAIL: "(set_color yellow)$remotepath(set_color normal)    else        # echo "PASS: "$remotepath    endend | nl -b a -w3 -nrz -s.' ' | string collect)
+# echo $res
+# echo $res | count
 
 # could also do 
 # 1) get local file path
