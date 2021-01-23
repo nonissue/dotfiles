@@ -71,19 +71,21 @@ find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" |
 end
 
 # FUCK YAH DUDE, this is it
-set -l res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
-    if not test -e $remotepath
-        echo (set_color red)"FAIL: "(set_color yellow)$remotepath(set_color normal)
-    end
-end | nl -b a -w3 -nrz -s.' ' | string collect)
-echo $res
-echo (echo $res | count) " FAILURES, you IDIOT"
-# do sometihng here like if count == 0, we
+function diff_paths
+    set -l res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
+        if not test -e $remotepath
+            echo (set_color red)"FAIL: "(set_color yellow)$remotepath(set_color normal)
+        end
+    end | nl -b a -w3 -nrz -s.' ' | string collect)
+    echo $res
+    echo (echo $res | count) "files not synced"
+    # do sometihng here like if count == 0, we
 
-if [ (echo $res | count) -ge 1 ]
-    echo "you fucked up dawg"
-else
-    echo "we ggoooooooooddd"
+    if [ (echo $res | count) -ge 1 ]
+        echo "BE CAREFUL before proceeding"
+    else
+        echo "Go nuts."
+    end
 end
 
 set res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath    if not test -e $remotepath        echo (set_color red)"FAIL: "(set_color yellow)$remotepath(set_color normal)    else        # echo "PASS: "$remotepath    endend | nl -b a -w3 -nrz -s.' ' | string collect)
@@ -119,7 +121,7 @@ end
 # for files
 # -t or --time : optional : accepts int (1-99) : sets age threshold for deleting files
 # -f or --force : runs command without any prompts
-function comp --description "Check a dir and all its files exist in a dir in a different file branch"
+function dblchk --description "Check a dir and all its files exist in a dir in a different file branch"
 
     # Files are in folder: (source)
     # And should be in holder: (destination)
@@ -128,15 +130,12 @@ function comp --description "Check a dir and all its files exist in a dir in a d
     set sep1 "============================================="
     set sep2 "---------------------------------------------"
     set timestamp (date +"%y-%m-%d %T")
-    set logpath "/home/ops/logs/fdel1.log"
-    set start_dir (pwd)
-    set initial_space (du -hs /mnt/media/local | grep -o -E '[0-9]+')
-    pushd .
+    set logpath "/home/ops/logs/dblchk.log"
 
     printf "\n%s\n\n  %s\n" $sep1 $timestamp | tee -a $logpath
 
     # config for parsing command line args
-    set -l options 'v/verbose' 's/source=' 'd/destination='
+    set -l options 'v/verbose' 's/source=' 'd/destination= t/time=!_validate_int'
     argparse -n fdel $options -- $argv
 
     if set -q _flag_s
@@ -150,9 +149,6 @@ function comp --description "Check a dir and all its files exist in a dir in a d
     else
         echo "You must specify a source directory"
         return 1
-        # set _flag_d false
-        # set base_dir '/mnt/media/local'
-        # cd $base_dir
     end
 
     if set -q _flag_d
@@ -171,9 +167,28 @@ function comp --description "Check a dir and all its files exist in a dir in a d
         # cd $base_dir
     end
 
+    set -l time 5
+
+    if set -q _flag_t
+        set time $_flag_t
+    else
+        set -e _flag_t
+        set _flag_t "not set"
+        printf "\n%s\n\n Check for local files not yet synced over %s days old?\n\n" $sep2 $time
+
+        # confirm user wants to continue with default time value
+        if not read_confirm
+            printf "\n  Exiting...\n\n%s\n\n" $sep1
+            return 1
+        end
+
+        printf "\n  Continuing...\n"
+
+    end
+
     # print debug mode if param passed
     if set -q _flag_v
-        printf "\n%s\n\n  Verbose Mode\n  * _flag_f: %s\n  * _flag_t: %s\n  * _flag_d: %s\n  * time: %s\n  * base_dir: %s\n  * start_dir: %s\n" $sep2 $_flag_f $_flag_t $_flag_d $time $base_dir $start_dir | tee -a $logpath
+        printf "\n%s\n\n  Verbose Mode\n  * _flag_s: %s\n  * _flag_d: %s\n" $sep2 $_flag_s $_flag_d | tee -a $logpath
     end
 
     # print description
