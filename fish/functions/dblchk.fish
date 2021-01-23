@@ -12,27 +12,14 @@
 # Notes:
 #
 # Todo:
+#   - [ ] figure out how to handle log path
+#   - [ ] actually log results
+#   - [ ] figure out how to let user set local/remote default dirs
+#   - [ ] cleanup
 #
 # -------------------------------------------------------------------
 
-# FUCK YAH DUDE, this is it
-function diff_paths
-    set -l res (find /mnt/media/local -type f -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
-        if not test -e $remotepath
-            echo (set_color red)"FAIL: "(set_color yellow)$remotepath(set_color normal)
-        end
-    end | nl -b a -w3 -nrz -s.' ' | string collect)
-    echo $res
-    echo (echo $res | count) "files not synced"
-    # do sometihng here like if count == 0, we
-
-    if [ (echo $res | count) -ge 1 ]
-        echo "BE CAREFUL before proceeding"
-    else
-        echo "Go nuts."
-    end
-end
-
+# confirmation prompt for user
 function read_confirm --description 'Ask the user for confirmation' --argument prompt
     if test -z "$prompt"
         set prompt "Continue? [y/n]"
@@ -52,15 +39,11 @@ end
 
 # opts:
 # -v or --verbose : enables debug mode
-# -d or --directory : optional : accepts path ro dir : sets base dir to search
-# -d or --directory : optional : accepts path ro dir : sets base dir to search
-# for files
-# -t or --time : optional : accepts int (1-99) : sets age threshold for deleting files
+# -s or --source : optional : list of files to check for
+# -d or --destinaiton : optional : where to check for them
+# -t or --time : optional : accepts int (-99 - 99) : sets age threshold for checking for files
+#   - eg: -1 checks for source dir files modified in the last day 
 function dblchk --description "Check a dir and all its files exist in a dir in a different file branch"
-
-    # Files are in folder: (source)
-    # And should be in holder: (destination)
-
     set sep1 "============================================="
     set sep2 "---------------------------------------------"
     set timestamp (date +"%y-%m-%d %T")
@@ -68,7 +51,7 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
 
     printf "\n%s\n\n  %s\n" $sep1 $timestamp | tee -a $logpath
 
-    # config for parsing command line args
+    # command line arg parsing (see above)
     set -l options 'v/verbose' 's/source=' 'd/destination=' 't/time=!_validate_int --min -99 --max 99'
     argparse -n dblchk $options -- $argv
 
@@ -88,6 +71,7 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         if not test -d $source_dir
             echo "  ERROR: Can't find default source dir!"
             echo "  Are you sure you're on the right machine?"
+            printf "\n%s\n\n" $sep1
             return 1
         end
 
@@ -109,12 +93,14 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         if not test -d $dest_dir
             echo "  ERROR: Can't find default destination dir!"
             echo "  Are you sure you're on the right machine?"
+            printf "\n%s\n\n" $sep1
             return 1
         end
 
         echo "  "$dest_dir
     end
 
+    # set default time to 5 days
     set -l time +5
 
     if set -q _flag_t
@@ -129,7 +115,6 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         set _flag_t "not set"
         printf "\n%s\n\n Check for local files not yet synced over %s days old?\n\n" $sep2 $time
 
-        # confirm user wants to continue with default time value
         if not read_confirm
             printf "\n  Exiting...\n\n%s\n\n" $sep1
             return 1
@@ -144,37 +129,37 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
         printf "\n%s\n\n  Verbose Mode\n  * _flag_s: %s\n  * _flag_d: %s\n  * _flag_t: %s\n" $sep2 $_flag_s $_flag_d $_flag_t | tee -a $logpath
     end
 
-    # print description
+    # res = files that don't exist on remote
     set -x res (find /mnt/media/local -type f -mtime $time -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
         if not test -e $remotepath
             printf (set_color red)"NOT SYNCED: "(set_color yellow)" %s"(set_color normal) $remotepath | string replace "remote" "local"
-        else 
-            # printf (set_color green)"SYNCED: "(set_color blue)" %s"(set_color normal) $remotepath | string replace "remote" "local"
-            # echo (set_color green)"SYNCED: "(set_color blue)(echo $remotepath | string replace "remote" "local")(set_color normal)
         end
     end | nl -bt -s.' ' | string collect)
 
+    # synced = files that do exist on the remote
     set -x synced (find /mnt/media/local -type f -mtime $time -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
-        if not test -e $remotepath
-            # printf (set_color red)"NOT SYNCED: "(set_color yellow)" %s"(set_color normal) $remotepath | string replace "remote" "local"
-        else 
+        if test -e $remotepath 
             printf (set_color green)"SYNCED: "(set_color blue)" %s"(set_color normal) $remotepath | string replace "remote" "local"
-            # echo (set_color green)"SYNCED: "(set_color blue)(echo $remotepath | string replace "remote" "local")(set_color normal)
         end
     end | nl -bt -s.' ' | string collect)
     
+    
     if [ (printf "%s" $res | nl | count) -ge 1 ]
+        # output which files aren't synced yet
         echo " "
         echo "  "(printf "%s" $res | nl -bt | count ) "file(s) not synced!"
         echo $res
 
+        
         if set -q _flag_v
+            # in verbose mode, print files that ARE synced as well
             echo " "
             echo "  "(printf "%s" $synced | nl -bt | count ) "file(s) synced!"
             echo $synced
         end
     else
-        echo "  No unsynced files found"
+        echo " "
+        echo (set_color green)"  No unsynced files found"(set_color normal)
     end
 
 
