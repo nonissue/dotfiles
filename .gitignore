@@ -31,3 +31,4 @@ ssh/config
 tmux/sidebar/directory_widths.txt
 ssh/
 quicklook/*.qlgenerator
+fish/fish_plugins
