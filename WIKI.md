@@ -8,6 +8,12 @@
 find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;
 ```
 
+### Show mdworker activity info
+
+```bash
+sudo fs_usage mdworker mds
+```
+
 ## General
 
 ### Update PlexMediaServer
@@ -36,3 +42,4 @@ ps -e -o pid,vsz,comm= | sort -n -k 2
 # Find empty folders older than a day, show their creation date
 find /mnt/media/local -type d -empty -ctime +1 -printf "%c - %p\n""
 ```
+

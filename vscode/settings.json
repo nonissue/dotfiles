@@ -111,5 +111,12 @@
     "plaintext": "javascript"
   },
   "typescript.autoClosingTags": false,
-  "workbench.colorTheme": "Rosé Pine Moon"
+  "workbench.colorTheme": "Rosé Pine Moon",
+  "terminal.integrated.windowsEnableConpty": false,
+  "remote.SSH.connectTimeout": 30,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.useLocalServer": false,
+  "remote.SSH.remotePlatform": {
+    "hetz": "linux"
+  }
 }
