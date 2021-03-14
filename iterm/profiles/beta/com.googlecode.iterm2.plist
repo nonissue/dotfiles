@@ -7986,7 +7986,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>7.0520820114213194</real>
+			<real>16.487089212940528</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -8653,7 +8653,7 @@
 			<key>Title Components</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.031243927945795748</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -20817,7 +20817,7 @@
 	<key>TerminalMargin</key>
 	<integer>15</integer>
 	<key>TerminalVMargin</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
 	<key>URLHandlersByGuid</key>

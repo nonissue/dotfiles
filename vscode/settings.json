@@ -50,7 +50,6 @@
   // "wallaby.noAutomaticInstall": true,
   "window.newWindowDimensions": "maximized",
   "window.openFoldersInNewWindow": "on",
-  "window.zoomLevel": 0,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "vscode-seedling-icon-theme",
@@ -78,7 +77,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-  
+    "breadcrumbs.showClasses": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "todo.file.exclude": [
@@ -106,17 +105,35 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "tailwindCSS.emmetCompletions": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "tailwindCSS.includeLanguages": {
     "typescriptreact": "html",
     "plaintext": "javascript"
   },
   "typescript.autoClosingTags": false,
-  "workbench.colorTheme": "Rosé Pine Moon",
+  "workbench.colorTheme": "Rosé Pine",
   "terminal.integrated.windowsEnableConpty": false,
   "remote.SSH.connectTimeout": 30,
   "remote.SSH.remoteServerListenOnSocket": true,
   "remote.SSH.useLocalServer": false,
   "remote.SSH.remotePlatform": {
     "hetz": "linux"
+  },
+  "window.zoomLevel": -1,
+  "dash.languageIdToDocsetMap": {
+    "lua": ["lua", "hammerspoon"],
+    "typescriptreact": [
+      "typescript",
+      "react",
+      "javascript",
+      "tailwindcss",
+      "next.js"
+    ]
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
