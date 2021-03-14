@@ -121,9 +121,9 @@ switch (uname)
         #        alias fd="fdfind"
         set -Ux EDITOR nvim
 
-        function fish_greeting
-            /bin/cat /run/motd.dynamic
-        end
+        #function fish_greeting
+        #    /bin/cat /run/motd.dynamic
+        #end
         # tmux_attach
 end
 
