@@ -21,7 +21,7 @@
       path: vscode
     ~/.fdignore:
       path: fdignore
-    ~/bin/pbcopy:
+    ~/.local/bin/pbcopy:
       # Better than running command with sudo...
       # Have to add it ~/bin to path on linux
       if: '[ (uname) = "Linux" ]'
