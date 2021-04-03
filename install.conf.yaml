@@ -26,30 +26,3 @@
       # Have to add it ~/bin to path on linux
       if: '[ (uname) = "Linux" ]'
       path: bin/pbcopy
-
-# - shell:
-   # -  # Ugly, and uses sudo
-    #- # also breaks in bash?
-      # command: 'if begin; [ (uname) = "Linux" ]; and sudo ln -s /home/ops/.dotfiles/bin/pbcopy /usr/local/bin/pbcopy; end; and echo "Linked pbcopy"; else if [ (uname) = "Darwin" ]; echo "macOS: Skipping..."; else; echo "Error linking pbcopy"; end;'
-      # command: ls -la
-      # command: if begin; [ (uname) = "Linux" ]; and sudo ln -s /home/ops/.dotfiles/bin/pbcopy /usr/local/bin/pbcopy; end; echo "true"; else if [ (uname) = "Darwin" ]; echo "Macos"; else; echo "error"; end
-      # stderr: true
-      # stdout: true
-      # quiet: false
-      # description: Creating link /usr/local/bin/pbcopy /home/ops/.dotfiles/bin/pbcopy (Linux)
-
-# - shell:
-  # - ["echo 'Testing'", "testing"]
-
-- shell:
-  # - ["set -l kernel (uname) && echo $kernel"]
-  # - [set -l kernel (uname) && echo $kernel, OS Version]
-  -
-    command: set -l kernel (uname) && echo $kernel && if [ $kernel = "Darwin" ]; echo "MACOS DETECTED"; else if [ $kernel = "Linux" ]; echo "LINUX"; end;
-    stdout: true
-    stderr: true
-    description: "Current OS :"
-    quiet: true
-  # -
-  #   command: read fail
-  #   stderr: true
