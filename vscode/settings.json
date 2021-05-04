@@ -31,7 +31,6 @@
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "npm.packageManager": "yarn",
   "prettier.jsxSingleQuote": true,
-  "prettier.packageManager": "yarn",
   "prettier.singleQuote": true,
   "prettier.useEditorConfig": false,
   "python.languageServer": "Microsoft",
@@ -97,9 +96,6 @@
     "**/vendor/**",
     "**/lambda/**"
   ],
-  "search.exclude": {
-    "**/.next": true
-  },
   "windowColors.🌈 Theme": "light",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -113,7 +109,6 @@
     "plaintext": "javascript"
   },
   "typescript.autoClosingTags": false,
-  "workbench.colorTheme": "Tokyo Night Storm",
   "terminal.integrated.windowsEnableConpty": false,
   "remote.SSH.connectTimeout": 30,
   "remote.SSH.remoteServerListenOnSocket": true,
@@ -142,5 +137,14 @@
       "filenamePattern": "*.ipynb"
     }
   ],
-  "workbench.fontAliasing": "auto"
+  "workbench.fontAliasing": "auto",
+  "workbench.colorTheme": "Matey",
+  "[css]": {
+    "editor.suggest.insertMode": "replace"
+  },
+  "css.validate": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxBracketSameLine": true
 }

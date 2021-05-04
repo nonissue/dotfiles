@@ -20798,6 +20798,8 @@
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.4240248226950355</real>
+	<key>SquareWindowCorners</key>
+	<true/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
