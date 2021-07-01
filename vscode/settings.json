@@ -131,14 +131,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "workbench.fontAliasing": "auto",
-  "workbench.colorTheme": "Matey",
+  "workbench.colorTheme": "Aylin",
   "[css]": {
     "editor.suggest.insertMode": "replace"
   },
@@ -146,5 +143,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.jsxBracketSameLine": true
+  "prettier.jsxBracketSameLine": true,
+  "autoimport.showNotifications": true,
+  "autoimport.filesToScan": "./src/**/*.{ts,tsx}"
 }
