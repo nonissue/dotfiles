@@ -26,11 +26,11 @@ curl -s "https://plex.tv/downloads/details/1?build=linux-ubuntu-x86_64&channel=1
 
 ### Python
 
-* The python situation on whats.one is a mess. Multiple versions installed, conflicts, etc. 
-* Had to modify `add-apt-repository` to reference python 3.6 rather than default python3 version (3.7.5).
-    * `sudo vim /usr/bin/add-apt-repository`
+- The python situation on whats.one is a mess. Multiple versions installed, conflicts, etc.
+- Had to modify `add-apt-repository` to reference python 3.6 rather than default python3 version (3.7.5).
+  - `sudo vim /usr/bin/add-apt-repository`
 
-### Commands 
+### Commands
 
 ```bash
 # scan disk space usage without crossing fs boundaries
@@ -43,3 +43,4 @@ ps -e -o pid,vsz,comm= | sort -n -k 2
 find /mnt/media/local -type d -empty -ctime +1 -printf "%c - %p\n""
 ```
 
+###

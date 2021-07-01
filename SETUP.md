@@ -1,9 +1,9 @@
 # Setup
 
-Inspiration: 
+Inspiration:
 
-* https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
-* https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
+- https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
+- https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
 
 ## Links
 
@@ -18,34 +18,35 @@ ln -s ~/.dotfiles/bin/crontest /usr/local/bin/
 
 ## System Configs
 
-* change capslock to control
-* make dirs:
-	* ~/code
-	* ~/nosync
+- change capslock to control
+- make dirs:
+  - ~/code
+  - ~/nosync
 
 ### Packages
 
 #### All OS
-* git
-* tmux
-* neovim
-	* plug: curl -fLo ~/.dotfiles/nvim/autoload/plug.vim --create-dirs \
+
+- git
+- tmux
+- neovim
+  - plug: curl -fLo ~/.dotfiles/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-* fish
-* z
-* fzf
-* tree
-* fd
-* node
-* npm
-* yarn
+- fish
+- z
+- fzf
+- tree
+- fd
+- node
+- npm
+- yarn
 
 #### macOS
 
-* Homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-* hammerspoon
-* xcode developer tools (brew does do this)
-* refind
+- Homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+- hammerspoon
+- xcode developer tools (brew does do this)
+- refind
 
 ## Linux Installations
 
@@ -63,7 +64,7 @@ sudo apt-get update
 ### Neovim
 
 ```bash
-sudo add-apt-repository ppa:neovim-ppa/stable 
+sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 # Plugin Manager
@@ -71,7 +72,7 @@ curl -fLo ~/.dotfiles/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-### Fish 
+### Fish
 
 ```bash
 sudo apt-add-repository ppa:fish-shell/release-3
@@ -90,18 +91,36 @@ curl -s https://api.github.com/repos/sharkdp/bat/releases/latest \
 sudo dpkg -i bat*
 ```
 
+### FD (on ubuntu 18.04)
+
+```bash
+curl -s https://api.github.com/repos/sharkdp/fd/releases/latest \
+  | grep amd64 \
+  | grep -v musl \
+  | cut -d '"' -f 4 \
+  | wget -qi -
+sudo dpkg -i fd*
+```
+
 ### FZF
 
 ```bash
 # As of 20-10-16
-sudo apt install fzf
-sudo apt install fdfind
+
+# Alternative
+echo "deb http://ftp.debian.org/debian stretch-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# sudo apt update
+# sudo apt install fzf
 ```
 
 ### Node
 
 ```bash
-sudo apt install nodejs
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
 sudo apt install npm
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
@@ -109,7 +128,11 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 ### Tmux
 
 ```bash
-sudo apt install tmux
+sudo apt install tmux # doesn't install latest
+
+## yah this seems to work
+sudo apt install -y build-essential autoconf automake pkg-config libevent-dev libncurses5-dev bison byacc
+git clone https://github.com/tmux/tmux.git ~/tmp/tmux; cd ~/tmp/tmux; ./autogen.sh; ./configure && make; sudo make install; tmux kill-server; tmux -V; rm -rf ~/tmp/tmux;
 # TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
@@ -118,7 +141,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ```bash
 # This seems to update ubuntu python3 as well ¯\_(ツ)_/¯
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 ```
 
 ### Glances
@@ -144,7 +167,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 # have to run below in bash, fish chokes
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-	 $(lsb_release -cs) 
+	 $(lsb_release -cs)
 	 stable"
 
 sudo apt-get update
