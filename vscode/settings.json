@@ -145,5 +145,6 @@
   },
   "prettier.jsxBracketSameLine": true,
   "autoimport.showNotifications": true,
-  "autoimport.filesToScan": "./src/**/*.{ts,tsx}"
+  "autoimport.filesToScan": "./src/**/*.{ts,tsx}",
+  "security.workspace.trust.untrustedFiles": "open"
 }

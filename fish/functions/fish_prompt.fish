@@ -95,12 +95,14 @@ __ayyylmao_colors dark
 # simple function to get git branch name
 # taken from krisleech
 function _git_branch_name
+    # return
     echo (command git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
 end
 
 # simple function to check if git repo is dirty
 # taken from krisleech
 function _is_git_dirty
+    # return
     echo (command git status -s --ignore-submodules=dirty 2>/dev/null)
 end
 
