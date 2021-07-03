@@ -135,7 +135,7 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "workbench.fontAliasing": "auto",
-  "workbench.colorTheme": "Aylin",
+  "workbench.colorTheme": "Moonlight II",
   "[css]": {
     "editor.suggest.insertMode": "replace"
   },
