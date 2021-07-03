@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# vim-plug
+git clone https://github.com/savq/paq-nvim.git \
+    "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/opt/paq-nvim
+
+# conf
+# mkdir -p ~/.config/nvim
+# cp -r ./nvim/init.lua ./nvim/lua ./nvim/after ~/.config/nvim/
+
+# Language servers
+# yarn global add bash-language-server
+# yarn global add vscode-css-languageserver-bin
+# go get golang.org/x/tools/gopls@latest
+# yarn global add vscode-html-languageserver-bin
+# yarn global add vscode-json-languageserver
+# pip install python-language-server
+# brew install rust-analyzer
+# gem install solargraph
+# yarn global add sql-language-server
+# yarn global add typescript typescript-language-server
+# yarn global add vim-language-server
+# yarn global add vls
+# yarn global add yaml-language-server
+
+# Lua LSP
+# brew install ninja
+cd ~/dev || exit 1
+git clone https://github.com/sumneko/lua-language-server
+cd lua-language-server || exit 1
+git submodule update --init --recursive
+cd 3rd/luamake || exit 1
+ninja -f compile/ninja/macos.ninja
+cd ../.. || exit 1
+./3rd/luamake/luamake rebuild
+
+echo "Run `nvim +PaqInstall` to finish setup"

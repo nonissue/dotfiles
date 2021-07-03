@@ -1,0 +1,17 @@
+proc /proc proc defaults 0 0
+/dev/md/0 none swap sw 0 0
+/dev/md/1 /boot ext3 defaults 0 0
+/dev/md/2 / ext4 defaults 0 0
+/dev/md/3 /home ext4 defaults 0 0
+#/dev/sdc1 swap swap defaults 0 0
+/dev/sdc3 /ssd ext4 defaults 0 0
+/dev/sdc2 /ssd/boot ext3 defaults 0 0
+tmpfs /tmp tmpfs rw,nosuid,nodev
+
+#proc /proc proc defaults 0 0
+# /dev/sdc1
+#UUID=15195b86-7501-402d-854d-142a37453fe5 none swap sw 0 0
+# /dev/sdc2
+#UUID=3e173124-784c-48ba-aa83-6682d77a4ee5 /boot ext3 defaults 0 0
+# /dev/sdc3
+#UUID=d1c7227a-b710-4a05-9198-02a0c486970a / ext4 defaults 0 0

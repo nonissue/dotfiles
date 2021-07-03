@@ -31,7 +31,6 @@
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "npm.packageManager": "yarn",
   "prettier.jsxSingleQuote": true,
-  "prettier.packageManager": "yarn",
   "prettier.singleQuote": true,
   "prettier.useEditorConfig": false,
   "python.languageServer": "Microsoft",
@@ -52,7 +51,7 @@
   "window.openFoldersInNewWindow": "on",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.iconTheme": "vscode-seedling-icon-theme",
+  "workbench.iconTheme": "quill-icons",
   "workbench.sideBar.location": "left",
   "workbench.tips.enabled": false,
   "workbench.tree.indent": 16,
@@ -97,9 +96,6 @@
     "**/vendor/**",
     "**/lambda/**"
   ],
-  "search.exclude": {
-    "**/.next": true
-  },
   "windowColors.🌈 Theme": "light",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -113,7 +109,6 @@
     "plaintext": "javascript"
   },
   "typescript.autoClosingTags": false,
-  "workbench.colorTheme": "Rosé Pine",
   "terminal.integrated.windowsEnableConpty": false,
   "remote.SSH.connectTimeout": 30,
   "remote.SSH.remoteServerListenOnSocket": true,
@@ -121,7 +116,6 @@
   "remote.SSH.remotePlatform": {
     "hetz": "linux"
   },
-  "window.zoomLevel": -1,
   "dash.languageIdToDocsetMap": {
     "lua": ["lua", "hammerspoon"],
     "typescriptreact": [
@@ -135,5 +129,22 @@
 
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.productIconTheme": "icons-carbon",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.fontAliasing": "auto",
+  "workbench.colorTheme": "Moonlight II",
+  "[css]": {
+    "editor.suggest.insertMode": "replace"
+  },
+  "css.validate": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxBracketSameLine": true,
+  "autoimport.showNotifications": true,
+  "autoimport.filesToScan": "./src/**/*.{ts,tsx}",
+  "security.workspace.trust.untrustedFiles": "open"
 }

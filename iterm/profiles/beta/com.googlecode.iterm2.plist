@@ -5,7 +5,7 @@
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AlternateMouseScroll</key>
-	<true/>
+	<false/>
 	<key>AutoCommandHistory</key>
 	<false/>
 	<key>AutoHideTmuxClientSession</key>
@@ -20798,6 +20798,8 @@
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.4240248226950355</real>
+	<key>SquareWindowCorners</key>
+	<true/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
@@ -20820,6 +20822,11 @@
 	<integer>2</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Paste History</string>
+	</array>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>

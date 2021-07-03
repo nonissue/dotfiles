@@ -1,5 +1,8 @@
+wg0-client-mbp.conf
 .env
 nvim/plugged/
+nvim.bak/plugged/
+nvim/lua/plugins/
 .DS_Store
 fish/fish_variables
 tmux/plugins/
@@ -32,3 +35,5 @@ tmux/sidebar/directory_widths.txt
 ssh/
 quicklook/*.qlgenerator
 fish/fish_plugins
+nvim.bak/plugged/tsuquyomi
+nvim.bak/plugged/vitality.vim
