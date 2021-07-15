@@ -17,88 +17,69 @@ end
 
 function rawr --description 'Unrar all rar archives in subfolders (to optional directory)'
     # set -l options '-s/source=? d/destination=?'
-    set -l options 's/source=?' 'd/destination=?' 'p/pattern='
+    set -l options 's/source=' 'd/destination=' 'p/pattern='
 
     argparse -n rawr $options -- $argv
 
-    # echo $argv
     if set -q _flag_d
+        echo $_flag_d
         if test -d $_flag_d
             set dest_dir $_flag_d
         else
-            echo "invalid directory specified"
+            echo "Error: invalid destination dir specified!"
+            echo "Exiting..."
+
             return 1
         end
     else
         set _flag_d false
-        # echo 'setting dest dir to ~/files/downloads/complete/tv/extracted'
-        set dest_dir /home/ops/files/downloads/complete/tv/extracted
+        echo 'Info: Using default dest dir'(pwd)
+        set dest_dir (pwd)
     end
+
 
     if set -q _flag_s
         if test -d $_flag_s
             set source_dir $_flag_s
         else
-            echo "invalid source dir specified"
+            echo "Error: invalid source dir specified."
+            echo "Exiting..."
+
             return 1
         end
     else
         set _flag_s false
-        # echo 'setting source dir to current dir'
-        set source_dir (pwd)
+        echo 'setting source dir ~/tmp'
+        set source_dir (echo $HOME"/tmp")
     end
-
-
 
     set -x string_patterns
+
     # echo $_flag_p
-    if set -q _flag_paa
-        set -l length (string split ',' $_flag_p | count)
+    echo ""
+    echo "Results:!"
+    if set -q _flag_p
         set -l split_strings (string split ',' $_flag_p)
-        
-        # echo $length
+        set -l length (string split ',' $_flag_p | count)
+
+
         for i in (seq $length)
-            # echo $i
-
-            if set -q i
-                set -l test $split_strings[$i]
-                # set -a string_patterns (echo "-name \""(echo "*" | string unescape)"."$test\")
-
-                set -a string_patterns $test
-                if [ $i != $length ]
-                    set -a string_patterns -o
-                end
-
-            else
-                echo 'i is empty'
-            end
-            # if [ $i = $length ]
-
-            #     set -a string_patterns "\\)"
-            # end
+            find $source_dir -name (echo "*."$split_strings[$i])
         end
-
-        echo $string_patterns
-
     else
-        set _flag_paa false
+        set _flag_p false
         echo 'using default str patterns (.r00, .rar)'
-        set -x string_patterns '*.conf'
 
+        set -l split_strings (string split ',' 'r00,rar')
+        set -l length (string split ',' 'r00,rar' | count)
+        for i in (seq $length)
+
+            find $source_dir -name (echo "*."$split_strings[$i])
+        end
     end
-
-    # find . \( -name $test_string -o -name "*.r00" \) -execdir unrar e -o- {} ~/files/downloads/complete/tv/extracted/ \;
-    # find . (echo "$string_patterns" ) -execdir echo {} \;
+    echo ""
 
 
-
-    set -l split_strings (string split ',' $_flag_p)
-    set -l length (string split ',' $_flag_p | count)
-
-    for i in (seq $length) 
-        echo $split_strings[$i]
-        find ~/tmp/clean -name (echo "*."$split_strings[$i])
-    end
 
 
 
