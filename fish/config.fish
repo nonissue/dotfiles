@@ -56,9 +56,19 @@ end
 # Keybinding for explainshell function
 bind \ch explain
 
+set -a fish_function_path (echo $HOME/.dotfiles/fish/functions)
+# set fish_function_path $fish_function_path "/usr/local/lib/python3.9/site-packages/powerline/bindings/fish" && powerline-setup
+
+# set -a fish_function_path (echo $HOME/.dotfiles/fish/conf.d)
+
 function jjrf
-    source ~/.config/fish/config.fish
+    #     # This doesnt really seem to be working for reloading functions that are changing...
+    #     # source ~/.config/fish/config.fish
+
+    source ~/.dotfiles/fish/config.fish && source ~/.dotfiles/fish/functions/*.fish
+    #     # echo 'config reloaded!'
 end
+
 function venv
     source ~/.dotfiles/env/python3/bin/activate.fish
 end
