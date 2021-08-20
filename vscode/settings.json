@@ -1,7 +1,11 @@
 {
+  
+  "autoimport.filesToScan": "**/*.{ts,tsx}",
+  "autoimport.showNotifications": true,
   "city-lights-icons-vsc.hidesExplorerArrows": true,
   "css.lint.unknownAtRules": "ignore",
   "css.lint.validProperties": ["composes", "apply"],
+  "css.validate": true,
   "editor.accessibilitySupport": "off",
   "editor.cursorStyle": "underline",
   "editor.fontFamily": "'Input', Menlo, Monaco, 'Courier New', monospace",
@@ -10,14 +14,13 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "editor.lineHeight": 0,
   "editor.minimap.enabled": false,
   "editor.smoothScrolling": true,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
-  "editor.wordWrapColumn": 100,
+  "editor.wordWrapColumn": 90,
   "eslint.packageManager": "yarn",
-  "explorer.openEditors.visible": 6,
+  "explorer.openEditors.visible": 0,
   "extensions.autoUpdate": false,
   "extensions.ignoreRecommendations": true,
   "faunadb.adminSecretKey": "fnADvAU-q-ACAHFwmh5bTceeQvqBg92VsgSH2dS3",
@@ -30,37 +33,44 @@
   "lua.targetVersion": "5.3",
   "npm-intellisense.packageSubfoldersIntellisense": true,
   "npm.packageManager": "yarn",
+  "prettier.jsxBracketSameLine": true,
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "prettier.useEditorConfig": false,
-  "python.languageServer": "Microsoft",
+  "remote.SSH.connectTimeout": 30,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.useLocalServer": false,
   "search.showLineNumbers": true,
+  "security.workspace.trust.untrustedFiles": "open",
   "stylelint.packageManager": "yarn",
+  "tailwindCSS.emmetCompletions": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.fontFamily": "monospace",
-  "terminal.integrated.rendererType": "dom",
   "terminal.integrated.scrollback": 500,
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  // "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.windowsEnableConpty": false,
   "todo.formatting.enabled": true,
   "tslint.packageManager": "yarn",
+  "typescript.autoClosingTags": false,
   "typescript.preferences.quoteStyle": "single",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  // "wallaby.noAutomaticInstall": true,
   "window.newWindowDimensions": "maximized",
   "window.openFoldersInNewWindow": "on",
+  "workbench.colorTheme": "Moonlight II",
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.tabSizing": "shrink",
+  // "workbench.editor.tabSizing": "shrink",
+  "workbench.fontAliasing": "auto",
   "workbench.iconTheme": "quill-icons",
+  "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "left",
   "workbench.tips.enabled": false,
-  "workbench.tree.indent": 16,
+  "workbench.tree.indent": 8,
   "workbench.tree.renderIndentGuides": "always",
   "yarn.enableTouchbar": true,
-  // "editor.fontFamily": "Fira Code",
-  // "editor.fontFamily": "Fira Code", "Georgia", "Input", "Menlo", "Courier New",
-  // "editor.fontFamily": "SFMono-Regular , \"Georgia\", Input, Menlo, Monaco, 'Courier New', monospace",
-  // "gruvboxMaterial.italicKeywords": true,
+  "[css]": {
+    "editor.suggest.insertMode": "replace"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -75,9 +85,35 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescriptreact]": {
     "breadcrumbs.showClasses": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dash.languageIdToDocsetMap": {
+    "lua": ["lua", "hammerspoon"],
+    "typescriptreact": [
+      "typescript",
+      "react",
+      "javascript",
+      "tailwindcss",
+      "next.js"
+    ]
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "remote.SSH.remotePlatform": {
+    "hetz": "linux"
+  },
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html",
+    "plaintext": "javascript"
   },
   "todo.file.exclude": [
     "**/.!(todo|todos|task|tasks)/**",
@@ -95,56 +131,5 @@
     "**/third_party/**",
     "**/vendor/**",
     "**/lambda/**"
-  ],
-  "windowColors.🌈 Theme": "light",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "tailwindCSS.emmetCompletions": true,
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "tailwindCSS.includeLanguages": {
-    "typescriptreact": "html",
-    "plaintext": "javascript"
-  },
-  "typescript.autoClosingTags": false,
-  "terminal.integrated.windowsEnableConpty": false,
-  "remote.SSH.connectTimeout": 30,
-  "remote.SSH.remoteServerListenOnSocket": true,
-  "remote.SSH.useLocalServer": false,
-  "remote.SSH.remotePlatform": {
-    "hetz": "linux"
-  },
-  "dash.languageIdToDocsetMap": {
-    "lua": ["lua", "hammerspoon"],
-    "typescriptreact": [
-      "typescript",
-      "react",
-      "javascript",
-      "tailwindcss",
-      "next.js"
-    ]
-  },
-
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "workbench.fontAliasing": "auto",
-  "workbench.colorTheme": "Moonlight II",
-  "[css]": {
-    "editor.suggest.insertMode": "replace"
-  },
-  "css.validate": false,
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.jsxBracketSameLine": true,
-  "autoimport.showNotifications": true,
-  "autoimport.filesToScan": "./src/**/*.{ts,tsx}",
-  "security.workspace.trust.untrustedFiles": "open"
+  ]
 }
