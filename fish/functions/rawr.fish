@@ -57,7 +57,7 @@ function rawr --description 'Unrar all rar archives in subfolders (to optional d
 
     # echo $_flag_p
     echo ""
-    echo "Results:!"
+    echo "Results:"
     if set -q _flag_p
         set -l split_strings (string split ',' $_flag_p)
         set -l length (string split ',' $_flag_p | count)
