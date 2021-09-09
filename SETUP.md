@@ -65,6 +65,8 @@ sudo apt-get update
 
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/stable
+# OR
+# sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim
 # Plugin Manager
