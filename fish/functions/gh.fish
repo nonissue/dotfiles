@@ -18,7 +18,8 @@ function gh
     # git@github.com:nonissue/hammerspoon
     # https://github.com/davedelong/sfsymbols.git
     # all pass
-    set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com[\/:](.*[^.git])/')
+    # set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com[\/:](.*[^.git])/')
+    set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com[\\/:](.*)/' | perl -lne 'print $1 if /(.+?)(\\.[^.]*$|$)/')
     # Build GitHub URL
     set url "$url/$repo"
 
