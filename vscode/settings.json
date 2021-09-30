@@ -66,8 +66,7 @@
   // "workbench.editor.tabSizing": "shrink",
   "workbench.fontAliasing": "auto",
   "workbench.tips.enabled": false,
-  "workbench.tree.indent": 8,
-  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 16,
   "yarn.enableTouchbar": true,
   "[css]": {
     "editor.suggest.insertMode": "replace"
@@ -149,7 +148,10 @@
   "editor.cursorBlinking": "expand",
   "editor.cursorStyle": "underline",
   "editor.fontSize": 12.5,
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "Rosé Pine Moon",
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "ayu"
+  "workbench.iconTheme": "ayu",
+  "tabnine.experimentalAutoImports": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "window.zoomLevel": -1
 }
