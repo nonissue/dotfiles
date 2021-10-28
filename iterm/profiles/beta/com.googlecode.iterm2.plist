@@ -7673,7 +7673,7 @@
 	<key>CustomTabBarFontSize</key>
 	<real>12</real>
 	<key>DarkThemeHasBlackTitlebar</key>
-	<false/>
+	<true/>
 	<key>Default Arrangement Name</key>
 	<string>Pseudo FS</string>
 	<key>Default Bookmark Guid</key>
@@ -7697,7 +7697,7 @@
 	<key>DismemberScrollView</key>
 	<false/>
 	<key>DrawBottomLineForHorizontalTabBar</key>
-	<false/>
+	<true/>
 	<key>DrawOutlineAroundCursor</key>
 	<true/>
 	<key>EnableAPIServer</key>
@@ -7739,11 +7739,11 @@
 	<key>MinimalSplitPaneDividerProminence</key>
 	<real>0.05000000074505806</real>
 	<key>MinimalTabStyleBackgroundColorDifference</key>
-	<real>0.019999999552965164</real>
+	<real>0.079999998211860657</real>
 	<key>MinimalTabStyleOutlineStrength</key>
 	<real>0.20000000298023224</real>
 	<key>MinimalTabStyleTreatLeftInsetAsPartOfFirstTab</key>
-	<false/>
+	<true/>
 	<key>MinimumTabLabelWidth</key>
 	<real>70</real>
 	<key>MojaveVisualEffectView</key>
@@ -8426,7 +8426,7 @@
 			<key>Show Mark Indicators</key>
 			<false/>
 			<key>Show Status Bar</key>
-			<false/>
+			<true/>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Status Bar Layout</key>
@@ -8435,6 +8435,8 @@
 				<dict>
 					<key>algorithm</key>
 					<integer>1</integer>
+					<key>auto-rainbow style</key>
+					<integer>0</integer>
 					<key>background color</key>
 					<dict>
 						<key>Alpha Component</key>
@@ -8463,6 +8465,8 @@
 					</dict>
 					<key>font</key>
 					<string>FuraCodeNerdFontComplete-Regular 13</string>
+					<key>remove empty components</key>
+					<true/>
 					<key>separator color 2</key>
 					<dict>
 						<key>Alpha Component</key>
@@ -8481,39 +8485,43 @@
 				<array>
 					<dict>
 						<key>class</key>
-						<string>iTermStatusBarWorkingDirectoryComponent</string>
+						<string>iTermStatusBarHostnameComponent</string>
 						<key>configuration</key>
 						<dict>
 							<key>knobs</key>
 							<dict>
+								<key>abbreviate-localhost</key>
+								<string></string>
 								<key>base: compression resistance</key>
 								<integer>1</integer>
 								<key>base: priority</key>
-								<real>5</real>
+								<real>1</real>
 								<key>maxwidth</key>
-								<real>100</real>
+								<real>+infinity</real>
 								<key>minwidth</key>
-								<real>0.0</real>
+								<string>0</string>
 								<key>path</key>
-								<string>path</string>
+								<string>hostname</string>
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.63</real>
+									<real>0.62999999523162842</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
-									<real>0.63</real>
+									<real>0.62999999523162842</real>
 									<key>Red Component</key>
-									<real>0.90000000000000002</real>
+									<real>0.89999997615814209</real>
 								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>background color</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -8542,6 +8550,8 @@
 								</dict>
 								<key>font</key>
 								<string>FuraCodeNerdFontComplete-Regular 13</string>
+								<key>remove empty components</key>
+								<true/>
 								<key>separator color 2</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -8555,6 +8565,35 @@
 									<key>Red Component</key>
 									<real>0.011825965717434883</real>
 								</dict>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarWorkingDirectoryComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict>
+								<key>base: compression resistance</key>
+								<integer>1</integer>
+								<key>base: priority</key>
+								<real>5</real>
+								<key>maxwidth</key>
+								<real>+infinity</real>
+								<key>minwidth</key>
+								<integer>0</integer>
+								<key>path</key>
+								<string>path</string>
+							</dict>
+							<key>layout advanced configuration dictionary value</key>
+							<dict>
+								<key>algorithm</key>
+								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
@@ -8580,7 +8619,7 @@
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.90000000000000002</real>
+									<real>0.67968000000000006</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
@@ -8593,6 +8632,8 @@
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>background color</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -8621,6 +8662,256 @@
 								</dict>
 								<key>font</key>
 								<string>FuraCodeNerdFontComplete-Regular 13</string>
+								<key>remove empty components</key>
+								<true/>
+								<key>separator color 2</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.40491801500320435</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.26475667953491211</real>
+									<key>Red Component</key>
+									<real>0.011825965717434883</real>
+								</dict>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarSpringComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict>
+								<key>iTermStatusBarSpringComponentSpringConstantKey</key>
+								<real>0.01</real>
+								<key>shared background color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.059667110443115234</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.034353790861187554</real>
+									<key>Red Component</key>
+									<real>0.037969979372891489</real>
+								</dict>
+							</dict>
+							<key>layout advanced configuration dictionary value</key>
+							<dict>
+								<key>algorithm</key>
+								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>background color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.10588235408067703</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.058823529630899429</real>
+									<key>Red Component</key>
+									<real>0.011764706112444401</real>
+								</dict>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.79048401117324829</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.81724661588668823</real>
+									<key>Red Component</key>
+									<real>0.82354736328125</real>
+								</dict>
+								<key>font</key>
+								<string>FuraCodeNerdFontComplete-Regular 13</string>
+								<key>remove empty components</key>
+								<true/>
+								<key>separator color 2</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.40491801500320435</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.26475667953491211</real>
+									<key>Red Component</key>
+									<real>0.011825965717434883</real>
+								</dict>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarCPUUtilizationComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict>
+								<key>base: priority</key>
+								<real>1</real>
+								<key>shared background color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.29604649543762207</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.17045101523399353</real>
+									<key>Red Component</key>
+									<real>0.18839322030544281</real>
+								</dict>
+								<key>shared text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.90000000000000002</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.63</real>
+									<key>Red Component</key>
+									<real>0.72936000000000012</real>
+								</dict>
+							</dict>
+							<key>layout advanced configuration dictionary value</key>
+							<dict>
+								<key>algorithm</key>
+								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>background color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.10588235408067703</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.058823529630899429</real>
+									<key>Red Component</key>
+									<real>0.011764706112444401</real>
+								</dict>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.79048401117324829</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.81724661588668823</real>
+									<key>Red Component</key>
+									<real>0.82354736328125</real>
+								</dict>
+								<key>font</key>
+								<string>FuraCodeNerdFontComplete-Regular 13</string>
+								<key>remove empty components</key>
+								<true/>
+								<key>separator color 2</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.40491801500320435</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.26475667953491211</real>
+									<key>Red Component</key>
+									<real>0.011825965717434883</real>
+								</dict>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarClockComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict>
+								<key>base: compression resistance</key>
+								<integer>1</integer>
+								<key>base: priority</key>
+								<real>1</real>
+								<key>format</key>
+								<string>YY-M-dd hh:mm:ss</string>
+								<key>localize</key>
+								<integer>0</integer>
+								<key>maxwidth</key>
+								<real>+infinity</real>
+								<key>minwidth</key>
+								<string>0</string>
+								<key>shared text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.77579998970031738</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.62999999523162842</real>
+									<key>Red Component</key>
+									<real>0.89999997615814209</real>
+								</dict>
+							</dict>
+							<key>layout advanced configuration dictionary value</key>
+							<dict>
+								<key>algorithm</key>
+								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>background color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.10588235408067703</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.058823529630899429</real>
+									<key>Red Component</key>
+									<real>0.011764706112444401</real>
+								</dict>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.79048401117324829</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.81724661588668823</real>
+									<key>Red Component</key>
+									<real>0.82354736328125</real>
+								</dict>
+								<key>font</key>
+								<string>FuraCodeNerdFontComplete-Regular 13</string>
+								<key>remove empty components</key>
+								<true/>
 								<key>separator color 2</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -20799,7 +21090,7 @@
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.4240248226950355</real>
 	<key>SquareWindowCorners</key>
-	<true/>
+	<false/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
@@ -21949,7 +22240,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>disableMetalWhenUnplugged</key>
-	<true/>
+	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPFavoritesUserDefaultsKey</key>

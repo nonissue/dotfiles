@@ -49,10 +49,10 @@
   "stylelint.packageManager": "yarn",
   "tailwindCSS.emmetCompletions": true,
   "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "/usr/local/bin/fish",
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.scrollback": 500,
-  // "terminal.integrated.shell.linux": "/usr/bin/fish",
   "terminal.integrated.windowsEnableConpty": false,
   "todo.formatting.enabled": true,
   "tslint.packageManager": "yarn",
@@ -148,10 +148,18 @@
   "editor.cursorBlinking": "expand",
   "editor.cursorStyle": "underline",
   "editor.fontSize": 12.5,
-  "workbench.colorTheme": "Rosé Pine Moon",
+  "workbench.colorTheme": "Aylin",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "ayu",
-  "tabnine.experimentalAutoImports": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "window.zoomLevel": -1
+  "terminal.integrated.profiles.osx": {
+    "/usr/local/bin/fish": {
+      "path": "/usr/local/bin/fish",
+      "args": [
+        "-l"
+      ]
+    }
+  },
+  "terminal.integrated.automationShell.osx": "fish",
+"redhat.telemetry.enabled": true
 }
