@@ -148,7 +148,7 @@
   "editor.cursorBlinking": "expand",
   "editor.cursorStyle": "underline",
   "editor.fontSize": 12.5,
-  "workbench.colorTheme": "Aylin",
+  "workbench.colorTheme": "Minuit",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "ayu",
   "diffEditor.ignoreTrimWhitespace": false,
