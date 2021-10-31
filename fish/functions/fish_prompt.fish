@@ -96,7 +96,7 @@ __ayyylmao_colors dark
 # taken from krisleech
 function _git_branch_name
     # return
-    echo (command git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
+    echo (command git symbolic-ref HEAD 2>/dev/null | sed -e 's|2>refs/heads/||')
 end
 
 # simple function to check if git repo is dirty
