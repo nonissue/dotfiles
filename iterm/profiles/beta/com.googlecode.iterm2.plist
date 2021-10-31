@@ -11,17 +11,17 @@
 	<key>AutoHideTmuxClientSession</key>
 	<true/>
 	<key>BadgeTopMargin</key>
-	<integer>5</integer>
+	<integer>16</integer>
 	<key>BootstrapDaemon</key>
 	<false/>
 	<key>CheckTestRelease</key>
 	<false/>
 	<key>ColoredSelectedTabOutlineStrength</key>
-	<real>0.0</real>
+	<real>3</real>
 	<key>ColoredUnselectedTabTextProminence</key>
 	<real>0.30000001192092896</real>
 	<key>CompactMinimalTabBarHeight</key>
-	<real>30</real>
+	<real>38</real>
 	<key>CopySelection</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -7671,7 +7671,7 @@
 		</dict>
 	</dict>
 	<key>CustomTabBarFontSize</key>
-	<real>12</real>
+	<real>10</real>
 	<key>DarkThemeHasBlackTitlebar</key>
 	<true/>
 	<key>Default Arrangement Name</key>
@@ -7679,9 +7679,9 @@
 	<key>Default Bookmark Guid</key>
 	<string>82C02EFB-99A8-4E5E-817C-8332B413EED7</string>
 	<key>DefaultTabBarHeight</key>
-	<real>30</real>
+	<real>34</real>
 	<key>DimBackgroundWindows</key>
-	<true/>
+	<false/>
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DimOnlyText</key>
@@ -7712,10 +7712,12 @@
 	<false/>
 	<key>ForceAntialiasingOnRetina</key>
 	<true/>
+	<key>HTMLTabTitles</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideActivityIndicator</key>
-	<false/>
+	<true/>
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
@@ -7725,7 +7727,7 @@
 	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HideTabNumber</key>
-	<true/>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>IRMemory</key>
@@ -7734,18 +7736,24 @@
 	<real>30</real>
 	<key>JobName</key>
 	<false/>
-	<key>MinTabWidth</key>
+	<key>MinCompactTabWidth</key>
 	<integer>100</integer>
+	<key>MinTabWidth</key>
+	<integer>160</integer>
+	<key>MinimalEdgeDragSize</key>
+	<real>16</real>
+	<key>MinimalSelectedTabUnderlineProminence</key>
+	<real>1</real>
 	<key>MinimalSplitPaneDividerProminence</key>
 	<real>0.05000000074505806</real>
 	<key>MinimalTabStyleBackgroundColorDifference</key>
-	<real>0.079999998211860657</real>
+	<real>0.0099999997764825821</real>
 	<key>MinimalTabStyleOutlineStrength</key>
-	<real>0.20000000298023224</real>
+	<real>0.10000000149011612</real>
 	<key>MinimalTabStyleTreatLeftInsetAsPartOfFirstTab</key>
 	<true/>
 	<key>MinimumTabLabelWidth</key>
-	<real>70</real>
+	<real>100</real>
 	<key>MojaveVisualEffectView</key>
 	<false/>
 	<key>New Bookmarks</key>
@@ -7754,7 +7762,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<false/>
+			<true/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -7768,6 +7776,8 @@
 			<key>AWDS Window Option</key>
 			<string>No</string>
 			<key>Allow Title Reporting</key>
+			<true/>
+			<key>Allow Title Setting</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
@@ -7977,6 +7987,18 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Badge Font</key>
+			<string>Input-Bold</string>
+			<key>Badge Max Height</key>
+			<real>0.070000000000000007</real>
+			<key>Badge Max Width</key>
+			<real>0.19</real>
+			<key>Badge Right Margin</key>
+			<real>32</real>
+			<key>Badge Text</key>
+			<string></string>
+			<key>Badge Top Margin</key>
+			<real>0.0</real>
 			<key>Blend</key>
 			<real>0.050000000000000003</real>
 			<key>Blink Allowed</key>
@@ -7986,7 +8008,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>16.487089212940528</real>
+			<real>16.411476557305519</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -8053,6 +8075,8 @@
 			<string>No</string>
 			<key>Custom Directory</key>
 			<string>Yes</string>
+			<key>Custom Tab Title</key>
+			<string>\(currentSession)</string>
 			<key>Custom Window Title</key>
 			<string>iterm</string>
 			<key>Default Bookmark</key>
@@ -8083,7 +8107,7 @@
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Icon</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -8378,7 +8402,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>Input-Regular 14</string>
+			<string>MonoLisa-Regular 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -8426,7 +8450,7 @@
 			<key>Show Mark Indicators</key>
 			<false/>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Status Bar Layout</key>
@@ -8932,6 +8956,19 @@
 			</dict>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.17254901960784313</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.090196078431372548</real>
+				<key>Red Component</key>
+				<real>0.10588235294117647</real>
+			</dict>
 			<key>Tags</key>
 			<array>
 				<string>dark</string>
@@ -8942,9 +8979,9 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Title Components</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.031243927945795748</real>
+			<real>0.049999999999999975</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -8953,6 +8990,8 @@
 			<true/>
 			<key>Use Cursor Guide</key>
 			<false/>
+			<key>Use Custom Tab Title</key>
+			<false/>
 			<key>Use Custom Window Title</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -8960,11 +8999,11 @@
 			<key>Use Non-ASCII Font</key>
 			<true/>
 			<key>Use Tab Color</key>
-			<false/>
+			<true/>
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.03</real>
+			<real>1.0700000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -21026,6 +21065,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>OptimumTabWidth</key>
+	<integer>140</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -21080,7 +21121,7 @@
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>Size Changes Affect Profile</key>
@@ -21088,7 +21129,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.4240248226950355</real>
+	<real>0.29569227200109982</real>
 	<key>SquareWindowCorners</key>
 	<false/>
 	<key>StatusBarPosition</key>
@@ -21108,9 +21149,9 @@
 	<key>TabsHaveCloseButton</key>
 	<true/>
 	<key>TerminalMargin</key>
-	<integer>15</integer>
+	<integer>17</integer>
 	<key>TerminalVMargin</key>
-	<integer>2</integer>
+	<integer>17</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
 	<key>ToolbeltTools</key>
@@ -21127,7 +21168,7 @@
 	<key>UseMetal</key>
 	<true/>
 	<key>UseUnevenTabs</key>
-	<false/>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>Window Arrangements</key>
