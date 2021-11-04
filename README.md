@@ -1,5 +1,9 @@
 # A Collection of my dotfiles (2019)
 
+## Shell Preview (2021)
+
+![Shell Preview](./meta/21-11-03-shell.png)
+
 ## Info
 
 This is a collection of configurations for both macOS, ubuntu, and some programs I use.
