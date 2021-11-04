@@ -146,4 +146,3 @@ end
 test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
 
 # set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
-
