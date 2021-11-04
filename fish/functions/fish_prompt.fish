@@ -102,7 +102,6 @@ end
 # simple function to check if git repo is dirty
 # taken from krisleech
 function _is_git_dirty
-    # return
     echo (command git status -s --ignore-submodules=dirty 2>/dev/null)
 end
 
