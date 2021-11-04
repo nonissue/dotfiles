@@ -1,6 +1,16 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = nonissue 
+	name = Andy Williams
 	email = andy@nonissue.org 
 
+[core]
+	excludesfile = /Users/apw/.global_gitignore
+	
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main

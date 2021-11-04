@@ -1,0 +1,14 @@
+session_name: 4-pane-split
+windows:
+- window_name: dev window
+  layout: tiled
+  shell_command_before:
+    - cd /opt/configs
+    # - posix-source mediaserver.conf
+    # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cat rclone.sh
+    - cat encfs-local.sh         # pane no. 2
+    - cat encfs-remote.sh          # pane no. 3
+    - cat mergerfs.sh          # pane no. 4

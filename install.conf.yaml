@@ -10,17 +10,19 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
     ~/.config/nvim:
-        path: nvim
-    ~/.config/glances: 
-        path: glances
-    ~/.config/fish: 
-        relink: true
-        path: fish
-    ~/.vscode: 
-        if: '[ `uname` = Darwin ]'
-        path: vscode
+      path: nvim
+    ~/.config/glances:
+      path: glances
+    ~/.config/fish:
+      relink: true
+      path: fish
+    ~/.vscode:
+      if: '[ (uname) = "Darwin" ]'
+      path: vscode
     ~/.fdignore:
-        path: fdignore
-
-
-
+      path: fdignore
+    ~/.local/bin/pbcopy:
+      # Better than running command with sudo...
+      # Have to add it ~/bin to path on linux
+      if: '[ (uname) = "Linux" ]'
+      path: bin/pbcopy

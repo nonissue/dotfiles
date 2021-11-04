@@ -106,6 +106,12 @@ defaults write com.apple.dock launchanim -bool false
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
+# remove dock delay in big sur
+defaults write com.apple.dock autohide-delay -float 0 && killall Dock
+
+# remove dock animation:
+defaults write com.apple.dock autohide-time-modifier -int 0 && killall Dock
+
 # Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
