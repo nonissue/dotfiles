@@ -7,6 +7,7 @@
     "composes",
     "apply"
   ],
+
   "css.validate": true,
   "editor.accessibilitySupport": "off",
   // "editor.fontFamily": "'JetBrains Mono', 'Georgia', 'Input', Menlo, Monaco, 'Courier New', monospace",
@@ -148,7 +149,7 @@
   "editor.cursorBlinking": "expand",
   "editor.cursorStyle": "underline",
   "editor.fontSize": 12.5,
-  "workbench.colorTheme": "Minuit",
+  "workbench.colorTheme": "Rosé Pine",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "ayu",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -161,5 +162,9 @@
     }
   },
   "terminal.integrated.automationShell.osx": "fish",
-"redhat.telemetry.enabled": true
+"redhat.telemetry.enabled": true,
+"colorHelper.disableTransparent": true,
+"workbench.editorAssociations": {
+  "*.etl": "default"
+}
 }

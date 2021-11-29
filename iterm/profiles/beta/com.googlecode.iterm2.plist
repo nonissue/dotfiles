@@ -7871,14 +7871,16 @@
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.64313725490196083</real>
+				<real>0.36772501303417737</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.66638040542602539</real>
 				<key>Red Component</key>
-				<real>0.58431372549019611</real>
+				<real>0.31849610220035629</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -8396,7 +8398,7 @@
 			<key>Name</key>
 			<string>!default chall</string>
 			<key>Non Ascii Font</key>
-			<string>Input-Regular 16</string>
+			<string>FuraCodeNerdFontComplete-Regular 16</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
