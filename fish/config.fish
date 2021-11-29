@@ -15,6 +15,8 @@ set -x FZF_CD_COMMAND 'fd --type directory --follow --hidden'
 set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd --type directory --follow --hidden --exclude .git'
 set -g FZF_COMPLETE 2
 
+zoxide init fish | source
+
 function ..
     cd ..
 end
