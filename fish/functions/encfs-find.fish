@@ -2,14 +2,14 @@ function encfs-find -a filename location
     pushd .
     if test -n "$filename"
         set TARGET $filename
-    else 
+    else
         echo "filename required!"
         return
     end
 
     if test -n "$location"
-        cd "/mnt/media/$location"
-        # set -l location "/mnt/media/$location"
+        cd "/mnt/media/remote/$location"
+        # set -l location "/mnt/media/remote/$location"
         set TARGET $filename
 	# set pwd "/mnt/media/$location"
     else
@@ -19,8 +19,8 @@ function encfs-find -a filename location
     echo $TARGET in (pwd)
     # cd $pwd
     # set maxdepth to 1?
-    find */ -name "$TARGET*" -exec echo \n{} \; -exec encfsctl encode --extpass="echo $ENCFS_PW" /mnt/media/.remote/whatson3/media/ {} \;
+    find */ -name "$TARGET*" -exec echo \n{} \; -exec encfsctl encode --extpass="echo $ENCFS_PW" /mnt/media/.remote {} \;
     popd
 
-    
+
 end
