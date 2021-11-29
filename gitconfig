@@ -5,7 +5,7 @@
 	email = andy@nonissue.org 
 
 [core]
-	excludesfile = /Users/apw/.global_gitignore
+	excludesfile = /Users/apw/.gitignore_global
 	
 [filter "lfs"]
 	process = git-lfs filter-process

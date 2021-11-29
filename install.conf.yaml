@@ -2,11 +2,11 @@
 
 - link:
     ~/.gitconfig: gitconfig
+    ~/.gitignore_global: .gitignore_global
     # Probably don't want to share this between machines...
     # ~/.ssh/config:
     #     path: ssh/config
     #     create: true
-    ~/.zshrc: zshrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
     ~/.config/nvim:
