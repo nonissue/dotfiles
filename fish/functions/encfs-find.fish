@@ -30,5 +30,4 @@ function encfs-find -a filename location
     # set maxdepth to 1?
     find */ -name "$TARGET*" -exec echo \n{} \; -exec encfsctl encode --extpass="echo $ENCFS_PW" /mnt/media/.remote {} \;
     popd
-
 end
