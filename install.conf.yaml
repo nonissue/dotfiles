@@ -2,13 +2,14 @@
 
 - link:
     ~/.gitconfig: gitconfig
+    ~/.gitignore_global: .gitignore_global
     # Probably don't want to share this between machines...
     # ~/.ssh/config:
     #     path: ssh/config
     #     create: true
-    ~/.zshrc: zshrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
+    # make ~/.config if it doesn't exist
     ~/.config/nvim:
       path: nvim
     ~/.config/glances:
@@ -21,6 +22,7 @@
       path: vscode
     ~/.fdignore:
       path: fdignore
+      # make ~/.local/bin if it doesn't exist
     ~/.local/bin/pbcopy:
       # Better than running command with sudo...
       # Have to add it ~/bin to path on linux
