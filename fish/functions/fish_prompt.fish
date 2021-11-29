@@ -95,7 +95,6 @@ __ayyylmao_colors dark
 # simple function to get git branch name
 # taken from krisleech
 function _git_branch_name
-    # return
     echo (command git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
 end
 
