@@ -9,6 +9,7 @@
     #     create: true
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
+    # make ~/.config if it doesn't exist
     ~/.config/nvim:
       path: nvim
     ~/.config/glances:
@@ -21,6 +22,7 @@
       path: vscode
     ~/.fdignore:
       path: fdignore
+      # make ~/.local/bin if it doesn't exist
     ~/.local/bin/pbcopy:
       # Better than running command with sudo...
       # Have to add it ~/bin to path on linux
