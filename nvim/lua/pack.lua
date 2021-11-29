@@ -50,7 +50,7 @@ paq 'monaqa/dial.nvim'              -- <c-a> <c-x> enhancement
 paq 'kana/vim-textobj-user'         -- define textobj by user
 paq 'haya14busa/vim-textobj-number' -- number textobj
 paq 'AndrewRadev/splitjoin.vim'     -- split and join in vim
-paq 'steelsojka/pears.nvim'         -- auto symbol pairs
+-- paq 'steelsojka/pears.nvim'         -- auto symbol pairs
 
 -- language
 paq {'nvim-treesitter/nvim-treesitter',           -- treesitter
