@@ -61,6 +61,15 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com 171 --recv-keys 648ACFD622F3D1
 sudo apt-get update
 ```
 
+```bash
+# Ubuntu 20.04 instructions
+echo "deb http://deb.debian.org/debian bullseye-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt-get install debian-keyring
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138
+sudo apt-get install tmux/bullseye-backports
+```
+
 ### Neovim
 
 ```bash
