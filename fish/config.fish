@@ -4,18 +4,29 @@ set -g XDG_CONFIG_HOME ~/.dotfiles
 set -x GREP_COLOR "1;37;45"
 set -x LS_COLORS 'ow=01;36;40'
 
-set -x FZF_LEGACY_KEYBINDINGS 0
-set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow'
-set -x FZF_DEFAULT_OPTS "--height 40 --ansi"
-set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-set -x FZF_FIND_FILE_COMMAND "fd --type f --hidden --follow . \$dir"
-set -x FZF_OPEN_COMMAND $FZF_DEFAULT_COMMAND
-set -U FZF_PREVIEW_FILE_CMD bat
-set -x FZF_CD_COMMAND 'fd --type directory --follow --hidden'
-set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd --type directory --follow --hidden --exclude .git'
-set -g FZF_COMPLETE 2
+# set -g FZF_COMPLETE 2
+# set -U FZF_PREVIEW_FILE_CMD bat
+# set -x FZF_CD_COMMAND 'fd --type directory --follow --hidden'
+# set -x FZF_CD_WITH_HIDDEN_COMMAND 'fd --type directory --follow --hidden --exclude .git'
+# set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+# set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow'
+set -x FZF_DEFAULT_OPTS "--height 30 --ansi"
+# set -x FZF_FIND_FILE_COMMAND "fd --type f --hidden --follow . \$dir"
+# set -x FZF_LEGACY_KEYBINDINGS 0
+# set -x FZF_OPEN_COMMAND $FZF_DEFAULT_COMMAND
 
-zoxide init fish | source
+
+set -x fzf_fd_opts --hidden --exclude=.git --follow
+set -x fzf_preview_dir_cmd exa --all --color=always
+
+
+function fzf --wraps=fzf --description="Use fzf-tmux if in tmux session"
+    if set --query TMUX
+        fzf-tmux $argv
+    else
+        command fzf $argv
+    end
+end
 
 function ..
     cd ..
@@ -29,10 +40,9 @@ end
 function .....
     cd ../../../..
 end
-function ll
-    tree --dirsfirst -ChFupDaLg 1 $argv
+function cat
+    command bat $argv
 end
-
 function df
     command df -h $argv
 end
@@ -45,14 +55,17 @@ end
 function lookbusy
     cat /dev/urandom | hexdump -C | grep --color "ca fe"
 end
+function ll
+    tree --dirsfirst -ChFupDaLg 1 $argv
+end
+function ls
+    command exa --long --all $argv
+end
 function t
     command tree -C $argv
 end
 function view
     nvim -R $argv
-end
-function cat
-    command bat $argv
 end
 
 # Keybinding for explainshell function
@@ -145,6 +158,7 @@ switch (uname)
 end
 
 # iterm
-test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
-
+# test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
 # set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
+
+zoxide init fish | source
