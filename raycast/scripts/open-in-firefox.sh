@@ -16,7 +16,7 @@ end tell
 
 tell application "Firefox Developer Edition"
     activate
-    delay 0.5
+    delay 2
     open location safariUrl
     activate
 end tell
