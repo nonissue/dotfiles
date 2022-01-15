@@ -181,11 +181,18 @@ sudo add-apt-repository \
 	 $(lsb_release -cs)
 	 stable"
 
+# FISH VERSION
+sudo add-apt-repository (echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu" (lsb_release -cs) stable)
+
 sudo apt-get update
-sudo apt-get install linux-generic-hwe-18.04 # unlisted docker dependency
+sudo apt-get install linux-generic-hwe-18.04
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 sudo usermod -aG docker ops # add my user to docker group
+
+# COMPOSE
+sudo curl -L (echo "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-"(uname -s)"-"(uname -m)) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ### Symlinks

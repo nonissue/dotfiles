@@ -3,10 +3,7 @@
   "autoimport.showNotifications": true,
   "city-lights-icons-vsc.hidesExplorerArrows": true,
   "css.lint.unknownAtRules": "ignore",
-  "css.lint.validProperties": [
-    "composes",
-    "apply"
-  ],
+  "css.lint.validProperties": ["composes", "apply"],
 
   "css.validate": true,
   "editor.accessibilitySupport": "off",
@@ -97,10 +94,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "dash.languageIdToDocsetMap": {
-    "lua": [
-      "lua",
-      "hammerspoon"
-    ],
+    "lua": ["lua", "hammerspoon"],
     "typescriptreact": [
       "typescript",
       "react",
@@ -116,9 +110,12 @@
     "hetz": "linux"
   },
   "tailwindCSS.includeLanguages": {
-    "typescriptreact": "html",
+    "typescriptreact": "javascript",
     "plaintext": "javascript"
   },
+  "tailwindCSS.experimental.classRegex": [
+    ["\\bcls\\(([^)]+)\\)", "\"([^\"]*)\""]
+  ],
   "todo.file.exclude": [
     "**/.!(todo|todos|task|tasks)/**",
     "**/_output/**",
@@ -143,27 +140,26 @@
   "customizeUI.font.regular": "TT Interfaces Mono",
   "customizeUI.activityBar": "top",
   "customizeUI.titleBar": "frameless",
-  "window.titleBarStyle": "custom",   
+  "window.titleBarStyle": "custom",
   "customizeUI.activityBarHideSettings": true,
   "customizeUI.moveStatusbar": true,
   "editor.cursorBlinking": "expand",
   "editor.cursorStyle": "underline",
-  "workbench.colorTheme": "Rosé Pine",
+  "workbench.colorTheme": "Rosé Pine Moon",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "ayu",
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.profiles.osx": {
     "/usr/local/bin/fish": {
       "path": "/usr/local/bin/fish",
-      "args": [
-        "-l"
-      ]
+      "args": ["-l"]
     }
   },
-  "terminal.integrated.automationShell.osx": "fish",
-"redhat.telemetry.enabled": true,
-"colorHelper.disableTransparent": true,
-"workbench.editorAssociations": {
-  "*.etl": "default"
-}
+  "redhat.telemetry.enabled": true,
+  "colorHelper.disableTransparent": true,
+  "workbench.editorAssociations": {
+    "*.etl": "default"
+  },
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false
 }
