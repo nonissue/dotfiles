@@ -7762,7 +7762,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -8008,7 +8008,7 @@
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
 			<real>16.411476557305519</real>
 			<key>Bold Color</key>
@@ -8398,13 +8398,13 @@
 			<key>Name</key>
 			<string>!default chall</string>
 			<key>Non Ascii Font</key>
-			<string>FuraCodeNerdFontComplete-Regular 16</string>
+			<string>FuraCodeNerdFontCompleteM-Regular 16</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>MonoLisa-Regular 13</string>
+			<string>JetBrainsMono-Regular 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -20356,7 +20356,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>7.0520820114213194</real>
+			<real>23.180458361037235</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -20383,7 +20383,7 @@
 			<key>Command</key>
 			<string>/usr/local/bin/fish -l</string>
 			<key>Cursor Boost</key>
-			<real>0.0</real>
+			<real>0.066691487630208338</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -20756,7 +20756,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>Input-Regular 14</string>
+			<string>FuraCodeNerdFontComplete-Regular 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -21032,7 +21032,7 @@
 			<key>Title Components</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.094806557513297876</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -21052,7 +21052,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.1000000000000001</real>
+			<real>1.1499999999999999</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -21158,8 +21158,8 @@
 	<false/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Profiles</string>
 		<string>Paste History</string>
+		<string>Profiles</string>
 	</array>
 	<key>URLHandlersByGuid</key>
 	<dict/>
