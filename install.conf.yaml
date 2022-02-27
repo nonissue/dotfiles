@@ -3,6 +3,7 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: .gitignore_global
+    ~/Library/Application Support/Code/User: vscode
     # Probably don't want to share this between machines...
     # ~/.ssh/config:
     #     path: ssh/config
