@@ -1,5 +1,3 @@
-# 19-04-03 - most up-to-date version!
-
 function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue'
     switch "$color_scheme"
         case light
@@ -74,7 +72,7 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
             # theme current colour scheme vars
             set -x set_path (set_color -o $dust_blue)
             # set -x set_prompt $blues
-            set -x set_prompt $blues
+            set -x set_prompt $greys
             set -x set_extra (set_color -o $grey_med)
             set -x set_status_l (set_color -o $new_blue)
             set -x set_status_r (set_color -o $new_blue)
@@ -93,30 +91,4 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
     end
 end
 
-# __ayyylmao_colors dark
 __ayyylmao_colors dark
-
-# simple function to check if git repo is dirty
-# taken from krisleech
-
-function show_status -a last_status
-    if [ $last_status -ne 0 ]
-        set current_color red
-    end
-
-    for color in $set_prompt # setcolor for >>> at prompt
-        echo -n (set_color $color)">"
-    end
-
-    echo -n " "
-
-    set_color normal
-end
-
-function fish_prompt
-    # Keep the command executed status
-    set --local last_status $status
-    # __ssh_badge
-
-    show_status $last_status
-end
