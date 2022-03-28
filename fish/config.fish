@@ -23,8 +23,19 @@ end
 function .....
     cd ../../../..
 end
+function b --description "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
+    bash -c "$argv"
+end
 function cat
     command bat $argv
+end
+function color --description "Print color"
+    echo (set_color (string trim -c '#' "$argv"))"██"
+end
+
+#  * `cp` to ask when overwriting files
+function cp
+    command cp -i $argv
 end
 function df
     command df -h $argv
@@ -46,6 +57,13 @@ function ll
 end
 function ls
     command exa --long --all $argv
+end
+function mkcd --description "Create and cd to directory"
+    mkdir $argv
+    and cd $argv
+end
+function mv
+    command mv -i $argv
 end
 function t
     command tree -C $argv
