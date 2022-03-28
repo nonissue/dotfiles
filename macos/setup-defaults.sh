@@ -34,12 +34,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
-# Save screenshots to custom folder
+# Screenshot functionality tweaks (accomdations for my hammerspoon spoon)
 defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots/2016mbpr/"
-
 defaults write com.apple.screencapture name "$(hostname) - "
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
 # Disable shadow in screenshots
@@ -110,7 +107,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.dock autohide-delay -float 0 && killall Dock
 
 # remove dock animation:
-defaults write com.apple.dock autohide-time-modifier -int 0 && killall Dock
+# defaults write com.apple.dock autohide-time-modifier -int 0 && killall Dock
 
 # Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
