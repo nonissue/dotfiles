@@ -22,12 +22,9 @@ fish/functions/fzf_key_bindings.fish
 fisher/
 fzf_key_bindings.fish
 iterm/profiles/com.googlecode.iterm2.plist
-nvim.bak/plugged/
-nvim.bak/plugged/tsuquyomi
-nvim.bak/plugged/vitality.vim
+nvim.bak/
 nvim/.netrwhist
-nvim/lua/plugins/
-nvim/plugged/
+# nvim/lua/plugins/
 quicklook/*.qlgenerator
 ssh/
 ssh/config
