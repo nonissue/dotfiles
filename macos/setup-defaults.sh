@@ -42,6 +42,10 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Revert to previous macos alert layout
+# See: https://pxlnv.com/linklog/fix-macos-alerts/
+defaults write -g NSAlertMetricsGatheringEnabled -bool false
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################

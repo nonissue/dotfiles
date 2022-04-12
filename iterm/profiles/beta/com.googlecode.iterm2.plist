@@ -8348,13 +8348,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.1362762451171875</real>
+				<real>0.1570587158203125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.06841468415223062</real>
+				<real>0.053634247742593288</real>
 				<key>Red Component</key>
-				<real>0.074877689958416954</real>
+				<real>0.063484197584130514</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -9073,7 +9073,7 @@
 			<key>Title Components</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.059999999999999998</real>
+			<real>0.078615359042553193</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -9093,7 +9093,7 @@
 			<key>Use Underline Color</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1.0800000000000001</real>
+			<real>1.04</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -11660,13 +11660,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.063433781266212463</real>
+				<real>0.078430421650409698</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.051114607602357864</real>
+				<real>0.060982971034206641</real>
 				<key>Red Component</key>
-				<real>0.040207445621490479</real>
+				<real>0.043539080353752979</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
