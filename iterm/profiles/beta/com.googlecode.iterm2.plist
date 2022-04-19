@@ -8770,7 +8770,7 @@
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Name</key>
 			<string>Copy of Rosé Pine</string>
 			<key>Non Ascii Font</key>
