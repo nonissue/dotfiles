@@ -3,31 +3,24 @@ if impatient_ok then
   impatient.enable_profile()
 end
 
-local utils = require "core.utils"
+vim.opt.rtp:append(vim.fn.stdpath "config" .. "/../astronvim")
 
-utils.disabled_builtins()
-
-utils.bootstrap()
-
-local sources = {
+for _, source in ipairs {
+  "core.utils",
   "core.options",
-  "core.autocmds",
   "core.plugins",
+  "core.autocmds",
   "core.mappings",
-}
-
-for _, source in ipairs(sources) do
+  "core.ui",
+  "configs.which-key-register",
+} do
   local status_ok, fault = pcall(require, source)
   if not status_ok then
     error("Failed to load " .. source .. "\n\n" .. fault)
   end
 end
 
-local polish = utils.user_plugin_opts "polish"
-
+local polish = astronvim.user_plugin_opts("polish", nil, false)
 if type(polish) == "function" then
   polish()
 end
-
--- keep this last:
-utils.compiled()

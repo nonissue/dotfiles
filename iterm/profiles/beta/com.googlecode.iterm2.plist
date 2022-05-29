@@ -8040,6 +8040,8 @@
 	<false/>
 	<key>DimOnlyText</key>
 	<true/>
+	<key>DisableCustomBoxDrawing</key>
+	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>DisableMetalWhenIdle</key>
@@ -8108,6 +8110,8 @@
 	<true/>
 	<key>MinimumTabLabelWidth</key>
 	<real>100</real>
+	<key>MinimumWeightDifferenceForBoldFont</key>
+	<integer>3</integer>
 	<key>MojaveVisualEffectView</key>
 	<false/>
 	<key>New Bookmarks</key>
@@ -8348,13 +8352,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.1570587158203125</real>
+				<real>0.1324462890625</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.053634247742593288</real>
+				<real>0.045229309092547326</real>
 				<key>Red Component</key>
-				<real>0.063484197584130514</real>
+				<real>0.05353568933406886</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -8462,7 +8466,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Draw Powerline Glyphs</key>
-			<false/>
+			<true/>
 			<key>Flashing Bell</key>
 			<true/>
 			<key>Foreground Color</key>
@@ -8770,7 +8774,7 @@
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
-			<false/>
+			<true/>
 			<key>Name</key>
 			<string>Copy of Rosé Pine</string>
 			<key>Non Ascii Font</key>
@@ -8780,7 +8784,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>MonoLisa-Regular 13</string>
+			<string>JetBrainsMono-Regular 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -9054,13 +9058,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3311920166015625</real>
+				<real>0.2485198974609375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.20517571829259396</real>
+				<real>0.15395977115046178</real>
 				<key>Red Component</key>
-				<real>0.22407816303893929</real>
+				<real>0.16814379401057034</real>
 			</dict>
 			<key>Tags</key>
 			<array>
@@ -9077,7 +9081,7 @@
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
-			<true/>
+			<false/>
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
