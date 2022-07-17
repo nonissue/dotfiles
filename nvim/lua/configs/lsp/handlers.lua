@@ -1,41 +1,7 @@
-local M = {}
-local user_plugin_opts = astronvim.user_plugin_opts
-
-local sign_define = vim.fn.sign_define
+astronvim.lsp = {}
 local map = vim.keymap.set
-
-function M.setup()
-  local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
-  }
-
-  for _, sign in ipairs(signs) do
-    sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
-
-  vim.diagnostic.config(user_plugin_opts("diagnostics", {
-    virtual_text = true,
-    signs = { active = signs },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-    float = {
-      focusable = false,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-    },
-  }))
-
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-end
+local user_plugin_opts = astronvim.user_plugin_opts
+local conditional_func = astronvim.conditional_func
 
 local function lsp_highlight_document(client)
   if client.resolved_capabilities.document_highlight then
@@ -53,7 +19,7 @@ local function lsp_highlight_document(client)
   end
 end
 
-M.on_attach = function(client, bufnr)
+astronvim.lsp.on_attach = function(client, bufnr)
   map("n", "K", function()
     vim.lsp.buf.hover()
   end, { desc = "Hover symbol details", buffer = bufnr })
@@ -97,37 +63,46 @@ M.on_attach = function(client, bufnr)
     vim.lsp.buf.formatting()
   end, { desc = "Format file with LSP" })
 
-  if client.name == "tsserver" or client.name == "jsonls" or client.name == "html" or client.name == "sumneko_lua" then
-    client.resolved_capabilities.document_formatting = false
-  end
-
   local on_attach_override = user_plugin_opts("lsp.on_attach", nil, false)
-  if type(on_attach_override) == "function" then
-    on_attach_override(client, bufnr)
-  end
-
   local aerial_avail, aerial = pcall(require, "aerial")
-  if aerial_avail then
-    aerial.on_attach(client, bufnr)
-  end
+  conditional_func(on_attach_override, true, client, bufnr)
+  conditional_func(aerial.on_attach, aerial_avail, client, bufnr)
   lsp_highlight_document(client)
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities.textDocument.completion.completionItem.preselectSupport = true
-M.capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-M.capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-M.capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-M.capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-M.capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-M.capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    "documentation",
-    "detail",
-    "additionalTextEdits",
-  },
+astronvim.lsp.capabilities = vim.lsp.protocol.make_client_capabilities()
+astronvim.lsp.capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
+astronvim.lsp.capabilities.textDocument.completion.completionItem.snippetSupport = true
+astronvim.lsp.capabilities.textDocument.completion.completionItem.preselectSupport = true
+astronvim.lsp.capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+astronvim.lsp.capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+astronvim.lsp.capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+astronvim.lsp.capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+astronvim.lsp.capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+astronvim.lsp.capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = { "documentation", "detail", "additionalTextEdits" },
 }
 
-return M
+function astronvim.lsp.server_settings(server_name)
+  local server = require("lspconfig")[server_name]
+  local opts = user_plugin_opts(
+    "lsp.server-settings." .. server_name,
+    user_plugin_opts("lsp.server-settings." .. server_name, {
+      capabilities = vim.tbl_deep_extend("force", astronvim.lsp.capabilities, server.capabilities or {}),
+    }, true, "configs")
+  )
+  local old_on_attach = server.on_attach
+  local user_on_attach = opts.on_attach
+  opts.on_attach = function(client, bufnr)
+    conditional_func(old_on_attach, true, client, bufnr)
+    astronvim.lsp.on_attach(client, bufnr)
+    conditional_func(user_on_attach, true, client, bufnr)
+  end
+  return opts
+end
+
+function astronvim.lsp.disable_formatting(client)
+  client.resolved_capabilities.document_formatting = false
+end
+
+return astronvim.lsp
