@@ -1,4 +1,5 @@
 local is_available = astronvim.is_available
+local user_plugin_opts = astronvim.user_plugin_opts
 local cmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local create_command = vim.api.nvim_create_user_command
@@ -8,8 +9,26 @@ cmd({ "VimEnter", "FileType", "BufEnter", "WinEnter" }, {
   desc = "URL Highlighting",
   group = "highlighturl",
   pattern = "*",
+  callback = function() astronvim.set_url_match() end,
+})
+
+augroup("auto_quit", { clear = true })
+cmd("BufEnter", {
+  desc = "Quit AstroNvim if more than one window is open and only sidebar windows are list",
+  group = "auto_quit",
   callback = function()
-    astronvim.set_url_match()
+    local num_wins = #vim.api.nvim_list_wins()
+    local not_sidebars = num_wins
+    local sidebar_fts = { "aerial", "neo-tree" }
+    for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+      if
+        vim.api.nvim_buf_is_loaded(bufnr)
+        and vim.tbl_contains(sidebar_fts, vim.api.nvim_buf_get_option(bufnr, "filetype"))
+      then
+        not_sidebars = not_sidebars - 1
+      end
+    end
+    if num_wins > 1 and not_sidebars == 0 then vim.cmd "quit" end
   end,
 })
 
@@ -25,9 +44,7 @@ if is_available "alpha-nvim" then
         vim.opt.showtabline = 0
         cmd("BufUnload", {
           pattern = "<buffer>",
-          callback = function()
-            vim.opt.showtabline = prev_showtabline
-          end,
+          callback = function() vim.opt.showtabline = prev_showtabline end,
         })
       end,
     })
@@ -41,9 +58,7 @@ if is_available "alpha-nvim" then
       vim.opt.laststatus = 0
       cmd("BufUnload", {
         pattern = "<buffer>",
-        callback = function()
-          vim.opt.laststatus = prev_status
-        end,
+        callback = function() vim.opt.laststatus = prev_status end,
       })
     end,
   })
@@ -65,9 +80,7 @@ if is_available "alpha-nvim" then
             end
           end
         end
-        if not should_skip then
-          alpha.start(true)
-        end
+        if not should_skip then alpha.start(true) end
       end
     end,
   })
@@ -80,9 +93,7 @@ if is_available "neo-tree.nvim" then
     group = "neotree_start",
     callback = function()
       local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
-      if stats and stats.type == "directory" then
-        require("neo-tree.setup.netrw").hijack()
-      end
+      if stats and stats.type == "directory" then require("neo-tree.setup.netrw").hijack() end
     end,
   })
 end
@@ -93,11 +104,26 @@ if is_available "feline.nvim" then
     desc = "Reload feline on colorscheme change",
     group = "feline_setup",
     callback = function()
-      require("configs.feline").config()
+      package.loaded["configs.feline"] = nil
+      require "configs.feline"
     end,
   })
 end
 
-create_command("AstroUpdate", astronvim.update, { desc = "Update AstroNvim" })
-create_command("AstroVersion", astronvim.version, { desc = "Check AstroNvim Version" })
+augroup("astronvim_highlights", { clear = true })
+cmd({ "VimEnter", "ColorScheme" }, {
+  desc = "Load custom highlights from user configuration",
+  group = "astronvim_highlights",
+  callback = function()
+    if vim.g.colors_name then
+      for group, spec in pairs(user_plugin_opts("highlights." .. vim.g.colors_name)) do
+        vim.api.nvim_set_hl(0, group, spec)
+      end
+    end
+  end,
+})
+
+create_command("AstroUpdate", function() astronvim.updater.update() end, { desc = "Update AstroNvim" })
+create_command("AstroReload", function() astronvim.updater.reload() end, { desc = "Reload AstroNvim" })
+create_command("AstroVersion", function() astronvim.updater.version() end, { desc = "Check AstroNvim Version" })
 create_command("ToggleHighlightURL", astronvim.toggle_url_match, { desc = "Toggle URL Highlights" })

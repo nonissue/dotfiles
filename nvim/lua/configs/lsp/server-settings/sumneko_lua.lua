@@ -8,7 +8,8 @@ return {
       workspace = {
         library = {
           [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.stdpath "config" .. "/lua"] = true,
+          [astronvim.install.home .. "/lua"] = true,
+          [astronvim.install.config .. "/lua"] = true,
         },
       },
     },

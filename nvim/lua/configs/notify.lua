@@ -1,12 +1,4 @@
-local M = {}
-
-function M.config()
-  local present, notify = pcall(require, "notify")
-  if present then
-    notify.setup(astronvim.user_plugin_opts("plugins.notify", { stages = "fade" }))
-
-    vim.notify = notify
-  end
-end
-
-return M
+local status_ok, notify = pcall(require, "notify")
+if not status_ok then return end
+notify.setup(astronvim.user_plugin_opts("plugins.notify", { stages = "fade" }))
+vim.notify = notify
