@@ -40,9 +40,9 @@ end
 function df
     command df -h $argv
 end
-function glances
-    command glances --disable-bg $argv
-end
+#function glances
+#    command glances --disable-bg $argv
+#end
 function grep
     command grep --color=auto $argv
 end

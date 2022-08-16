@@ -1,1 +1,1 @@
-/Users/apw/Library/Application Support/org.dystroy.broot/launcher/fish/br.fish
+/home/ops/.local/share/broot/launcher/fish/br.fish
