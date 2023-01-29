@@ -72,18 +72,19 @@ function __ayyylmao_colors -S -a color_scheme -d 'Define colors used by nonissue
             set -l blues $dust_bright_blue $dust_med_blue $dust_blue
 
             # theme current colour scheme vars
-            set -x set_path (set_color -o $dust_blue)
+            set -x set_path (set_color -o $fish_color_comment)
             # set -x set_prompt $blues
-            set -x set_prompt $blues
+            set -x set_prompt $fish_color_command
             set -x set_extra (set_color -o $grey_med)
             set -x set_status_l (set_color -o $new_blue)
             set -x set_status_r (set_color -o $new_blue)
-            set -x set_branch (set_color -o $dark_yellow)
+            set -x set_branch (set_color -o $fish_color_operator)
             set -x set_ind_clean (set_color -o $grey_med)
             set -x set_ind_dirty (set_color -o EEEEEE)
-            set -x set_ind_mod (set_color -o $dark_yellow)
+            set -x set_ind_mod (set_color -o $fish_color_end)
             set -x set_white (set_color -o EEEEEE)
             set -x set_bright_green (set_color -o $dust_bright_green)
+            set -x set_fish_color_cwd (set_color -o $fish_color_command)
 
             # otherwise the completion looks bad on light themes?
             # the prefix looks good on dark too tbh
@@ -105,7 +106,7 @@ function show_status -a last_status
     end
 
     for color in $set_prompt # setcolor for >>> at prompt
-        echo -n (set_color $color)">"
+        echo -n (set_color $color)"❯"
     end
 
     echo -n " "
