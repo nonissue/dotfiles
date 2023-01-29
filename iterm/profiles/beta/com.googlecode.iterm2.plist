@@ -8052,6 +8052,8 @@
 	<true/>
 	<key>DismemberScrollView</key>
 	<false/>
+	<key>DoubleReportScrollWheel</key>
+	<false/>
 	<key>DrawBottomLineForHorizontalTabBar</key>
 	<true/>
 	<key>DrawOutlineAroundCursor</key>
@@ -14535,6 +14537,8 @@
 	<key>UseCustomTabBarFontSize</key>
 	<true/>
 	<key>UseMetal</key>
+	<true/>
+	<key>UseModernScrollWheelAccumulator</key>
 	<true/>
 	<key>UseUnevenTabs</key>
 	<true/>
