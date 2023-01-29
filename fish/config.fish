@@ -127,6 +127,7 @@ switch (uname)
         fish_add_path /opt/homebrew/bin
         fish_add_path /opt/homebrew/sbin
         fish_add_path $HOME/.cargo/bin
+        fish_add_path /opt/homebrew/opt/node@16/bin
 
         # bun
         set -Ux BUN_INSTALL "/Users/apw/.bun"

@@ -1,4 +1,10 @@
-function targz -a name target 
+# function targz -a name target 
+
+function targz --description "tar + gz shortcut"
+
+    set -l options 'h/help' 'r/recover'
+    argparse -n targz -N 2 $options -- $argv
+    or return
     
     if test -n "$name"
         set tmpFile $name.tar

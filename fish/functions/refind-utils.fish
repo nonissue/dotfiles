@@ -2,7 +2,8 @@
 function refind-utils --description "utilities for refind"
 
     set -l options 'h/help' 'r/recover'
-    argparse -n fdel $options -- $argv
+    argparse -n refind-utils $options -- $argv
+    or return
 
     if set -q _flag_h
         echo "Utilities for refind."
