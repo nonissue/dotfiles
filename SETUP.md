@@ -2,8 +2,22 @@
 
 Inspiration:
 
-- https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
-- https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
+- [create_symbolic_links.sh](https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh)
+- [symlink-setup.sh](https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh)
+
+## OS Quirks
+
+### macOS + tmux
+
+In order to use `tmux-256color` in tmux on macOS, we must install `tmux-256color`.
+
+[Steps](https://gist.github.com/ssh352/785395faad3163b2e0de32649f7ed45c)
+
+```bash
+# Absolutely have not verified the safety of this file, use at own risk
+curl -LO https://invisible-island.net/datafiles/current/terminfo.src.gz && gunzip terminfo.src.gz
+/usr/bin/tic -xe tmux-256color terminfo.src
+```
 
 ## Links
 
