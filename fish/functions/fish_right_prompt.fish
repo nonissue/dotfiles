@@ -41,7 +41,7 @@ end
 
 function show_path
     echo -n "$set_status_l"
-    echo -en $set_path(prompt_pwd)
+    echo -en $set_path(prompt_pwd) ""
     echo -n "$set_status_l"
 end
 

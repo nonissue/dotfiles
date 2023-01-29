@@ -1,4 +1,4 @@
-# set fish_greeting
+set fish_greeting
 
 set -g XDG_CONFIG_HOME ~/.dotfiles
 set -x GREP_COLOR "1;37;45"
