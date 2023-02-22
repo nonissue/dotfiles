@@ -31,10 +31,11 @@ end
 function __ssh_host
     if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
         set_color -d white
-        echo -n $USER@
+        echo -n "("$USER@
         set_color normal
         set_color -d -o brmagenta
         echo -n (hostname -s)
+        echo -n ")"
         set_color normal
     end
 end
@@ -85,13 +86,13 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set git_info "$set_status_l  $set_branch$git_branch$set_status_l $set_fish_color_cwd+ " #setcolor for git indicator (dirty), git branch𝌆
+            set git_info "$set_status_l $set_branch$git_branch$set_status_l$set_fish_color_cwd+ " #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
                 # If there is new or deleted files, update status𝌡
                 set extra "$set_ind_mod*" #setcolor for git indicator (dirty)✱✲
             end
         else if [ ~(_is_git_dirty) ]
-            set git_info "$extra$set_status_l $set_fish_color_cwd$git_branch$set_status_l $set_fish_color_cwd• " # setcolor for git branch?
+            set git_info "$extra$set_status_l $set_fish_color_cwd$git_branch$set_status_l$set_fish_color_cwd• " # setcolor for git branch?
         end
 
 
