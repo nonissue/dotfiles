@@ -31,11 +31,11 @@ end
 function __ssh_host
     if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
         set_color -d white
-        echo -n "("$USER@
+        echo -n $USER@
         set_color normal
         set_color -d -o brmagenta
         echo -n (hostname -s)
-        echo -n ")"
+
         set_color normal
     end
 end
@@ -55,6 +55,7 @@ end
 
 
 function fish_right_prompt
+    
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
     set --local extra "" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
@@ -98,10 +99,11 @@ function fish_right_prompt
 
     end
 
-    __ssh_host
+    
     echo -n -s $git_info
     show_git_info
     set_color -o 596f73
     show_path
     set_color normal
+    __ssh_host
 end
