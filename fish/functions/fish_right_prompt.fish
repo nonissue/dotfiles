@@ -22,7 +22,7 @@ function __ssh_badge
         # dark purple on light purple
         set_color -b d6aeec -o 2a0a8b
         # first character of remote hostname, uppercase
-        echo -n " "(string upper (string sub -s 1 -l 1 (hostname -s)))" "
+        echo -n "\("(string upper (string sub -s 1 -l 1 (hostname -s)))"\) "
         set_color normal
     end
 end
