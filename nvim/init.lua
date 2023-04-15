@@ -1,17 +1,20 @@
-local impatient_ok, impatient = pcall(require, "impatient")
-if impatient_ok then impatient.enable_profile() end
+if vim.loader then vim.loader.enable() end -- enable vim.loader early if available
 
 for _, source in ipairs {
-  "core.utils",
-  "core.options",
-  "core.bootstrap",
-  "core.plugins",
-  "core.autocmds",
-  "core.mappings",
-  "configs.which-key-register",
+  "astronvim.bootstrap",
+  "astronvim.options",
+  "astronvim.lazy",
+  "astronvim.autocmds",
+  "astronvim.mappings",
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
 end
 
-astronvim.conditional_func(astronvim.user_plugin_opts("polish", nil, false))
+if astronvim.default_colorscheme then
+  if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
+    require("astronvim.utils").notify("Error setting up colorscheme: " .. astronvim.default_colorscheme, "error")
+  end
+end
+
+require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
