@@ -7,7 +7,6 @@
 *~
 \#*\#
 auto-save-list
-dotbot
 emacs/backup
 emacs/elpa
 emacs/general.org

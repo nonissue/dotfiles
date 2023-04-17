@@ -1,9 +1,11 @@
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: gitconfig
+#    ~/.gitconfig: gitconfig
     ~/.gitignore_global: .gitignore_global
-    ~/Library/Application Support/Code/User: vscode
+    ~/Library/Application Support/Code/User: 
+      if: '[ (uname) = "Darwin" ]'
+      path: vscode
     # Probably don't want to share this between machines...
     # ~/.ssh/config:
     #     path: ssh/config
@@ -19,7 +21,7 @@
       relink: true
       path: fish
     ~/.vscode:
-      if: '[ (uname) = "Darwin" ]'
+      if: '[ (uname) = "Linux" ]'
       path: vscode
     ~/.fdignore:
       path: fdignore
