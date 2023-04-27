@@ -9438,7 +9438,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -9501,13 +9501,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.68627450980392157</real>
+				<real>0.74510002139999998</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.88627450980392153</real>
+				<real>0.74510002139999998</real>
 				<key>Red Component</key>
-				<real>0.97647058823529409</real>
+				<real>0.93332999940000005</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -9553,13 +9553,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.14509999749999999</real>
+				<real>0.1058799997</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.094120003280000003</real>
+				<real>0.066670000549999997</real>
 				<key>Red Component</key>
-				<real>0.094120003280000003</real>
+				<real>0.066670000549999997</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
@@ -9631,13 +9631,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.87058997149999995</real>
+				<real>0.78430998330000001</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.76077997679999998</real>
+				<real>0.67843002080000003</real>
 				<key>Red Component</key>
-				<real>0.72940999269999995</real>
+				<real>0.65097999569999998</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
@@ -9698,7 +9698,7 @@
 			<key>Blend</key>
 			<real>0.050000000000000003</real>
 			<key>Blink Allowed</key>
-			<true/>
+			<false/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -9721,7 +9721,7 @@
 			<key>Bound Hosts</key>
 			<array/>
 			<key>Brighten Bold Text</key>
-			<false/>
+			<true/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -9786,7 +9786,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Draw Powerline Glyphs</key>
-			<false/>
+			<true/>
 			<key>Flashing Bell</key>
 			<true/>
 			<key>Foreground Color</key>
