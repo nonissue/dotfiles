@@ -53,14 +53,14 @@ function ll
     tree --dirsfirst -ChFupDaLg 1 $argv
 end
 function ls
-    # command exa --color-scale --all --long --octal-permissions --no-permissions $argv
+    command exa --color-scale --all --long --octal-permissions --no-permissions $argv
     # command exa --all 
-    command exa --all $argv
+    # command exa --all $argv
 end
 function lsg
     # command exa --color-scale --all --long --octal-permissions --no-permissions $argv
     # command exa --all 
-    command exa --all --long --grid -h $argv
+    command exa --all --long --grid -h --octal-permissions --no-permissions $argv
 end
 function mkcd --description "Create and cd to directory"
     mkdir $argv
