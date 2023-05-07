@@ -3,8 +3,13 @@
 # NOTE: Only for linux at the moment
 # NOTE: NOT WORKING!!!
 
-cd ~/tmp
+# Todo: 
+# - [ ] cleanup
+# - [ ] better copy / install (rather than just plunking binary in ~/.local/bin)
+# - [ ] print status at end (success/fail)
+# - [ ] print version at the end
 
+cd ~/tmp
 
 GITHUB_RESULT=$(curl -s https://api.github.com/repos/ogham/exa/releases/latest \
   | grep x86_64 \
@@ -20,17 +25,13 @@ RELEASE_URL=$(echo $GITHUB_RESULT | cut -d ' ' -f2)
 mkdir ~/tmp/exa
 curl -LO $RELEASE_URL
 unzip $RELEASE_FILE -d ~/tmp/exa
-# tar -xvjf $RELEASE_FILE -C ~/tmp
-cd ~/tmp/exa
 
+cd ~/tmp/exa
 cp ~/tmp/exa/bin/exa ~/.local/bin/exa
 cp ~/tmp/exa/completions/exa.fish ~/.dotfiles/fish/completions/exa.fish
 cd -
-# rm -r ~/tmp/exa
-# sudo make install
-# sudo make setuid
 
-# rm -rf ~/tmp/$RELEASE_FILE
-# rm -rf ~/tmp/btop
+rm -rf ~/tmp/$RELEASE_FILE
+rm -r ~/tmp/exa
 
-# echo $RELEASE_FILE $RELEASE_URL
+echo $RELEASE_FILE $RELEASE_URL
