@@ -62,6 +62,9 @@ function lsg
     # command exa --all 
     command exa --all --long --grid -h --octal-permissions --no-permissions $argv
 end
+function lst
+    exa --tree --long --all --no-permissions --octal-permissions --color-scale $argv
+end
 function mkcd --description "Create and cd to directory"
     mkdir $argv
     and cd $argv
