@@ -4,12 +4,13 @@
 
 cd ~/tmp
 
-GITHUB_RESULT=$(curl -s https://api.github.com/repos/aristocratos/btop/releases/latest \
-  | grep x86_64 \
-  | grep musl \
-  | grep linux \
-  | cut -d '"' -f 4 \
-  | xargs echo
+GITHUB_RESULT=$(
+  curl -s https://api.github.com/repos/aristocratos/btop/releases/latest |
+    grep x86_64 |
+    grep musl |
+    grep linux |
+    cut -d '"' -f 4 |
+    xargs echo
 )
 
 RELEASE_FILE=$(echo $GITHUB_RESULT | cut -d ' ' -f1)
