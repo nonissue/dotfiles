@@ -37,6 +37,9 @@ end
 function cp
     command cp -i $argv
 end
+function dockerps 
+    command docker ps --format 'table {{.Names}}\t{{.State}}\t{{.Status}}\t{{.Image}}\t{{.CreatedAt}}\t{{.Ports}}' -a $argv
+end
 function df
     command df -h $argv
 end
