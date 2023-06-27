@@ -50,4 +50,7 @@
 - btop
 - iostat
 - tree
--
+- fzf
+- fd-find
+- fzf
+- docker?
