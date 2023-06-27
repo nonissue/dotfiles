@@ -174,11 +174,11 @@ switch (uname)
         # fish_add_path "/opt/local/bin /opt/local/sbin /usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin /opt/local/bin /usr/local/bin"
 
         # install if not?
-        fisher install catppuccin/fish
+        # fisher install catppuccin/fish
 
         # Verify installed, then switch?
-        fish_config theme choose Catppuccin\ Frappe
-        fish_config theme save
+        # fish_config theme choose Catppuccin\ Frappe
+        # fish_config theme save
 
         /home/ops/.local/bin/zoxide init fish | source
         set -Ux EDITOR nvim
