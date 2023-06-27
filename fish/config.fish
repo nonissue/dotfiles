@@ -162,7 +162,15 @@ switch (uname)
 
     case Linux
         set -g os Linux
-        fish_add_path "/home/ops/.local/bin /opt/local/bin /opt/local/sbin /usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin /opt/local/bin /usr/local/bin"
+
+        # I think if we attempt to add multiple entries to path, but one dir doesn't exist, the whole thing fails
+        fish_add_path "/home/ops/.local/bin"
+        fish_add_path "/home/ops/.local"
+        fish_add_path "/home/ops/.fzf/bin"
+
+        # fish_add_path "/usr/local/opt/fzf/bin"
+        # fish_add_path "/usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /usr/local/bin"
+        # fish_add_path "/opt/local/bin /opt/local/sbin /usr/local/opt/fzf/bin /usr/local/bin /usr/bin /usr/local/sbin /bin /usr/sbin /sbin /usr/local/opt/curl/bin /opt/local/bin /usr/local/bin"
         /home/ops/.local/bin/zoxide init fish | source
         set -Ux EDITOR nvim
 end

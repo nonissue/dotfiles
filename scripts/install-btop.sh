@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # NOTE: Only for linux at the moment
+# DEPENDS ON MAKE WHICH ISNT INSTALLED BY DEFAULT
+sudo apt install make
 
 cd ~/tmp
 
