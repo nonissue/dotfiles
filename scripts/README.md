@@ -36,3 +36,21 @@
 - rgrep
 - tree
 - gdu
+
+## TODO 2023
+
+- gdu
+- git
+- figlet
+- figlet -> isometric3.flf
+- lolcat
+- docker
+- zoxide
+- ncdu
+- btop
+- iostat
+- tree
+- fzf
+- fd-find
+- fzf
+- docker?

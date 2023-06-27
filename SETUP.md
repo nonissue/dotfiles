@@ -2,8 +2,22 @@
 
 Inspiration:
 
-- https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh
-- https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
+- [create_symbolic_links.sh](https://github.com/alrra/dotfiles/blob/master/src/os/create_symbolic_links.sh)
+- [symlink-setup.sh](https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh)
+
+## OS Quirks
+
+### macOS + tmux
+
+In order to use `tmux-256color` in tmux on macOS, we must install `tmux-256color`.
+
+[Steps](https://gist.github.com/ssh352/785395faad3163b2e0de32649f7ed45c)
+
+```bash
+# Absolutely have not verified the safety of this file, use at own risk
+curl -LO https://invisible-island.net/datafiles/current/terminfo.src.gz && gunzip terminfo.src.gz
+/usr/bin/tic -xe tmux-256color terminfo.src
+```
 
 ## Links
 
@@ -181,11 +195,19 @@ sudo add-apt-repository \
 	 $(lsb_release -cs)
 	 stable"
 
+# FISH VERSION
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository (echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu" (lsb_release -cs) stable)
+
 sudo apt-get update
-sudo apt-get install linux-generic-hwe-18.04 # unlisted docker dependency
+sudo apt-get install linux-generic-hwe-18.04
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 sudo usermod -aG docker ops # add my user to docker group
+
+# COMPOSE
+sudo curl -L (echo "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-"(uname -s)"-"(uname -m)) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ### Symlinks

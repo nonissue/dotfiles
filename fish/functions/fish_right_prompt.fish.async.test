@@ -1,0 +1,67 @@
+# function _git_branch_name
+#     sleep 1 # For demo.
+#     git symbolic-ref --short HEAD 2>/dev/null
+
+# end
+
+# function _git_repo_status
+#     echo (command git status -s --ignore-submodules=dirty)
+# end
+
+# function fish_right_prompt
+#     echo (set_color 88f)(_git_repo_status) - (_git_branch_name) (set_color cyan)(prompt_pwd)
+# end
+
+
+# set -g async_prompt_functions fish_right_prompt
+
+
+# function fish_right_prompt_loading_indicator -a last_prompt
+#     echo -n "$last_prompt" | sed -r 's/\x1B\[[0-9;]*[JKmsu]//g' | read -zl uncolored_last_prompt
+#     echo -n (set_color brblack)"$uncolored_last_prompt"(set_color normal)
+# end
+
+
+function _is_git_repo
+    git rev-parse --is-inside-work-tree >/dev/null 2>/dev/null
+end
+
+function _is_git_dirty
+    set -l stat (git status --porcelain=v2)
+    test -n "$stat"
+end
+
+function _git_branch_name
+    sleep 1
+    git symbolic-ref --short HEAD 2>/dev/null
+end
+
+function _fish_right_prompt_branch_name
+    if _is_git_repo
+        _is_git_dirty
+        and set color (set_color bryellow)
+        or set color (set_color brblue)
+
+        echo -n "$color"(_git_branch_name)(set_color normal)
+    end
+end
+
+function _fish_right_prompt_repo_info
+    echo -n ' '(prompt_pwd)
+end
+
+function fish_right_prompt
+    _fish_right_prompt_branch_name
+    _fish_right_prompt_repo_info
+end
+
+set -g async_prompt_functions fish_right_prompt
+
+function fish_right_prompt_loading_indicator -a last_prompt
+    echo -n "$last_prompt" | sed -r 's/[[:cntrl:]]\[[0-9]{1,3}m//g' | read -zl uncolored_last_prompt
+    echo -n (set_color brblack)"$uncolored_last_prompt"(set_color normal)
+end
+
+function _fish_right_prompt_repo_info_loading_indicator
+    echo (set_color 'yellow')' … '(set_color normal)
+end

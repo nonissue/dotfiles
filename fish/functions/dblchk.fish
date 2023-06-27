@@ -132,14 +132,14 @@ function dblchk --description "Check a dir and all its files exist in a dir in a
     # res = files that don't exist on remote
     set -x res (find /mnt/media/local -type f -mtime $time -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
         if not test -e $remotepath
-            printf (set_color red)"NOT SYNCED: "(set_color yellow)" %s"(set_color normal) $remotepath | string replace "remote" "local"
+            printf (set_color red)"\nNOT SYNCED: "(set_color yellow)" %s"(set_color normal) $remotepath | string replace "remote" "local"
         end
     end | nl -bt -s.' ' | string collect)
 
     # synced = files that do exist on the remote
     set -x synced (find /mnt/media/local -type f -mtime $time -printf "%p\n" | string replace "local" "remote" | xargs -L 1 -d '\n' | while read -lt remotepath
         if test -e $remotepath 
-            printf (set_color green)"SYNCED: "(set_color blue)" %s"(set_color normal) $remotepath | string replace "remote" "local"
+            printf (set_color green)"\nSYNCED: "(set_color blue)" %s"(set_color normal) $remotepath | string replace "remote" "local"
         end
     end | nl -bt -s.' ' | string collect)
     
