@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# EXCEPT
+# But not these files...
+!.gitignore
+!argv.json
+!keybindings.json
+!projects.json
+!settings.json
+# etc...
