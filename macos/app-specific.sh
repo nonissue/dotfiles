@@ -47,7 +47,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	Privileges -bool true
 
 echo "  › Set Desktop as the default location for new Finder windows"
-echo "  › For other paths, use `PfLo` and `file:///full/path/here/`"
+echo "  › For other paths, use \`PfLo\` and \`file:///full/path/here/\`"
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
@@ -74,7 +74,7 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 echo "  › Show the full URL in the address bar (note: this still hides the scheme)"
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
-echo "  › Set Safari’s home page to `about:blank` for faster loading"
+echo "  › Set Safari’s home page to \`about:blank\` for faster loading"
 defaults write com.apple.Safari HomePage -string "about:blank"
 
 echo "  › Allow hitting the Backspace key to go to the previous page in history"
