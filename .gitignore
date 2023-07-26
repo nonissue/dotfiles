@@ -1,3 +1,4 @@
+
 .\#*
 .DS_Store
 .env
@@ -18,9 +19,12 @@ fish/fisher/functions/__history*
 fisher/
 fzf_key_bindings.fish
 iterm/profiles/com.googlecode.iterm2.plist
+nvim
+nvim.astrotrash
 nvim.bak/
-nvim/.netrwhist
-# nvim/lua/plugins/
+nvim/
+nvim/lua/plugins/
+nvim/nvim
 quicklook/*.qlgenerator
 ssh/
 ssh/config
@@ -29,6 +33,8 @@ tmux/plugins/
 tmux/resurrect
 tmux/sidebar/directory_widths.txt
 tramp
+vscode/
 vscode/extensions/
 vscode/phantomjs*
 wg0-client-mbp.conf
+macos/app-specific.sh
