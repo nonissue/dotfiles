@@ -1,6 +1,6 @@
 {
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.colorTheme": "Aylin",
+  "workbench.colorTheme": "Field Lights",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -11,5 +11,10 @@
   "lua.luacheckPath": "/usr/local/bin/luacheck",
   "lua.preferLuaCheckErrors": true,
   "lua.targetVersion": "5.3",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+  "workbench.tree.indent": 16,
+  "editor.guides.highlightActiveIndentation": "always",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.fontAliasing": "auto"
 }
