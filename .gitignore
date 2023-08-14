@@ -19,10 +19,9 @@ fish/fisher/functions/__history*
 fisher/
 fzf_key_bindings.fish
 iterm/profiles/com.googlecode.iterm2.plist
-nvim
+
 nvim.astrotrash
 nvim.bak/
-nvim/
 nvim/lua/plugins/
 nvim/nvim
 quicklook/*.qlgenerator
