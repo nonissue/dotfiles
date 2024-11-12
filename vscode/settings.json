@@ -1,20 +1,43 @@
 {
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.colorTheme": "Field Lights",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "[lua]": {
-    "editor.defaultFormatter": "trixnz.vscode-lua"
-  },
-  "git.autofetch": true,
-  "lua.luacheckPath": "/usr/local/bin/luacheck",
-  "lua.preferLuaCheckErrors": true,
-  "lua.targetVersion": "5.3",
-  "redhat.telemetry.enabled": false,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-  "workbench.tree.indent": 16,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
   "editor.guides.highlightActiveIndentation": "always",
+  "git.autofetch": true,
+  "Lua.codeLens.enable": true,
+  "Lua.completion.displayContext": 1,
+  "redhat.telemetry.enabled": false,
+  "workbench.fontAliasing": "auto",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
-  "workbench.fontAliasing": "auto"
+  "editor.formatOnSave": true,
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "editor.formatOnSaveMode": "modifications",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Matey",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "telemetry.telemetryLevel": "crash",
+  "extensions.autoUpdate": false,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+  "workbench.editor.tabSizingFixedMinWidth": 70,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.preferredLightColorTheme": "Feather",
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "workbench.preferredDarkColorTheme": "Aylin",
+  "workbench.editorAssociations": {
+    "*.plist": "default"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
