@@ -10,6 +10,7 @@ set -x fzf_preview_dir_cmd exa --all --color=always
 abbr ff "$EDITOR ~/.config/fish/config.fish"
 abbr tt "$EDITOR ~/.tmux.conf"
 abbr vv "$EDITOR ~/.config/nvim/init.vim"
+abbr hh "$EDITOR ~/.hammerspoon"
 
 function ..
     cd ..
@@ -56,7 +57,8 @@ function ll
     tree --dirsfirst -ChFupDaLg 1 $argv
 end
 function ls
-    command exa --color-scale --all --long --octal-permissions --no-permissions $argv
+    # command exa --color-scale --all --long --octal-permissions --no-permissions $argv
+    command eza --all --long $argv
     # command exa --all 
     # command exa --all $argv
 end
@@ -119,6 +121,12 @@ function tmux_attach
         end
     end
 end
+
+# Not perfect, seems to fail with dir paths (maybe with tilde)?
+# function code
+#   set location "$PWD/$argv"
+#   open -n -b "com.microsoft.VSCode" --args $location
+# end
 
 # Keybinding for explainshell function
 bind \ch explain
