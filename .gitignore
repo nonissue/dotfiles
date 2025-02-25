@@ -30,6 +30,5 @@ tmux/resurrect
 tmux/sidebar/directory_widths.txt
 tramp
 vscode/
-vscode/extensions/
-vscode/phantomjs*
 wg0-client-mbp.conf
+vscode/settings.json

@@ -9,9 +9,10 @@
 - link:
     #    ~/.gitconfig: gitconfig
     ~/.gitignore_global: .gitignore_global
-    ~/Library/Application Support/Code/User:
-      if: '[ (uname) = "Darwin" ]'
-      path: vscode
+    # VSCode disabled since I use in app settings sync anyway?
+    # ~/Library/Application Support/Code/User:
+      # if: '[ (uname) = "Darwin" ]'
+      # path: vscode
     # Probably don't want to share this between machines...
     # ~/.ssh/config:
     #     path: ssh/config
