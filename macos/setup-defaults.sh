@@ -41,7 +41,7 @@ chflags nohidden ~/Library
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # Screenshot functionality tweaks (accomdations for my hammerspoon spoon)
-defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots/2016mbpr/"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots/2021mbp/"
 defaults write com.apple.screencapture name "$(hostname) - "
 defaults write com.apple.screencapture type -string "png"
 
