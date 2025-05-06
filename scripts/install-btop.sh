@@ -19,7 +19,7 @@ RELEASE_FILE=$(echo $GITHUB_RESULT | cut -d ' ' -f1)
 RELEASE_URL=$(echo $GITHUB_RESULT | cut -d ' ' -f2)
 
 curl -LO $RELEASE_URL
-# mkdir ~/tmp/btop
+mkdir ~/tmp/btop
 tar -xvjf $RELEASE_FILE -C ~/tmp
 cd ~/tmp/btop
 sudo make install
