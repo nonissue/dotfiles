@@ -177,6 +177,8 @@ switch (uname)
         # uninstall by removing these lines
         [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 
+	uv generate-shell-completion fish | source
+	uvx --generate-shell-completion fish | source
     case Linux
         set -g os Linux
 
@@ -197,7 +199,9 @@ switch (uname)
         # fish_config theme choose Catppuccin\ Frappe
         # fish_config theme save
 
-        /home/ops/.local/bin/zoxide init fish | source
+        # /home/ops/.local/bin/zoxide init fish | source
+	
+        zoxide init fish | source
         set -Ux EDITOR nvim
 end
 
@@ -206,8 +210,7 @@ end
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
 
-uv generate-shell-completion fish | source
-uvx --generate-shell-completion fish | source
+
 
 # pnpm
 set -gx PNPM_HOME "/Users/apw/Library/pnpm"
