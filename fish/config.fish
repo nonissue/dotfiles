@@ -91,8 +91,8 @@ end
 function t
     command tree -C $argv
 end
-function view
-    nvim -R $argv
+if type -q nvim
+    alias view="nvim -R"
 end
 function jjrf
     #     # This doesnt really seem to be working for reloading functions that are changing...
