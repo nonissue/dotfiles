@@ -27,9 +27,13 @@ end
 function b --description "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
     bash -c "$argv"
 end
-function cat
-    command bat $argv
+if type -q bat
+    # alias cat="bat --paging never --style \"changes,header,rule,snip\" --theme ansi"
+    alias cat="bat --paging never --style "changes,header,rule,snip" --theme ansi"
 end
+# function cat
+#     command bat $argv
+# end
 function color --description "Print color"
     echo (set_color (string trim -c '#' "$argv"))"██"
 end
