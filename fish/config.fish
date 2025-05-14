@@ -140,27 +140,6 @@ function tmux_attach
     end
 end
 
-# Not perfect, seems to fail with dir paths (maybe with tilde)?
-# function code
-#   set location "$PWD/$argv"
-#   open -n -b "com.microsoft.VSCode" --args $location
-# end
-
-# better attempt at code shell command from vscode docs
-# https://code.visualstudio.com/docs/terminal/shell-integration
-#
-# DONT KNOW IF NECESSARY?
-# string match -q "$TERM_PROGRAM" "vscode"
-# and . (code --locate-shell-integration-path fish)
-
-
-# better attempt at code shell command from vscode docs
-# https://code.visualstudio.com/docs/terminal/shell-integration
-#
-# DONT KNOW IF NECESSARY?
-# string match -q "$TERM_PROGRAM" "vscode"
-# and . (code --locate-shell-integration-path fish)
-
 
 # Keybinding for explainshell function
 bind \ch explain
