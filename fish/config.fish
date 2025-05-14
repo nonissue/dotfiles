@@ -53,15 +53,26 @@ end
 function ip
     curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'
 end
-function ll
-    tree --dirsfirst -ChFupDaLg 1 $argv
+
+# function ll
+#     tree --dirsfirst -ChFupDaLg 1 $argv
+# end
+# function ls
+#     # command exa --color-scale --all --long --octal-permissions --no-permissions $argv
+#     command eza --all --long $argv
+#     # command exa --all 
+#     # command exa --all $argv
+# end
+
+# Replaces old `function ls/ll`
+# https://github.com/gf3/dotfiles/blob/main/.config/fish/config.fish
+if type -q eza
+    alias l="eza --icons --git"
+    alias ll="eza --icons --long --header --group --created --modified --git -a"
+    alias ls="eza --icons --git"
 end
-function ls
-    # command exa --color-scale --all --long --octal-permissions --no-permissions $argv
-    command eza --all --long $argv
-    # command exa --all 
-    # command exa --all $argv
-end
+
+
 function lsg
     # command exa --color-scale --all --long --octal-permissions --no-permissions $argv
     # command exa --all 
