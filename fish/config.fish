@@ -98,9 +98,12 @@ function jjrf
     #     # This doesnt really seem to be working for reloading functions that are changing...
     source ~/.dotfiles/fish/config.fish && source ~/.dotfiles/fish/functions/*.fish
 end
-function venv
-    source ~/.dotfiles/env/python3/bin/activate.fish
-end
+
+# This seems dangerous? I gotta sus out the mental model of python projects and packages
+# function venv
+#     source ~/.dotfiles/env/python3/bin/activate.fish
+# end
+
 
 function fzf --wraps=fzf --description="Use fzf-tmux if in tmux session"
     if set --query TMUX
