@@ -11,6 +11,7 @@ abbr ff "$EDITOR ~/.config/fish/config.fish"
 abbr tt "$EDITOR ~/.tmux.conf"
 abbr vv "$EDITOR ~/.config/nvim/init.vim"
 abbr hh "$EDITOR ~/.hammerspoon"
+abbr xx "$EDITOR ~/.dotfiles"
 
 function ..
     cd ..
@@ -205,3 +206,10 @@ end
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
+
+# pnpm
+set -gx PNPM_HOME "/Users/apw/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
