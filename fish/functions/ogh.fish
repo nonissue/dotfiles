@@ -5,7 +5,11 @@
 # - [ ] Handle cases where branch isn't available on remote
 # - [ ] I think we accidentally strip trailing chars (like "t") from urls
 
-function gh
+# Update 2025-08-23
+# I use this a lot, but the name collides with githubs cli tool for macos which is also called `gh`
+# Changing name to `ogh` for now, could also use `gg` ?
+
+function ogh --description "If current path is a git repo, open on github"
     set url 'https://github.com'
     set branch (git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
     # set repo (git remote show -n origin | perl -lne 'print $1 if /Fetch URL:(.*)/' | perl -lne 'print $1 if /github.com\/(.*)/' | perl -lne '/(.*)\.git/ ? print $2 : print')
