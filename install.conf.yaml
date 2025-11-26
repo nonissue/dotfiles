@@ -1,40 +1,43 @@
 - clean: ["~"]
 
 - create:
-    - ~/.config
-    - ~/tmp
-    - ~/.local
-    - ~/.local/bin
+      - ~/.config
+      - ~/tmp
+      - ~/.local
+      - ~/.local/bin
 
 - link:
-    #    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: .gitignore_global
-    # VSCode disabled since I use in app settings sync anyway?
-    # ~/Library/Application Support/Code/User:
+      #    ~/.gitconfig: gitconfig
+      ~/.gitignore_global: .gitignore_global
+      # VSCode disabled since I use in app settings sync anyway?
+      # ~/Library/Application Support/Code/User:
       # if: '[ (uname) = "Darwin" ]'
       # path: vscode
-    # Probably don't want to share this between machines...
-    # ~/.ssh/config:
-    #     path: ssh/config
-    #     create: true
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux: tmux
-    # make ~/.config if it doesn't exist
-    ~/.config/nvim:
-      path: nvim
-    ~/.config/glances:
-      path: glances
-    ~/.config/fish:
-      relink: true
-      path: fish
-    ~/.vscode:
-      if: '[ (uname) = "Linux" ]'
-      path: vscode
-    ~/.fdignore:
-      path: fdignore
-      # make ~/.local/bin if it doesn't exist
-    ~/.local/bin/pbcopy:
-      # Better than running command with sudo...
-      # Have to add it ~/bin to path on linux
-      if: '[ (uname) = "Linux" ]'
-      path: bin/pbcopy
+      # Probably don't want to share this between machines...
+      # ~/.ssh/config:
+      #     path: ssh/config
+      #     create: true
+      ~/.tmux.conf: tmux/tmux.conf
+      ~/.tmux: tmux
+      # make ~/.config if it doesn't exist
+      ~/.config/nvim:
+          path: nvim
+      ~/.config/glances:
+          path: glances
+      ~/.config/fish:
+          relink: true
+          path: fish
+      ~/.config/lf/lfrc:
+          create: true
+          path: lf/lfrc
+      ~/.vscode:
+          if: '[ (uname) = "Linux" ]'
+          path: vscode
+      ~/.fdignore:
+          path: fdignore
+          # make ~/.local/bin if it doesn't exist
+      ~/.local/bin/pbcopy:
+          # Better than running command with sudo...
+          # Have to add it ~/bin to path on linux
+          if: '[ (uname) = "Linux" ]'
+          path: bin/pbcopy
