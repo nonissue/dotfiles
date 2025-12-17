@@ -55,6 +55,18 @@ end
 function ip
     curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'
 end
+function getsong
+    # Very basic
+    # yt-dlp -f bestaudio -o '%(title)s.%(ext)s' --embed-thumbnail -- $argv
+
+    # crazy command with ffmpeg exec from here:
+    # https://github.com/yt-dlp/yt-dlp/issues/14041
+    # yt-dlp -f "bestaudio[ext=m4a]" --embed-thumbnail --convert-thumbnail jpg --exec-before-download "ffmpeg -i %(thumbnails.-1.filepath)q -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\" _%(thumbnails.-1.filepath)q" --exec-before-download "rm %(thumbnails.-1.filepath)q" --exec-before-download "mv _%(thumbnails.-1.filepath)q %(thumbnails.-1.filepath)q" --output "%(artist)s - %(title)s.%(ext)s" --no-playlist argv
+
+    # My tweaked version
+    yt-dlp -f "bestaudio[ext=m4a]" -P "home:~/Music/Webrips" -P "temp:~/temp" --embed-thumbnail --convert-thumbnail png --output "%(artist)s - %(title)s.%(ext)s" --no-playlist -- $argv
+
+end
 
 # Replaces old `function ls/ll`
 # https://github.com/gf3/dotfiles/blob/main/.config/fish/config.fish
@@ -115,11 +127,11 @@ function tmux_attach
         set PPID (echo (ps --pid %self -o ppid --no-headers) | xargs)
         if ps --pid $PPID | grep ssh
             tmux has-session -t remote; and tmux attach-session -t remote; or tmux new-session -s remote; and kill %self
-            echo "tmux failed to start; using plain fish shell"
+            echo "tmux failed to start
+ using plain fish shell"
         end
     end
 end
-
 
 # Keybinding for explainshell function
 bind \ch explain
@@ -174,7 +186,6 @@ switch (uname)
         # uninstall by removing these lines
         [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 
-
     case Linux
         set -g os Linux
 
@@ -208,9 +219,9 @@ end
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
 
 # pnpm
-set -gx PNPM_HOME "/Users/apw/Library/pnpm"
+set -gx PNPM_HOME /Users/apw/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
 
