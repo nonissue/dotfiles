@@ -107,9 +107,5 @@ function fish_right_prompt
 
     # echo -n -s $git_info
     string join '' -- $git_info (set_color -o 596f73) (show_path) (set_color normal)
-    # show_git_info
-    # set_color -o 596f73
-    # show_path
-    # set_color normal
-    # __ssh_host
+
 end
