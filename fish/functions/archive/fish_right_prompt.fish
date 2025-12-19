@@ -13,13 +13,25 @@ function show_git_info
     [ $status -eq 128 ]; and return # Not a repository? Nothing to do
 end
 
+# Currently not using this, as __ssh_host obviates its utility
+function __ssh_badge
+    # See if any standard SSH environment variables contain anything
+    if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
+        # dark purple on light purple
+        set_color -b d6aeec -o 2a0a8b
+        # first character of remote hostname, uppercase
+        echo -n "\("(string upper (string sub -s 1 -l 1 (hostname -s)))"\) "
+        set_color normal
+    end
+end
+
 # only display a host name if we're in an ssh session
 function __ssh_host
     if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
         set_color -d white
         echo -n $USER@
         set_color normal
-        set_color -d -o fish_color_host_remote
+        set_color -d -o brmagenta
         echo -n (hostname -s)
 
         set_color normal
@@ -27,10 +39,9 @@ function __ssh_host
 end
 
 function show_path
-    set_color normal
-    set_color $fish_color_normal
-    prompt_pwd
-    set_color normal
+    echo -n "$set_status_l"
+    echo -en $set_path(prompt_pwd) ""
+    echo -n "$set_status_l"
 end
 
 function show_virtualenv_name
@@ -45,8 +56,8 @@ function fish_right_prompt
     set --local git_status (git status --porcelain 2> $LIMBO)
     set --local extra "" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
 
-    set -l status_l "<"
-    set -l status_r ">"
+    set -l status_l "$set_status_l<"
+    set -l status_r "$set_status_r>"
 
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
@@ -69,21 +80,16 @@ function fish_right_prompt
     # 𝍖 --> for stashed?
     # other symbols: ⤽⤼⥅⫀⪿⨄⨦⨧⨮⨴⊛⊕⊙⊘⊚⊝ ●○
     # WE gots to do smething
-
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            # string join '' -- (set_color $fish_color_operator) (prompt_pwd) (set_color normal) ''
-
-            set git_info (set_color --bold $fish_color_operator)" $git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
-
+            set git_info "$set_status_l $set_branch$git_branch$set_status_l$set_fish_color_cwd+ " #setcolor for git indicator (dirty), git branch𝌆
             if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
                 # If there is new or deleted files, update status𝌡
-                set extra (set_color red)"NOT *"(set_color normal) #setcolor for git indicator (dirty)✱✲
+                set extra "$set_ind_mod*" #setcolor for git indicator (dirty)✱✲
             end
-            set_color normal
         else if [ ~(_is_git_dirty) ]
-            set git_info (set_color --bold $fish_color_command)"$extra$git_branch• "(set_color normal) # setcolor for git branch?
+            set git_info "$extra$set_status_l $set_fish_color_cwd$git_branch$set_status_l$set_fish_color_cwd• " # setcolor for git branch?
         end
 
     end

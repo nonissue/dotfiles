@@ -1,0 +1,45 @@
+# name: 'nonissue'
+# url: 'https://github.com/nonissue/dotfiles'
+# preferred_background: 181825
+
+fish_color_autosuggestion 3D8479
+fish_color_cancel -r
+fish_color_command 5CCFE6
+fish_color_comment 5C6773
+fish_color_cwd 73D0FF
+fish_color_cwd_root red
+fish_color_end F29E74
+fish_color_error FF3333
+fish_color_escape 95E6CB
+fish_color_gray 6e738d
+fish_color_history_current --bold
+fish_color_host normal
+fish_color_host_remote yellow
+fish_color_keyword 5CCFE6
+fish_color_match F28779
+fish_color_normal red
+fish_color_operator FFCC66
+fish_color_option CBCCC6
+fish_color_param CBCCC6
+fish_color_quote BAE67E
+fish_color_redirection D4BFFF
+fish_color_search_match --background=FFCC66
+fish_color_selection --background=FFCC66
+fish_color_status red
+fish_color_user brgreen
+fish_color_valid_path --underline
+# fish_pager_color_background 181825
+fish_pager_color_completion 1587DF
+fish_pager_color_description B3A06D yellow
+fish_pager_color_prefix 4CBF99
+fish_pager_color_progress brwhite '--background=cyan'
+fish_color_custom_one 1587DF
+fish_color_custom_two 0E558C
+# fish_pager_color_secondary_background 
+# fish_pager_color_secondary_completion
+# fish_pager_color_secondary_description
+# fish_pager_color_secondary_prefix
+fish_pager_color_selected_background --background=FFCC66
+# fish_pager_color_selected_completion
+# fish_pager_color_selected_description
+# fish_pager_color_selected_prefix
