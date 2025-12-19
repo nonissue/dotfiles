@@ -3,9 +3,11 @@ set fish_greeting
 set -g XDG_CONFIG_HOME ~/.dotfiles
 set -x GREP_COLOR "1;37;45"
 # set -x LS_COLORS 'ow=01;36;40'
-set -x FZF_DEFAULT_OPTS "--height 30 --ansi"
+set -x FZF_DEFAULT_OPTS "--height 35 --ansi"
 set -x fzf_fd_opts --hidden --exclude=.git --follow
 set -x fzf_preview_dir_cmd exa --all --color=always
+set -x fzf_directory_opts
+set -x fzf_variable_opts --height 40
 
 abbr ff "$EDITOR ~/.config/fish/config.fish"
 abbr tt "$EDITOR ~/.tmux.conf"
@@ -52,6 +54,12 @@ end
 function grep
     command grep --color=auto $argv
 end
+function cd-icloud --description "Change directory to iCloud Drive"
+    cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
+end
+function zcode
+    code (zoxide query $argv)
+end
 function ip
     curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'
 end
@@ -89,9 +97,12 @@ end
 if type -q nvim
     alias view="nvim -R"
 end
-function jjrf
+function jjrf --description "reloads fish shell config and functions (function loading is janky)"
     #     # This doesnt really seem to be working for reloading functions that are changing...
     source ~/.dotfiles/fish/config.fish && source ~/.dotfiles/fish/functions/*.fish
+    # source ~/.dotfiles/fish/config.fish
+    # source ~/.dotfiles/fish/functions/*.fish
+
 end
 
 # This seems dangerous? I gotta sus out the mental model of python projects and packages
@@ -109,7 +120,7 @@ function fzf --wraps=fzf --description="Use fzf-tmux if in tmux session"
 end
 
 # Fuzzy find & vim
-function vp
+function vp --description "Fuzzy find files and open in nvim"
     if test (count $argv) -gt 0
         command nvim $argv
     else
@@ -135,7 +146,8 @@ end
 
 # Keybinding for explainshell function
 bind \ch explain
-set -a fish_function_path (echo $HOME/.dotfiles/fish/functions)
+# set -a fish_function_path (echo $HOME/.dotfiles/fish/functions)
+# set -a fish_function_path (echo $HOME/.config/fish/functions)
 
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
@@ -230,3 +242,26 @@ alias claude="/Users/apw/.claude/local/claude"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# # Load function descriptions
+# function describe_functions --description "Load function descriptions for tab completions"
+#     set -f output ""
+#     for file in $fish_function_path/*.fish
+#         set -f cmd (basename $file .fish)
+#         set -f desc (functions -Dv $cmd)[5]
+#         set -a output "`$cmd`: $desc"
+#     end
+#     printf '%s\n' $output | sort -d
+# end
+# describe_functions 2&>/dev/null
+
+# function load_em --description 'Loads Fish shell function descriptions.'
+#     # Load function information so it shows up in auto completion
+#     # Original from https://github.com/fish-shell/fish-shell/issues/1915#issuecomment-72315918
+
+#     for i in (functions | tr , ' ')
+#         functions -vD $i >/dev/null
+#     end
+# end
+
+# load_em
