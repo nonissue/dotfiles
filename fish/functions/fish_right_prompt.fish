@@ -43,7 +43,8 @@ function fish_right_prompt
 
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
-    set --local extra "" #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
+    # set --local extra
+    #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
 
     set -l status_l "<"
     set -l status_r ">"
@@ -73,14 +74,29 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            # string join '' -- (set_color $fish_color_operator) (prompt_pwd) (set_color normal) ''
+            set --local extra notset
 
-            set git_info (set_color --bold $fish_color_operator)" $git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
+            # set extra (set_color $fish_color_command)"dirty:"(set_color normal)
+            # i actually cant remember what "extra" is for, but i think i had a valid use case
+            # maybe update vs modified files?
 
-            if not [ -z (echo "$git_status" | grep -e '^[MDA]') ]
+            # okay, actually, it's currently showing up if there is ONLY a NEW file that IS staged but NOT committed
+            # if there is a new staged file AND modified files, it does not show up
+            if not [ -z (echo "$git_status" | grep -e '^[MDA\?]') ]
                 # If there is new or deleted files, update status𝌡
-                set extra (set_color red)"NOT *"(set_color normal) #setcolor for git indicator (dirty)✱✲
+                set extra "a+aextra" #setcolor for git indicator (dirty)✱✲
             end
+
+            # this causes it to show up if there is ONLY untracked new files that ARENT staged
+            # if not [ -z (echo "$git_status" | grep -e '^[\?\?]') ]
+
+            #     set extra "+aextra"
+            # end
+            set git_info_tmp "$git_branch+ " #setcolor for git indicator (dirty), git branch𝌆
+
+            # set git_info (set_color --bold $fish_color_operator)"$git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
+            set git_info (string join '' -- (set_color red) $extra (set_color --bold $fish_color_operator) $git_info_tmp) #setcolor for git indicator (dirty), git branch𝌆
+
             set_color normal
         else if [ ~(_is_git_dirty) ]
             set git_info (set_color --bold $fish_color_command)"$extra$git_branch• "(set_color normal) # setcolor for git branch?
@@ -88,10 +104,11 @@ function fish_right_prompt
 
     end
 
-    echo -n -s $git_info
-    show_git_info
-    set_color -o 596f73
-    show_path
-    set_color normal
-    __ssh_host
+    # echo -n -s $git_info
+    string join '' -- $git_info (set_color -o 596f73) (show_path) (set_color normal)
+    # show_git_info
+    # set_color -o 596f73
+    # show_path
+    # set_color normal
+    # __ssh_host
 end

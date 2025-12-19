@@ -9716,13 +9716,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.14509999749999999</real>
+				<real>0.14127129316329956</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.094120003280000003</real>
+				<real>0.09411650151014328</real>
 				<key>Red Component</key>
-				<real>0.094120003280000003</real>
+				<real>0.094118721783161163</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
