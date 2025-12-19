@@ -144,6 +144,8 @@ function tmux_attach
     end
 end
 
+fish_config theme choose nonissue
+
 # Keybinding for explainshell function
 bind \ch explain
 # set -a fish_function_path (echo $HOME/.dotfiles/fish/functions)
