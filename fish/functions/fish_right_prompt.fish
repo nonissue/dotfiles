@@ -74,7 +74,7 @@ function fish_right_prompt
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
         if [ (_is_git_dirty) ]
-            set --local extra notset
+            set --local extra ""
 
             # set extra (set_color $fish_color_command)"dirty:"(set_color normal)
             # i actually cant remember what "extra" is for, but i think i had a valid use case
@@ -82,16 +82,17 @@ function fish_right_prompt
 
             # okay, actually, it's currently showing up if there is ONLY a NEW file that IS staged but NOT committed
             # if there is a new staged file AND modified files, it does not show up
-            if not [ -z (echo "$git_status" | grep -e '^[MDA\?]') ]
-                # If there is new or deleted files, update status𝌡
-                set extra "a+aextra" #setcolor for git indicator (dirty)✱✲
+            # if not [ -z (echo "$git_status" | grep -e '^[MDA\?]') ]
+            # set extra "a+aextra" #setcolor for git indicator (dirty)✱✲
+            # end
+
+            # okay i think this is working??
+            # indicates when there is a new file that is not staged and/or staged
+            if [ (git status --porcelain | grep -e '^[MDA\?]') ]
+                set extra "*newfile" #setcolor for git indicator (dirty)✱✲
+
             end
 
-            # this causes it to show up if there is ONLY untracked new files that ARENT staged
-            # if not [ -z (echo "$git_status" | grep -e '^[\?\?]') ]
-
-            #     set extra "+aextra"
-            # end
             set git_info_tmp "$git_branch+ " #setcolor for git indicator (dirty), git branch𝌆
 
             # set git_info (set_color --bold $fish_color_operator)"$git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
