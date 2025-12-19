@@ -7,7 +7,7 @@ function print_fish_colors --description 'Shows the various fish colors being us
         echo '|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|'
         for var in $clr_list
             set -l def $$var
-            set -l clr (set_color $def ^/dev/null)
+            set -l clr (set_color $def >/dev/null)
             or begin
                 printf "| %-38s | %s%-38s$bclr |\n" "$var" (set_color --bold white --background=red) "$def"
                 continue

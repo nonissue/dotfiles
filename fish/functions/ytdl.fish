@@ -1,4 +1,4 @@
-function ytdl -a url
+function ytdl -a url --description 'Download audio from a YouTube URL as an mp3 file'
     if test -n "$url"
         set targetURL $url.tar
     else
