@@ -5,7 +5,7 @@ set -x GREP_COLOR "1;37;45"
 # set -x LS_COLORS 'ow=01;36;40'
 set -x FZF_DEFAULT_OPTS "--height 30 --ansi"
 set -x fzf_fd_opts --hidden --exclude=.git --follow
-set -x fzf_preview_dir_cmd exa --all --color=always
+set -x fzf_preview_dir_cmd eza --all --color=always
 
 abbr ff "$EDITOR ~/.config/fish/config.fish"
 abbr tt "$EDITOR ~/.tmux.conf"
