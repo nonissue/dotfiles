@@ -29,13 +29,29 @@ end
 function b --description "Exec command in bash. Useful when copy-pasting commands with imcompatible syntax to fish "
     bash -c "$argv"
 end
+
+# Use bat if available
+# this is probably not a good idea:
+# 1. I've had many issues even trying to tweak the command as it is below, it's very brittle and causes fish shell to hang onload
+# 2. Aliasing core unix commands can lead to unexpected behavior
+# anyway, seems to be working for now
+
 if type -q bat
-    # alias cat="bat --paging never --style \"changes,header,rule,snip\" --theme ansi"
-    alias cat="bat --paging never --style "changes,header,rule,snip" --theme ansi"
+    alias cat="bat --paging=never --style \"numbers,changes,header,rule,snip\" --theme=Catppuccin\ Frappe"
+
+    # function cat
+    # command bat --paging=never --style=numbers,changes,header --theme=ansi $argv
+    # command bat --paging=never $argv
+    # end
+    # alias cat="bat --paging never --style "changes,header,rule,snip" --theme ansi"
+    # alias cat="bat --paging never"
+
 end
+
 # function cat
 #     command bat $argv
 # end
+
 function color --description "Print color"
     echo (set_color (string trim -c '#' "$argv"))"██"
 end
