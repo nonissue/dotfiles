@@ -28,7 +28,7 @@ end
 
 function show_path
     set_color normal
-    set_color $fish_color_normal
+    set_color -o $fish_color_keyword
     prompt_pwd
     set_color normal
 end
@@ -89,14 +89,14 @@ function fish_right_prompt
             # okay i think this is working??
             # indicates when there is a new file that is not staged and/or staged
             if [ (git status --porcelain | grep -e '^[MDA\?]') ]
-                set extra "*newfile" #setcolor for git indicator (dirty)✱✲
+                set extra "+" #setcolor for git indicator (dirty)✱✲
 
             end
 
-            set git_info_tmp "$git_branch+ " #setcolor for git indicator (dirty), git branch𝌆
+            set git_info_tmp "$git_branch" #setcolor for git indicator (dirty), git branch𝌆
 
             # set git_info (set_color --bold $fish_color_operator)"$git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
-            set git_info (string join '' -- (set_color red) $extra (set_color --bold $fish_color_operator) $git_info_tmp) #setcolor for git indicator (dirty), git branch𝌆
+            set git_info (string join '' -- (set_color -o red) $extra (set_color -o $fish_color_operator) $git_info_tmp)(set_color -o $fish_color_operator)"* " #setcolor for git indicator (dirty), git branch𝌆
 
             set_color normal
         else if [ ~(_is_git_dirty) ]
@@ -106,6 +106,6 @@ function fish_right_prompt
     end
 
     # echo -n -s $git_info
-    string join '' -- $git_info (set_color -o 596f73) (show_path) (set_color normal)
+    string join '' -- $git_info (show_path) (set_color normal)
 
 end
