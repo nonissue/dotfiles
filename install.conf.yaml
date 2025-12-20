@@ -22,6 +22,8 @@
       # make ~/.config if it doesn't exist
       ~/.config/nvim:
           path: nvim
+      ~/.config/bat:
+          path: bat
       ~/.config/glances:
           path: glances
       ~/.config/fish:
