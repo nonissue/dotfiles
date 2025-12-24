@@ -9623,13 +9623,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.8980399966</real>
+				<real>0.48953062295913696</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.64705997709999996</real>
+				<real>0.84146636724472046</real>
 				<key>Red Component</key>
-				<real>0.015690000730000001</real>
+				<real>0.97340923547744751</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
@@ -10861,7 +10861,7 @@
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
-			<true/>
+			<false/>
 			<key>Use Custom Window Title</key>
 			<false/>
 			<key>Use Italic Font</key>
