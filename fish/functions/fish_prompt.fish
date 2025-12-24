@@ -36,7 +36,7 @@ function fish_prompt
     end
 
     # string join '' -- (set_color $prompt_prefix_color)'❯ '(set_color red)
-    string join '' -- (set_color $fish_color_autosuggestion)(whoami)(set_color -o $prompt_prefix_color)' ❯ '(set_color red)
+    string join '' -- (set_color $fish_color_autosuggestion)(whoami)(set_color -o $prompt_prefix_color)' ❯ '(set_color normal)
 
     # string join '' -- (set_color $fish_pager_color_prefix)"❯" 
     # string join '' -- (set_color $fish_pager_color_prefix)"❯" $stat ' >'

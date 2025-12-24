@@ -28,8 +28,8 @@ end
 
 function show_path
     set_color normal
-    set_color -o $fish_color_keyword
-    prompt_pwd
+    set_color -b $fish_color_gray_bg
+    string join '' -- " "(prompt_pwd)" "
     set_color normal
 end
 
@@ -41,8 +41,11 @@ end
 
 function fish_right_prompt
 
-    set --local LIMBO /dev/null
-    set --local git_status (git status --porcelain 2> $LIMBO)
+    # set --local LIMBO /dev/null
+    # set --local git_status (git status --porcelain 2> $LIMBO)
+
+    set -l git_status (git status --porcelain 2>/dev/null)
+
     # set --local extra
     #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
 
@@ -73,8 +76,8 @@ function fish_right_prompt
 
     if [ (_git_branch_name) ]
         set -l git_branch (_git_branch_name)
+        set -l structural ""
         if [ (_is_git_dirty) ]
-            set --local extra ""
 
             # set extra (set_color $fish_color_command)"dirty:"(set_color normal)
             # i actually cant remember what "extra" is for, but i think i had a valid use case
@@ -88,19 +91,19 @@ function fish_right_prompt
 
             # okay i think this is working??
             # indicates when there is a new file that is not staged and/or staged
-            if [ (git status --porcelain | grep -e '^[MDA\?]') ]
-                set extra "+" #setcolor for git indicator (dirty)✱✲
 
+            if string match -rq '^(?:[AD].|.[AD]|\?\?)' -- $git_status
+                set structural (set_color green)"± "
             end
 
             set git_info_tmp "$git_branch" #setcolor for git indicator (dirty), git branch𝌆
 
             # set git_info (set_color --bold $fish_color_operator)"$git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
-            set git_info (string join '' -- (set_color -o red) $extra (set_color -o $fish_color_operator) $git_info_tmp)(set_color -o $fish_color_operator)"* " #setcolor for git indicator (dirty), git branch𝌆
+            set git_info (string join '' -- (set_color -b $fish_color_gray_bg_dark)" "(set_color -o red) $structural (set_color -o $fish_color_host_remote) $git_info_tmp)(set_color $fish_color_operator)" ✱ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
 
             set_color normal
         else if [ ~(_is_git_dirty) ]
-            set git_info (set_color --bold $fish_color_command)"$extra$git_branch• "(set_color normal) # setcolor for git branch?
+            set git_info (set_color -o $fish_color_command)"$extra$git_branch • "(set_color normal) # setcolor for git branch?
         end
 
     end
