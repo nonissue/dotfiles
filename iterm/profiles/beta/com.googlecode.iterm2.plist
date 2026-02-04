@@ -9545,13 +9545,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.74510002139999998</real>
+				<real>0.86343604326248169</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.74510002139999998</real>
+				<real>0.75236356258392334</real>
 				<key>Red Component</key>
-				<real>0.93332999940000005</real>
+				<real>0.90362662076950073</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -9597,13 +9597,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.1058799997</real>
+				<real>0.9063035102739726</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.066670000549999997</real>
+				<real>0.79215949134777963</real>
 				<key>Red Component</key>
-				<real>0.066670000549999997</real>
+				<real>0.76647708714782792</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
@@ -9840,7 +9840,7 @@
 			<key>Description</key>
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
-			<true/>
+			<false/>
 			<key>Draw Powerline Glyphs</key>
 			<false/>
 			<key>Flashing Bell</key>
@@ -10867,7 +10867,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Use Underline Color</key>
