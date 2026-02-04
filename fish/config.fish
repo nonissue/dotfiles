@@ -1,7 +1,15 @@
 set fish_greeting
 
 set -g XDG_CONFIG_HOME ~/.dotfiles
-set -x GREP_COLOR "1;37;45"
+
+# this is deprecated apparently
+# I can't even really remember why I added it
+# set -x GREP_COLOR "1;37;45"
+
+# The suggested fix
+set -e GREP_COLOR
+set -x GREP_COLORS "mt=1;37;45"
+
 # set -x LS_COLORS 'ow=01;36;40'
 set -x FZF_DEFAULT_OPTS "--height=35% --ansi --info=inline --border --margin=0 --padding=1"
 set -x fzf_fd_opts --hidden --exclude=.git --follow
@@ -37,7 +45,7 @@ end
 # anyway, seems to be working for now
 
 if type -q bat
-    alias cat="bat --paging=never --style \"numbers,changes,header,rule,snip\" --theme=Catppuccin\ Frappe"
+    alias cat="bat --paging=never --style \"changes,header,rule,snip\" --theme=Catppuccin\ Frappe"
 
     # function cat
     # command bat --paging=never --style=numbers,changes,header --theme=ansi $argv
