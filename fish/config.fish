@@ -45,7 +45,7 @@ end
 # anyway, seems to be working for now
 
 if type -q bat
-    alias cat="bat --paging=never --style \"numbers,changes,header,rule,snip\" --theme=Catppuccin\ Frappe"
+    alias cat="bat --paging=never --style \"changes,header,rule,snip\" --theme=Catppuccin\ Frappe"
 
     # function cat
     # command bat --paging=never --style=numbers,changes,header --theme=ansi $argv
