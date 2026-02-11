@@ -43,3 +43,9 @@
           # Have to add it ~/bin to path on linux
           if: '[ (uname) = "Linux" ]'
           path: bin/pbcopy
+
+#- plugins:
+#    - dotbot-plugins/dotbot-git
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
