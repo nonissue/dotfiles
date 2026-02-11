@@ -261,7 +261,6 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-alias claude="/Users/apw/.claude/local/claude"
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
