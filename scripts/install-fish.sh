@@ -21,7 +21,7 @@ fi
 
 # Add the Fish shell PPA
 echo "Adding Fish shell PPA..."
-sudo apt-add-repository -y ppa:fish-shell/release-3
+sudo apt-add-repository -y ppa:fish-shell/release-4
 
 # Update package lists again to include the Fish PPA
 echo "Updating package lists after adding PPA..."
