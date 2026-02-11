@@ -45,6 +45,12 @@
           path: bin/pbcopy
 
 - plugins:
-      - dotbot-plugins/dotbot-git
-#- shell:
-#      - [git submodule update --init --recursive, Installing submodules]
+      - dotbot-plugins/dotbot-git/git.py
+
+- git:
+      "~/.tmux/plugins/tpm":
+      url: "https://github.com/tmux-plugins/tpm"
+      description: "tmux plugins (tpm)"
+
+- shell:
+      - [git submodule update --init --recursive, Installing submodules]
