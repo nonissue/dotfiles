@@ -20275,6 +20275,8 @@
 	<integer>16</integer>
 	<key>TerminalVMargin</key>
 	<integer>16</integer>
+	<key>TmuxSyncClipboard</key>
+	<true/>
 	<key>TmuxUsesDedicatedProfile</key>
 	<false/>
 	<key>ToolbeltTools</key>
