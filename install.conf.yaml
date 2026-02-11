@@ -1,3 +1,5 @@
+# - verbose: true
+
 - clean: ["~"]
 
 - create:
@@ -45,12 +47,12 @@
           path: bin/pbcopy
 
 - plugins:
-      - dotbot-plugins/dotbot-git/git.py
+      - dotbot-plugins/dotbot-git/
 
 - git:
       "~/.tmux/plugins/tpm":
-      url: "https://github.com/tmux-plugins/tpm"
-      description: "tmux plugins (tpm)"
+          url: "https://github.com/tmux-plugins/tpm"
+          description: "tmux plugins (tpm)"
 
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
