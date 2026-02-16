@@ -13,18 +13,6 @@ function show_git_info
     [ $status -eq 128 ]; and return # Not a repository? Nothing to do
 end
 
-# only display a host name if we're in an ssh session
-function __ssh_host
-    if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
-        set_color -d white
-        echo -n $USER@
-        set_color normal
-        set_color -d -o fish_color_host_remote
-        echo -n (hostname -s)
-
-        set_color normal
-    end
-end
 
 function show_path
     set_color normal
@@ -109,6 +97,7 @@ function fish_right_prompt
     end
 
     # echo -n -s $git_info
-    string join '' -- $git_info (show_path) (set_color normal)
+
+    string join ''  $git_info (show_path) (set_color normal)
 
 end
