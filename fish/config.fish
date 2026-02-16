@@ -122,10 +122,12 @@ if type -q nvim
 end
 function jjrf --description "reloads fish shell config and functions (function loading is janky)"
     #     # This doesnt really seem to be working for reloading functions that are changing...
-    source ~/.dotfiles/fish/config.fish && source ~/.dotfiles/fish/functions/*.fish
+    # source ~/.dotfiles/fish/config.fish && source ~/.dotfiles/fish/functions/*.fish
     # source ~/.dotfiles/fish/config.fish
     # source ~/.dotfiles/fish/functions/*.fish
-
+    echo "Reloading fish config..."
+    exec fish
+    
 end
 
 # This seems dangerous? I gotta sus out the mental model of python projects and packages
