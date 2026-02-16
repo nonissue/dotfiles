@@ -22,12 +22,12 @@
 
 function __prompt_user
     if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
-        set_color -d $fish_pager_color_completion
+        set_color $fish_color_autosuggestion
         echo -n $USER
         set_color -d $fish_color_autosuggestion
         echo -n "@"
         set_color normal
-        set_color -d red
+        set_color -d $fish_color_cwd
         echo -n (hostname -s)
         set_color normal
     else 
