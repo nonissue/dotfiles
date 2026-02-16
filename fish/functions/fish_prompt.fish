@@ -20,6 +20,23 @@
 #     show_status $last_status
 # end
 
+function __prompt_user
+    if test -n "$SSH_CLIENT$SSH2_CLIENT$SSH_TTY"
+        set_color -d $fish_pager_color_completion
+        echo -n $USER
+        set_color -d $fish_color_autosuggestion
+        echo -n "@"
+        set_color normal
+        set_color -d red
+        echo -n (hostname -s)
+        set_color normal
+    else 
+        set_color $fish_pager_color_completion
+        echo -n (whoami)
+        set_color normal
+    end
+end
+
 function fish_prompt
     set -l last_status $status
     # Prompt status only if it's not 0
@@ -36,8 +53,7 @@ function fish_prompt
     end
 
     # string join '' -- (set_color $prompt_prefix_color)'❯ '(set_color red)
-    string join '' -- (set_color $fish_color_autosuggestion)(whoami)(set_color -o $prompt_prefix_color)' ❯ '(set_color normal)
+    
+    string join '' -- (__prompt_user)(set_color -o $prompt_prefix_color)' ❯ '(set_color normal)
 
-    # string join '' -- (set_color $fish_pager_color_prefix)"❯" 
-    # string join '' -- (set_color $fish_pager_color_prefix)"❯" $stat ' >'
 end
