@@ -1,5 +1,7 @@
 window-padding-x = 12
-window-padding-y = 6
+window-padding-y = 12,6
+# window-padding-y = 6
+
 
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
@@ -11,12 +13,12 @@ background-blur = macos-glass-regular
 
 # theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 # cool themes (dark): twilight, traffic, Rouge 2, Poimandres, novmbr, Kanso Pearl, Kanso Mist, Kanso Ink, Kanagawabones, Everforest Dark Hard, branch
-# cool themes (light): Rose Pine Dawn, Night Owlish Light, Neobones Light, Light Owl, Kanso Zen, Flexoki Light, Farmhouse Light, Everforest Light Med,  Dayfox, Dawnfox, Belafonte Day
-theme = light:Kanso Pearl,dark:Kanso Ink
+# cool themes (light): Rose Pine Dawn, Night Owlish Light, Light Owl, Kanso Zen, Flexoki Light, Farmhouse Light, Everforest Light Med,  Dayfox, Dawnfox, Belafonte Day
+theme = light:Dawnfox,dark:Kanso Ink
 
 shell-integration-features = no-cursor
 cursor-style = underline
-adjust-cursor-thickness = 2
+adjust-cursor-thickness = 3
 mouse-hide-while-typing = true
 
 window-inherit-working-directory = false
@@ -33,6 +35,10 @@ font-family = "JetBrainsMono Nerd Font Mono"
 
 macos-icon = custom
 macos-custom-icon = ~/.dotfiles/ghostty/ghostty-original.icns
+# macos-titlebar-style = hidden  
+# macos-titlebar-style = transparent  
+macos-window-buttons = hidden
+
 
 # macos-icon = xray
 # macos-icon-frame = beige
@@ -40,11 +46,12 @@ macos-custom-icon = ~/.dotfiles/ghostty/ghostty-original.icns
 # macos-icon-screen-color = #ece8df
 
 # Behavior
+custom-shader = shaders/cursor_blaze.glsl
 auto-update = check
 window-save-state = always
 
 # Quick terminal (system-wide dropdown)
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+# keybind = global:cmd+grave_accent=toggle_quick_terminal
 quick-terminal-position = top
 quick-terminal-animation-duration = 0.15
 
