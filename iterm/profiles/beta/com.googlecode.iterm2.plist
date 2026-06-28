@@ -17,9 +17,9 @@
 	<key>AIVectorStore</key>
 	<integer>0</integer>
 	<key>AiMaxTokens</key>
-	<integer>400000</integer>
+	<integer>1050000</integer>
 	<key>AiModel</key>
-	<string>gpt-5.1</string>
+	<string>gpt-5.5</string>
 	<key>AiResponseMaxTokens</key>
 	<integer>128000</integer>
 	<key>AitermURL</key>
@@ -9812,6 +9812,8 @@
 				<key>Red Component</key>
 				<real>0.29804000260000002</real>
 			</dict>
+			<key>Cursor Hidden When Unfocused</key>
+			<true/>
 			<key>Cursor Shadow</key>
 			<false/>
 			<key>Cursor Text Color</key>
@@ -9828,7 +9830,7 @@
 				<real>0.92157000300000003</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
