@@ -5,5 +5,8 @@
 
 LOLCAT=/usr/games/lolcat
 
-/usr/bin/env figlet -f isometric3 "wtsn" | $LOLCAT -f
-printf '\n'
+#/usr/bin/env figlet -f isometric3 "ADLER" | $LOLCAT -f
+#/usr/bin/env figlet -f isometric3 "adler" | $LOLCAT -f
+printf '\n\n'
+/usr/bin/env figlet -f roman "adler" | $LOLCAT -f
+#printf '\n'
