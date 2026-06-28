@@ -22,16 +22,36 @@ Requires:
 
 ## Install Instructions
 
+Symlinking is automated by dotbot. The `scripts/install-motd.sh` helper (wired into
+`install.conf.yaml` via a Linux-guarded `shell:` entry) archives any distro-default
+scripts once, then symlinks only the numbered MOTD scripts into `/etc/update-motd.d`.
+It is idempotent, so it's safe to re-run on every bootstrap — it will prompt for sudo
+since writing to `/etc` requires root.
+
+Running the dotfiles installer on a Linux host is enough:
+
+```
+~/.dotfiles/install
+```
+
+The dependencies still need to be installed manually:
+
+```
+sudo apt install figlet lolcat -y
+cd /usr/share/figlet
+sudo curl -O 'https://www.figlet.org/fonts/roman.flf'
+~/.dotfiles/motd/preview.sh
+```
+
+### Manual symlinking (if needed)
+
 ```
 cd /etc/update-motd.d
 sudo mkdir archive
 sudo mv * archive/
-sudo ln -s ~/.dotfiles/motd/* .
-sudo apt install figlet lolcat -y
-cd /usr/share/figlet
-sudo curl -O 'https://www.figlet.org/fonts/roman.flf'
-cd /etc/update-motd.d
-./preview.sh
+# Link only the numbered scripts (avoid symlinking README.md / preview.sh,
+# which run-parts would otherwise execute on login)
+sudo ln -sfn ~/.dotfiles/motd/[0-9]* .
 ```
 
 ## Misc notes
