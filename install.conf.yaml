@@ -59,3 +59,5 @@
 
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
+      - command: scripts/install-motd.sh
+        description: Linking MOTD scripts (Linux only, needs sudo)
