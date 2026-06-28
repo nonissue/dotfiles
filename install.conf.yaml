@@ -35,7 +35,7 @@
           create: true
           path: lf/lfrc
       ~/.vscode:
-          if: '[ (uname) = "Linux" ]'
+          if: '[ "$(uname)" = "Linux" ]'
           path: vscode
       ~/.fdignore:
           path: fdignore
@@ -43,11 +43,12 @@
       ~/.local/bin/pbcopy:
           # Better than running command with sudo...
           # Have to add it ~/bin to path on linux
-          if: '[ (uname) = "Linux" ]'
+          if: '[ "$(uname)" = "Linux" ]'
           path: bin/pbcopy
-      ~/Library/Application Support/com.mitchellh.ghostty:
-          if: '[ (uname) = "Darwin" ]'
-          path: ghostty
+      ~/Library/Application Support/com.mitchellh.ghostty/config:
+          if: '[ "$(uname)" = "Darwin" ]'
+          create: true
+          path: ghostty/config.ghostty
 
 - plugins:
       - dotbot-plugins/dotbot-git/
