@@ -20,12 +20,20 @@ Requires:
 - figlet
 - LOLCAT
 
-## Figlet setup
-
-1. Find figlet default font directory: `figlet -I 2`.
-2. Install `roman.fif` to this dir (used to use isometric3.flf)
+## Install Instructions
 
 ```
+cd /etc/update-motd.d
+sudo mkdir archive
+sudo mv * archive/
+sudo ln -s ~/.dotfiles/motd/* .
+sudo apt install figlet lolcat -y
 cd /usr/share/figlet
 sudo curl -O 'https://www.figlet.org/fonts/roman.flf'
+cd /etc/update-motd.d
+./preview.sh
 ```
+
+## Misc notes
+
+- Find figlet default font directory: `figlet -I 2`.
