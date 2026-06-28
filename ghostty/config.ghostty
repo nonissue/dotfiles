@@ -5,8 +5,10 @@ macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
-background-image-opacity = 0.95
+background-opacity = 0.80
 background-blur = macos-glass-regular
+
+theme = "Catppuccin Mocha"
 # background-blur-radius = 40
 
 mouse-hide-while-typing = true
