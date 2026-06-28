@@ -45,6 +45,9 @@
           # Have to add it ~/bin to path on linux
           if: '[ (uname) = "Linux" ]'
           path: bin/pbcopy
+      ~/Library/Application Support/com.mitchellh.ghostty:
+          if: '[ (uname) = "Darwin" ]'
+          path: ghostty
 
 - plugins:
       - dotbot-plugins/dotbot-git/
