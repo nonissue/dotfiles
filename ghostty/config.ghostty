@@ -5,11 +5,15 @@ macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur = macos-glass-regular     
-
-theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 # background-blur-radius = 40
+
+# theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+# cool themes (dark): twilight, traffic, Rouge 2, Poimandres, novmbr, Kanso Pearl, Kanso Mist, Kanso Ink, Kanagawabones, Everforest Dark Hard, branch
+# cool themes (light): Rose Pine Dawn, Night Owlish Light, Neobones Light, Light Owl, Kanso Zen, Flexoki Light, Farmhouse Light, Everforest Light Med,  Dayfox, Dawnfox, Belafonte Day
+theme = light:Kanso Pearl,dark:Kanso Ink
+
 
 mouse-hide-while-typing = true
 

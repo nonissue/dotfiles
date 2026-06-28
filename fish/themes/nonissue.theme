@@ -1,45 +1,53 @@
 # name: 'nonissue'
 # url: 'https://github.com/nonissue/dotfiles'
-# preferred_background: 181825
+#
+# Named-ANSI version: every color references one of the 16 ANSI palette slots
+# (or `normal` = default fg), so ALL shell/prompt colors resolve through the
+# active terminal (Ghostty) theme. Switch Ghostty light/dark or to any other
+# theme and this tracks it automatically — no hardcoded hex.
+#
+# The original hand-tuned hex shades are archived as nonissue-classic.theme.
+# NOTE: editing this file does not re-apply it (theme vars are universal and
+# persist). After changing it, run:  fish_config theme choose nonissue
 
 
 # fish_color_cwd_root red
-fish_color_autosuggestion 3D8479
-fish_color_cancel e78284
-fish_color_command 8caaee
-fish_color_comment 5C6773
-fish_color_custom_one 1587DF
-fish_color_custom_two 0E558C
-fish_color_cwd 73D0FF
-fish_color_end F29E74
-fish_color_error FF3333
-fish_color_escape 95E6CB
-fish_color_gray 6e738d
-fish_color_gray_bg 52576f
-fish_color_gray_bg_dark 393552
+fish_color_autosuggestion brblack
+fish_color_cancel red
+fish_color_command blue
+fish_color_comment brblack
+fish_color_custom_one blue
+fish_color_custom_two brblue
+fish_color_cwd cyan
+fish_color_end yellow
+fish_color_error brred
+fish_color_escape cyan
+fish_color_gray brblack
+fish_color_gray_bg brblack
+fish_color_gray_bg_dark black
 fish_color_host normal
 fish_color_host_remote yellow
-fish_color_keyword 5CCFE6
-fish_color_match F28779
+fish_color_keyword cyan
+fish_color_match red
 fish_color_normal normal
-fish_color_operator FFCC66
-fish_color_option a6d189
-fish_color_param eebebe
-fish_color_quote BAE67E
-fish_color_redirection f4b8e4
-fish_color_search_match --background=FFCC66
-fish_color_selection --background=FFCC66
-fish_color_status e78284
-fish_color_user 81c8be
+fish_color_operator yellow
+fish_color_option green
+fish_color_param normal
+fish_color_quote green
+fish_color_redirection magenta
+fish_color_search_match --background=yellow
+fish_color_selection --background=yellow
+fish_color_status red
+fish_color_user cyan
 fish_color_valid_path --underline
-fish_pager_color_completion 1587DF
-fish_pager_color_description B3A06D
-fish_pager_color_prefix 4CBF99
+fish_pager_color_completion blue
+fish_pager_color_description yellow
+fish_pager_color_prefix green
 fish_pager_color_progress brwhite '--background=cyan'
-fish_pager_color_selected_background --background=FFCC66
+fish_pager_color_selected_background --background=yellow
 
-fish_pager_color_background 181825
-# fish_pager_color_secondary_background 
+fish_pager_color_background normal
+# fish_pager_color_secondary_background
 # fish_pager_color_secondary_completion
 # fish_pager_color_secondary_description
 # fish_pager_color_secondary_prefix
