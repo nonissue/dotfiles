@@ -173,8 +173,11 @@ fish_config theme choose nonissue
 
 # Keybinding for explainshell function
 bind \ch explain
-# set -a fish_function_path (echo $HOME/.dotfiles/fish/functions)
-# set -a fish_function_path (echo $HOME/.config/fish/functions)
+# Custom functions/completions live in fish/custom/ — outside the fisher-managed
+# dirs (functions/, completions/, conf.d/) so `fisher update` never collides with
+# them. Prepend so customs take precedence; guard against dupes on reload.
+contains $__fish_config_dir/custom/functions $fish_function_path; or set -p fish_function_path $__fish_config_dir/custom/functions
+contains $__fish_config_dir/custom/completions $fish_complete_path; or set -p fish_complete_path $__fish_config_dir/custom/completions
 
 # set -g prevents path items being duplicated when fish is reloaded
 # as we are shadowing the global variable with a session variable
@@ -197,14 +200,14 @@ switch (uname)
             fish_add_path "/Users/apw/.bun/bin"
         end
 
-        # pnpm
-        if type -q pnpm
-            set -gx PNPM_HOME $HOME"/Library/pnpm"
-            if not string match -q -- $PNPM_HOME $PATH
-                set -gx PATH "$PNPM_HOME" $PATH
-            end
+        # pnpm — executables live in PNPM_HOME/bin (pn, pnpm, pnpx, pnx).
+        # Guard on the dir existing, NOT `type -q pnpm`: on first install the
+        # binary isn't on PATH yet, so a `type` guard would never add it (chicken/egg).
+        # The installer creates this dir, so its existence is the real "installed" signal.
+        set -gx PNPM_HOME "$HOME/Library/pnpm"
+        if test -d $PNPM_HOME/bin
+            fish_add_path $PNPM_HOME/bin
         end
-        # pnpm end
 
         if type -q uv
             uv generate-shell-completion fish | source
@@ -225,7 +228,6 @@ switch (uname)
         # tabtab source for packages
         # uninstall by removing these lines
         [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
-
     case Linux
         set -g os Linux
 
@@ -256,14 +258,6 @@ end
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
-
-# pnpm
-set -gx PNPM_HOME /Users/apw/Library/pnpm
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
-
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.

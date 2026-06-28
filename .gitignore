@@ -14,9 +14,13 @@ env/python3/lib/
 fish/fish_history
 fish/fish_variables
 fish/fishd.*
-fish/fisher/functions/__history*
-fisher/
-fzf_key_bindings.fish
+# Fisher-managed — regenerated from fish/fish_plugins via `fisher update`.
+# Custom functions/completions live in fish/custom/ (tracked).
+fish/functions/
+fish/completions/
+fish/conf.d/
+fish/themes/catppuccin-*.theme
+fish/themes/static/
 iterm/profiles/com.googlecode.iterm2.plist
 nvim.bak/
 nvim/.netrwhist
