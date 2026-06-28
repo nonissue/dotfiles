@@ -5,7 +5,7 @@ macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
-background-opacity = 0.95
+background-opacity = 0.90
 background-blur = macos-glass-regular     
 # background-blur-radius = 40
 
@@ -14,7 +14,9 @@ background-blur = macos-glass-regular
 # cool themes (light): Rose Pine Dawn, Night Owlish Light, Neobones Light, Light Owl, Kanso Zen, Flexoki Light, Farmhouse Light, Everforest Light Med,  Dayfox, Dawnfox, Belafonte Day
 theme = light:Kanso Pearl,dark:Kanso Ink
 
-
+shell-integration-features = no-cursor
+cursor-style = underline
+adjust-cursor-thickness = 2
 mouse-hide-while-typing = true
 
 window-inherit-working-directory = false
