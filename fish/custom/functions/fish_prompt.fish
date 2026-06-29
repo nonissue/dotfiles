@@ -52,8 +52,14 @@ function fish_prompt
         set prompt_prefix_color brred
     end
 
+    # Virtualenv (python venv etc.) prefixed on the left, only when active.
+    set -l venv ""
+    if set -q VIRTUAL_ENV
+        set venv (set_color cyan)"("(path basename $VIRTUAL_ENV)") "(set_color normal)
+    end
+
     # string join '' -- (set_color $prompt_prefix_color)'❯ '(set_color red)
-    
-    string join '' -- (__prompt_user)(set_color -o $prompt_prefix_color)' ❯ '(set_color normal)
+
+    string join '' -- "$venv"(__prompt_user)(set_color -o $prompt_prefix_color)' ❯ '(set_color normal)
 
 end

@@ -1,103 +1,80 @@
-function _is_git_dirty
-    echo (command git status -s --ignore-submodules=dirty 2>/dev/null)
+# Right prompt:  [duration]  [git]  [cwd]
+#
+# Named-ANSI colours so it tracks the active terminal theme. The two Nerd Font
+# glyphs (branch, folder) are injected as real bytes; standard Unicode symbols
+# (↑ ↓) are inline. Every segment is conditional.
+
+function __prompt_git
+    # One porcelain v2 call yields branch, ahead/behind, and per-file states.
+    set -l raw (command git status --porcelain=v2 --branch 2>/dev/null)
+    test (count $raw) -gt 0; or return
+
+    set -l branch ""
+    set -l oid ""
+    set -l ahead 0
+    set -l behind 0
+    set -l dirty 0  # any change -> branch shows amber
+
+    for line in $raw
+        set -l t (string sub -l 1 -- $line)
+        if test $t = '#'
+            if string match -q '# branch.head *' -- $line
+                set branch (string replace '# branch.head ' '' -- $line)
+            else if string match -q '# branch.oid *' -- $line
+                set oid (string replace '# branch.oid ' '' -- $line)
+            else if string match -q '# branch.ab *' -- $line
+                set -l p (string split ' ' -- $line)
+                set ahead (string sub -s 2 -- $p[3])
+                set behind (string sub -s 2 -- $p[4])
+            end
+        else if test $t = 1 -o $t = 2
+            set dirty 1
+        else if test $t = u
+            set dirty 1
+        else if test $t = '?'
+            set dirty 1
+        end
+    end
+
+    # Detached HEAD -> short sha instead of a branch name.
+    test "$branch" = '(detached)'; and set branch ":"(string sub -l 7 -- $oid)
+
+
+    # Branch colour signals state: green = clean, yellow (amber) = dirty.
+    set -l branch_color yellow
+    test $dirty -eq 0; and set branch_color green
+
+    set -l out (set_color $branch_color)" "(set_color normal)
+    set out $out (set_color -o $branch_color)"$branch"(set_color normal)
+    test $ahead -gt 0; and set out $out (set_color cyan)"↑$ahead"(set_color normal)
+    test $behind -gt 0; and set out $out (set_color cyan)"↓$behind"(set_color normal)
+
+    string join '' $out
 end
 
-function _git_branch_name
-    echo (command git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
+function __prompt_duration
+    test "$CMD_DURATION" -gt 4000; or return
+    set -l d
+    if test $CMD_DURATION -ge 60000
+        set d (math -s0 "floor($CMD_DURATION/60000)")"m "(math -s0 "floor(($CMD_DURATION%60000)/1000)")"s"
+    else
+        set d (math -s1 $CMD_DURATION/1000)"s"
+    end
+    string join '' -- (set_color brblack)"$d"(set_color normal)
 end
-
-function show_git_info
-    set --local LIMBO /dev/null
-    set --local git_status (git status --porcelain 2> $LIMBO)
-    set --local dirty ""
-    [ $status -eq 128 ]; and return # Not a repository? Nothing to do
-end
-
 
 function show_path
-    set_color normal
-    set_color -b $fish_color_gray_bg
-    string join '' -- " "(prompt_pwd)" "
-    set_color normal
-end
-
-function show_virtualenv_name
-    if set -q VIRTUAL_ENV
-        echo -en "["(basename "$VIRTUAL_ENV")"] "
-    end
+    # Folder glyph + soft-gray path, no background.
+    set -l g_folder ''
+    string join '' -- (set_color brblack)"$g_folder "(prompt_pwd)(set_color normal)
 end
 
 function fish_right_prompt
-
-    # set --local LIMBO /dev/null
-    # set --local git_status (git status --porcelain 2> $LIMBO)
-
-    set -l git_status (git status --porcelain 2>/dev/null)
-
-    # set --local extra
-    #-- others ⧒ ⧑ ⧔ ⧕ ⧖⧗ (times with÷) ≍⫏⧇⦿⦸⦷⦵⧆⧈⊜≡≣∗∅=⊡⋐⨀*⤲
-
-    set -l status_l "<"
-    set -l status_r ">"
-
-    if [ (_git_branch_name) ]
-        set -l git_branch (_git_branch_name)
-        set git_info "$git_branch"
-    end
-
-    # TODO !
-    # IDEAS BELOW!
-
-    # maybe just change the color of the tetragram to indicate
-    # repo is dirty rather than the branch name? 
-    # grey_blue -> clean
-    # red -> dirty, nothing staged
-    # yellow -> dirty, staged file additions/deletions
-
-    # ⏘ --> nothing changed? EDIT: eh doens't look good in term 
-    # maybe: ⊜
-    # 𝌆 --> new file additions/deletions, not staged
-    # 𝌡 --> new staged file additions/deletions, not committed
-    # 𝍖 --> for stashed?
-    # other symbols: ⤽⤼⥅⫀⪿⨄⨦⨧⨮⨴⊛⊕⊙⊘⊚⊝ ●○
-    # WE gots to do smething
-
-    if [ (_git_branch_name) ]
-        set -l git_branch (_git_branch_name)
-        set -l structural ""
-        if [ (_is_git_dirty) ]
-
-            # set extra (set_color $fish_color_command)"dirty:"(set_color normal)
-            # i actually cant remember what "extra" is for, but i think i had a valid use case
-            # maybe update vs modified files?
-
-            # okay, actually, it's currently showing up if there is ONLY a NEW file that IS staged but NOT committed
-            # if there is a new staged file AND modified files, it does not show up
-            # if not [ -z (echo "$git_status" | grep -e '^[MDA\?]') ]
-            # set extra "a+aextra" #setcolor for git indicator (dirty)✱✲
-            # end
-
-            # okay i think this is working??
-            # indicates when there is a new file that is not staged and/or staged
-
-            if string match -rq '^(?:[AD].|.[AD]|\?\?)' -- $git_status
-                set structural (set_color green)"± "
-            end
-
-            set git_info_tmp "$git_branch" #setcolor for git indicator (dirty), git branch𝌆
-
-            # set git_info (set_color --bold $fish_color_operator)"$git_branch+ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
-            set git_info (string join '' -- (set_color -b $fish_color_gray_bg_dark)" "(set_color -o red) $structural (set_color -o $fish_color_host_remote) $git_info_tmp)(set_color $fish_color_operator)" ✱ "(set_color normal) #setcolor for git indicator (dirty), git branch𝌆
-
-            set_color normal
-        else if [ ~(_is_git_dirty) ]
-            set git_info (set_color -o $fish_color_command)"$extra$git_branch • "(set_color normal) # setcolor for git branch?
-        end
-
-    end
-
-    # echo -n -s $git_info
-
-    string join ''  $git_info (show_path) (set_color normal)
-
+    set -l segs
+    set -l dur (__prompt_duration)
+    test -n "$dur"; and set segs $segs "$dur"
+    set -l git (__prompt_git)
+    test -n "$git"; and set segs $segs "$git"
+    set segs $segs (show_path)
+    string join '  ' $segs
 end
