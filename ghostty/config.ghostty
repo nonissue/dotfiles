@@ -1,7 +1,5 @@
 window-padding-x = 12
 window-padding-y = 12,6
-# window-padding-y = 6
-
 
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
@@ -57,3 +55,9 @@ quick-terminal-animation-duration = 0.15
 # Prompt jumping (uses shell integration, auto-enabled for fish)
 keybind = cmd+up=jump_to_prompt:-1
 keybind = cmd+down=jump_to_prompt:1
+
+# Override the native 'edit config' shortcut with the CLI action, respecting ${VISUAL:-${EDITOR}}
+#   1. `\x1bq` runs the zsh `push-line-or-edit` widget (bound to alt-q)
+#   2. `ghostty +edit-config` is sent to the shell prompt
+#   3. `\x0d` enters/executes the command currently on the prompt
+keybind = unconsumed:super+,=text:\x1bqghostty +edit-config\x0d
