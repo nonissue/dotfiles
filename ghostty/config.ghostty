@@ -5,6 +5,8 @@ window-padding-y = 12,6
 
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
+macos-window-buttons = hidden
+
 macos-option-as-alt = true
 
 background-opacity = 0.90
@@ -37,8 +39,6 @@ macos-icon = custom
 macos-custom-icon = ~/.dotfiles/ghostty/ghostty-original.icns
 # macos-titlebar-style = hidden  
 # macos-titlebar-style = transparent  
-macos-window-buttons = hidden
-
 
 # macos-icon = xray
 # macos-icon-frame = beige
@@ -46,7 +46,6 @@ macos-window-buttons = hidden
 # macos-icon-screen-color = #ece8df
 
 # Behavior
-custom-shader = shaders/cursor_blaze.glsl
 auto-update = check
 window-save-state = always
 
