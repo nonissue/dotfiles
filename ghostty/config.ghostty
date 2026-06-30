@@ -1,20 +1,20 @@
-window-padding-x = 12
+window-padding-x = 18
 window-padding-y = 12,6
 
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
-macos-window-buttons = hidden
+# macos-window-buttons = hidden
 
-macos-option-as-alt = true
-
-background-opacity = 0.90
-background-blur = macos-glass-regular     
-# background-blur-radius = 40
+background-opacity = 0.8
+background-blur = macos-glass-regular
 
 # theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 # cool themes (dark): twilight, traffic, Rouge 2, Poimandres, novmbr, Kanso Pearl, Kanso Mist, Kanso Ink, Kanagawabones, Everforest Dark Hard, branch
 # cool themes (light): Rose Pine Dawn, Night Owlish Light, Light Owl, Kanso Zen, Flexoki Light, Farmhouse Light, Everforest Light Med,  Dayfox, Dawnfox, Belafonte Day
-theme = light:Dawnfox,dark:Kanso Ink
+theme = light:Dawnfox,dark:novmbr
+
+# font
+font-family = "JetBrainsMono Nerd Font Mono"
 
 shell-integration-features = no-cursor
 cursor-style = underline
@@ -25,7 +25,8 @@ window-inherit-working-directory = false
 tab-inherit-working-directory = false
 working-directory = home
 
-font-family = "JetBrainsMono Nerd Font Mono"
+
+
 # font-family = "Georgia"
 # font-variation = wght=300
 # font-variation = wdth=100
@@ -46,11 +47,14 @@ macos-custom-icon = ~/.dotfiles/ghostty/ghostty-original.icns
 # Behavior
 auto-update = check
 window-save-state = always
+notify-on-command-finish = unfocused
 
 # Quick terminal (system-wide dropdown)
 # keybind = global:cmd+grave_accent=toggle_quick_terminal
 quick-terminal-position = top
 quick-terminal-animation-duration = 0.15
+
+macos-option-as-alt = true
 
 # Prompt jumping (uses shell integration, auto-enabled for fish)
 keybind = cmd+up=jump_to_prompt:-1
