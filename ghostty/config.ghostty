@@ -11,7 +11,7 @@ background-blur = macos-glass-regular
 # theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 # cool themes (dark): twilight, traffic, Rouge 2, Poimandres, novmbr, Kanso Pearl, Kanso Mist, Kanso Ink, Kanagawabones, Everforest Dark Hard, branch
 # cool themes (light): Rose Pine Dawn, Night Owlish Light, Light Owl, Kanso Zen, Flexoki Light, Farmhouse Light, Everforest Light Med,  Dayfox, Dawnfox, Belafonte Day
-theme = light:Dawnfox,dark:novmbr
+theme = light:Dayfox,dark:Kanso Ink
 
 # font
 font-family = "JetBrainsMono Nerd Font Mono"
