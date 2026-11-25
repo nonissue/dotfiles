@@ -65,7 +65,8 @@
 
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
-      - command: 'case "$(uname)" in Darwin) [ -x /opt/homebrew/bin/7zz ] ;; *) command -v 7z >/dev/null ;; esac || echo "  7-Zip not found. Run brew install sevenzip (macOS) or scripts/install-7zip.sh (Ubuntu), then ./install again."'
+      # dotbot runs this with $SHELL (fish), so keep it valid in fish and sh.
+      - command: '[ -x /opt/homebrew/bin/7zz ] || command -v 7z >/dev/null || echo "  7-Zip not found. Run brew install sevenzip (macOS) or scripts/install-7zip.sh (Ubuntu), then ./install again."'
         description: Checking for 7-Zip
         stdout: true
       - command: scripts/install-motd.sh
