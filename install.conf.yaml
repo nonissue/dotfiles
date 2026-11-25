@@ -50,6 +50,17 @@
           create: true
           path: ghostty/config.ghostty
 
+# Official 7-Zip ships as 7zz; expose it as 7z. Install it first
+# (brew install sevenzip / apt install 7zip); skipped if 7zz is absent.
+- link:
+      ~/.local/bin/7z:
+          if: '[ -x /opt/homebrew/bin/7zz ]'
+          path: /opt/homebrew/bin/7zz
+- link:
+      ~/.local/bin/7z:
+          if: '[ -x /usr/bin/7zz ]'
+          path: /usr/bin/7zz
+
 - plugins:
       - dotbot-plugins/dotbot-git/
 
@@ -60,5 +71,8 @@
 
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
+      - command: '[ -x /opt/homebrew/bin/7zz ] || [ -x /usr/bin/7zz ] || echo "  7zz not found, 7z link skipped. Run brew install sevenzip (macOS) or sudo apt install 7zip (Ubuntu), then ./install again."'
+        description: Checking for 7-Zip (7zz)
+        stdout: true
       - command: scripts/install-motd.sh
         description: Linking MOTD scripts (Linux only, needs sudo)
